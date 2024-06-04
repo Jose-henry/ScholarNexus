@@ -13,11 +13,11 @@ export default function NavBar(){
     const pathname = usePathname()
     const { userId } = useAuth()
     return(
-        <nav className="flex flex-col justify-between items-center  bg-purple-500 w-56 h-screen pt-[10px] pb-[10px] border-r-2 border-gray-600">
+        <nav className="flex flex-col justify-between items-center  bg-gradient-to-r from-Navbar-primary to-Navbar-secondary max-md:hidden w-[100px] h-[100%] pt-[10px] pb-[10px] rounded-[15px] ">
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
-                    <Image src="/assets/logo2.svg" alt="logo" width={50} height={50} className="ml-[-5px]">
-                    </Image>
+                    {/* <Image src="/assets/logo28.svg" alt="" width={50} height={50} className="ml-[-5px]">
+                    </Image> */}
                 </Link>
              
             <div className=" gap-[30px] flex flex-col items-start justify-start">
@@ -33,7 +33,7 @@ export default function NavBar(){
                     ${isActive && 'bg-green-500 rounded-[8px] pt-[10px] pb-[10px] pr-[10px]'}`}>
                         <Image src = {link.imgURL} alt = {link.label} width ={24} height = {24} />
 
-                        <p className="text-light-1 max-lg:hidden">{link.label}</p>
+                        {/* <p className="text-light-1 max-lg:hidden">{link.label}</p> */}
                     </Link>
                 )}
                 )}
@@ -44,7 +44,7 @@ export default function NavBar(){
                         <SignOutButton redirectUrl="/sign-in">
                             <div className="flex cursor-pointer gap-4 p-4">
                                 <Image src='/assets/logout.svg' alt="logout" width ={24} height ={25} />
-                                <p className="text-light-2 max-lg:hidden">Logout</p>
+                                {/* <p className="text-light-2 max-lg:hidden">Logout</p> */}
                             </div>
                         </SignOutButton>
                     </SignedIn>

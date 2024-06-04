@@ -1,13 +1,15 @@
 import { currentUser } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 
 
 export const metadata: Metadata = {
-  title:"Jobs" };
+  title:"Groups" };
 
-export default function Jobs() {
+
+
+export default function Groups() {
   const User = currentUser();
   if (!User) redirect("/");
   return (

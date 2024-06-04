@@ -24,6 +24,11 @@ export const sidebarLinks = [
       route: "/jobs",
       label: "Jobs",
     },
+    {
+      imgURL: "/assets/clubs.svg",
+      route: "/groups",
+      label: "Groups",
+    },
   ];
   
 

@@ -10,12 +10,22 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.1.3",
+    "@clerk/themes": "^2.1.8",
+    "@heroicons/react": "^2.1.3",
+    "@nextui-org/avatar": "^2.0.29",
+    "@nextui-org/button": "^2.0.33",
+    "@nextui-org/input": "^2.2.1",
+    "@nextui-org/system": "^2.2.1",
+    "@nextui-org/theme": "^2.2.5",
     "@uploadthing/react": "^6.6.0",
+    "framer-motion": "^11.2.10",
+    "lottie-web": "^5.12.2",
     "mongoose": "^8.4.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
     "svix": "^1.24.0",
+    "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.12.0"
   },
   "devDependencies": {
