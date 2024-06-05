@@ -1,11 +1,11 @@
 "use client"
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid'
-import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs"
+import { SignOutButton, SignedIn } from "@clerk/nextjs"
 import Image from "next/image"
 import { motion } from 'framer-motion'
-import {Avatar, AvatarGroup, AvatarIcon} from 
+import {Avatar} from 
 "@nextui-org/avatar";
-import Link from "next/link";
+
 import {Input} from "@nextui-org/input";
 import React, { useState } from "react";
 

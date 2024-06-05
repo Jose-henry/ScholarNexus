@@ -2,11 +2,7 @@
 import { Nunito } from "next/font/google";
 import "../globals.css";
 import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
+  ClerkProvider
 } from '@clerk/nextjs'
 import NavBar from "@/components/shared/NavBar";
 import TopBar from "@/components/shared/topbar";
