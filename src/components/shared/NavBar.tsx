@@ -13,13 +13,12 @@ export default function NavBar(){
     const pathname = usePathname()
     const { userId } = useAuth()
     return(
-        <nav className="flex flex-col justify-between items-center background-image  max-md:hidden w-[100px] h-[100%] pt-[10px] pb-[10px] rounded-[15px] ">
+        <nav className="flex flex-col justify-between items-center background-image  max-md:hidden w-[100px] h-[100%] pt-[10px] pb-[10px]">
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
                     {/* <Image src="/assets/logo28.svg" alt="" width={50} height={50} className="ml-[-5px]">
                     </Image> */}
                 </Link>
-             
             <div className=" gap-[30px] flex flex-col items-start justify-start">
             {sidebarLinks.map((link) => {
                     const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
@@ -43,7 +42,7 @@ export default function NavBar(){
             <SignedIn>
                         <SignOutButton redirectUrl="/sign-in">
                             <div className="flex cursor-pointer gap-4 p-4">
-                                <Image src='/assets/logout.svg' alt="logout" width ={24} height ={25} />
+                                <Image src='/assets/logout.svg' alt="logout" width ={24} height ={24} />
                                 {/* <p className="text-light-2 max-lg:hidden">Logout</p> */}
                             </div>
                         </SignOutButton>

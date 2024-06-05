@@ -34,11 +34,11 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <body className={nunito.className} style={{ height: "100vh" }} >
-        <div id="wrapper" className="h-[100%] flex md:p-[20px] sm:p-0 bg-white gap-[2%]">
+        <div id="wrapper" className="h-[100%] flex sm:p-0 bg-white gap-[2%]">
           <NavBar />
           <div id="container" className="bg-white w-[100%] flex flex-col h-[100%]">
             <TopBar />
-            <main className="flex-1 border-[1px] border-black p-[10px]">
+            <main className="flex-1 border-[1px] border-grey p-[10px] ml-[12px]">
                 {children}
             </main>
               <BottomBar />

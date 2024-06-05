@@ -16,8 +16,8 @@ export default function TopBar(){
     setisClick(!isClick)
     }
     return(
-        <header className="p-[10px] flex justify-between">
-        <div className="flex  bg-slate-100 border-[1px] w-full md:w-[400px] xs:w-[350px] gap-[3%] p-[0.5px] rounded-lg">
+        <header className="p-[15px] flex justify-between">
+        <div className="flex  bg-slate-100 w-full md:w-[400px] xs:w-[350px] gap-[3%] p-[0.5px]">
       <Input
         isClearable
         radius="sm"
@@ -47,7 +47,7 @@ export default function TopBar(){
         }}
         placeholder="Type to search..."
         startContent={
-            <Image width="22" height="22" src="/assets/search-gray.svg" alt="search"/>
+            <Image width="18" height="18" src="/assets/search-gray.svg" alt="search"/>
         }
       />
     </div>
@@ -55,23 +55,23 @@ export default function TopBar(){
             <div className='relative flex gap-[15px] items-center'>
             
                 <motion.div 
-                className={`absolute p-[5px] mt-[12px] top-full rounded-[4px] border-3 right-0 w-40 bg-gradient-to-r from-Navbar-primary to-Navbar-secondary flex text-white flex-col gap-2 shadow-sm ${isClick ? '' : 'hidden'} md:hidden`}
+                className={`absolute p-[5px] mt-[12px] top-full rounded-[2px] right-0 w-40 bg-gradient-to-r from-Navbar-primary to-Navbar-secondary flex text-white flex-col gap-2 shadow-sm ${isClick ? '' : 'hidden'} md:hidden`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isClick ? 1 : 0 }}
                 transition={{ duration: 0.5 }}>
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/bell-ringggg.svg" alt="notification" width={23} height={23} />
+                  <Image src="/assets/bell-ringggg.svg" alt="notification" width={18} height={18} />
                   <span>Notifications</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/settingssss.svg" alt="settings" width={23} height={23} />
+                  <Image src="/assets/settingssss.svg" alt="settings" width={18} height={18} />
                   <span>Settings</span>
                 </div>
 
                 <SignedIn>
                 <SignOutButton>
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/logout.svg" alt="logout" width={23} height={23}/>
+                  <Image src="/assets/logout.svg" alt="logout" width={18} height={18}/>
                   <span>Logout</span>
                 </div>
                 </SignOutButton>
@@ -86,13 +86,12 @@ export default function TopBar(){
                 </button>
                 </div>
                 <div className="flex gap-4 items-center">
-                <Image src="/assets/bell-ringblack.svg" alt="notification" width={23} height={23} className="hidden md:block">
+                <Image src="/assets/bell-ringblack.svg" alt="notification" width={20} height={20} className="hidden md:block cursor-pointer">
                 </Image>
-                <Image src="/assets/settingsblack.svg" alt="settings" width={23} height={23} className="hidden md:block">
+                <Image src="/assets/settingsblack.svg" alt="settings" width={20} height={2} className="hidden md:block cursor-pointer">
                 </Image>
-                <Avatar showFallback  isBordered radius="full"   color="success" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" size="md">
+                <Avatar showFallback  isBordered radius="full"   color="success" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" size="sm" className='cursor-pointer'>
                 </Avatar>
-                <span className='text-black lg:block hidden'>Fortune</span>
                 </div>
             </div>
         </header>
