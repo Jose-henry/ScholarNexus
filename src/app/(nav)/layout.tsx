@@ -38,7 +38,7 @@ export default function RootLayout({
           <NavBar />
           <div id="container" className="bg-white w-[100%] flex flex-col h-[100%]">
             <TopBar />
-            <main className="flex-1 border-[1px] border-grey p-[10px] ml-[12px]">
+            <main className="flex-1 ml-[12px]">
                 {children}
             </main>
               <BottomBar />

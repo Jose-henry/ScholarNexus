@@ -16,8 +16,8 @@ export default function TopBar(){
     setisClick(!isClick)
     }
     return(
-        <header className="p-[15px] flex justify-between">
-        <div className="flex  bg-slate-100 w-full md:w-[400px] xs:w-[350px] gap-[3%] p-[0.5px]">
+        <header className="p-[15px] pr-[25px] flex justify-between">
+        <div className="flex  bg-[#ececec] w-full md:w-[400px] xs:w-[350px] gap-[3%] p-[0.5px] rounded-[3px]">
       <Input
         isClearable
         radius="none"
@@ -90,7 +90,7 @@ export default function TopBar(){
                 </Image>
                 <Image src="/assets/settingsblack.svg" alt="settings" width={20} height={2} className="hidden md:block cursor-pointer">
                 </Image>
-                <Avatar showFallback  isBordered radius="full"   color="success" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" size="sm" className='cursor-pointer'>
+                <Avatar showFallback  isBordered radius="full" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" size="sm" className='cursor-pointer'>
                 </Avatar>
                 </div>
             </div>
