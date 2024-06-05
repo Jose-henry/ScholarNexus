@@ -55,23 +55,23 @@ export default function TopBar(){
             <div className='relative flex gap-[15px] items-center'>
             
                 <motion.div 
-                className={`absolute top-full right-0 w-40 bg-gray-200 text-black flex-col gap-2 rounded-2xl shadow-sm ${isClick ? '' : 'hidden'} md:hidden`}
+                className={`absolute p-[5px] mt-[12px] top-full rounded-[4px] border-2 right-0 w-40 bg-gradient-to-r from-Navbar-primary to-Navbar-secondary flex text-white flex-col gap-2 shadow-sm ${isClick ? '' : 'hidden'} md:hidden`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isClick ? 1 : 0 }}
                 transition={{ duration: 0.5 }}>
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/bell.svg" alt="notification" width={23} height={23} />
+                  <Image src="/assets/bell-ringggg.svg" alt="notification" width={23} height={23} />
                   <span>Notifications</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/settings.svg" alt="settings" width={23} height={23} />
+                  <Image src="/assets/settingssss.svg" alt="settings" width={23} height={23} />
                   <span>Settings</span>
                 </div>
 
                 <SignedIn>
                 <SignOutButton>
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/log-out.svg" alt="logout" width={23} height={23}/>
+                  <Image src="/assets/logout.svg" alt="logout" width={23} height={23}/>
                   <span>Logout</span>
                 </div>
                 </SignOutButton>
@@ -86,9 +86,9 @@ export default function TopBar(){
                 </button>
                 </div>
                 <div className="flex gap-4 items-center">
-                <Image src="/assets/bell.svg" alt="notification" width={23} height={23} className="hidden md:block">
+                <Image src="/assets/bell-ringblack.svg" alt="notification" width={23} height={23} className="hidden md:block">
                 </Image>
-                <Image src="/assets/settings.svg" alt="settings" width={23} height={23} className="hidden md:block">
+                <Image src="/assets/settingsblack.svg" alt="settings" width={23} height={23} className="hidden md:block">
                 </Image>
                 <Avatar showFallback  isBordered radius="full"   color="success" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" size="md">
                 </Avatar>
