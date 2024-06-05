@@ -47,7 +47,7 @@ export default function TopBar(){
         }}
         placeholder="Type to search..."
         startContent={
-            <img width="22" height="22" src="https://img.icons8.com/material-outlined/24/search--v1.png" alt="search--v1"/>
+            <Image width="22" height="22" src="/assets/search-gray.svg" alt="search"/>
         }
       />
     </div>
