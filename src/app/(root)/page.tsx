@@ -9,20 +9,19 @@ export default function Home() {
     <div>Landing page</div>
 
     <div className="bg-gray-400 w-[150px] h-[150%] rounded-xl border-2 border-dark-400 inline-block">
+    <Link href="/sign-in">
       <Button color="primary" className="w-[100%]">
-        <Link href="/sign-in">
-        Sign in
-        </Link>
-        
+        Sign in        
       </Button>
+      </Link>
 
     </div>
     <div className="bg-gray-400 w-[150px] h-[150%] rounded-xl border-2 border-dark-400 inline-block">
+    <Link href="/sign-up">
       <Button color="primary" className="w-[100%]">
-      <Link href="/sign-up">
       Sign up
-        </Link>
       </Button>
+      </Link>
 
     </div>
     </>
