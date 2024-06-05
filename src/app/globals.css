@@ -27,6 +27,26 @@ body {
 }
 
 
+@layer components{
+
+  .background-image {
+    background-image: radial-gradient(
+      circle 1292px at -13.6% 51.7%,
+      rgba(0, 56, 68, 1) 0%,
+      rgba(163, 217, 185, 1) 51.5%,
+      rgba(255, 252, 247, 1) 88.6%
+    );
+  }
+  
+
+
+
+}
+
+
+
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

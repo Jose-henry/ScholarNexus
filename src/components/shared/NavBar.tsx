@@ -13,7 +13,7 @@ export default function NavBar(){
     const pathname = usePathname()
     const { userId } = useAuth()
     return(
-        <nav className="flex flex-col justify-between items-center  bg-gradient-to-r from-Navbar-primary to-Navbar-secondary max-md:hidden w-[100px] h-[100%] pt-[10px] pb-[10px] rounded-[15px] ">
+        <nav className="flex flex-col justify-between items-center background-image  max-md:hidden w-[100px] h-[100%] pt-[10px] pb-[10px] rounded-[15px] ">
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
                     {/* <Image src="/assets/logo28.svg" alt="" width={50} height={50} className="ml-[-5px]">
