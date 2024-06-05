@@ -20,7 +20,7 @@ export default function TopBar(){
         <div className="flex  bg-slate-100 w-full md:w-[400px] xs:w-[350px] gap-[3%] p-[0.5px]">
       <Input
         isClearable
-        radius="sm"
+        radius="none"
         size="md"
         classNames={{
           label: "text-black/50 dark:text-white/90",
