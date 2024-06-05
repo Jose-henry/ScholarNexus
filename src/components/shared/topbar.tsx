@@ -55,7 +55,7 @@ export default function TopBar(){
             <div className='relative flex gap-[15px] items-center'>
             
                 <motion.div 
-                className={`absolute p-[5px] mt-[12px] top-full rounded-[4px] border-2 right-0 w-40 bg-gradient-to-r from-Navbar-primary to-Navbar-secondary flex text-white flex-col gap-2 shadow-sm ${isClick ? '' : 'hidden'} md:hidden`}
+                className={`absolute p-[5px] mt-[12px] top-full rounded-[4px] border-3 right-0 w-40 bg-gradient-to-r from-Navbar-primary to-Navbar-secondary flex text-white flex-col gap-2 shadow-sm ${isClick ? '' : 'hidden'} md:hidden`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isClick ? 1 : 0 }}
                 transition={{ duration: 0.5 }}>

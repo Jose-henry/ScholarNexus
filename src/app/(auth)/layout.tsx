@@ -1,9 +1,13 @@
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({ 
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  variable: '--font-nunito' 
+});
 
 
 export const metadata: Metadata = {
@@ -24,7 +28,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className={`${inter.className} `}style={{ backgroundImage: `url('/assets/low-poly-grid-haikeii.svg')` }}>
+      <body className={`${nunito.className} `}style={{ backgroundImage: `url('/assets/low-poly-grid-haikeii.svg')` }}>
       <div className="w-full flex justify-center items-center min-h-screen">{children}</div>
       </body>
     </html>

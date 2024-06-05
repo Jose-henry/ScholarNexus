@@ -5,16 +5,10 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title:"Dashboard" };
+  title:"Home" };
 
-export default async function Dashboard() {
-  const { userId } = auth();
-  console.log('userId', userId)
-  const User = await currentUser();
-
-  console.log('User', User)
-
-  if (!User) redirect("/");
+export default async function Home() {
+ 
   return (
     <></>
   );

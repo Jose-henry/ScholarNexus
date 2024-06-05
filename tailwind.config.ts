@@ -183,6 +183,13 @@ module.exports = {
       ],
     },
     extend: {
+
+      fontFamily: {
+        nunito: ["var(--font-nunito)", "sans-serif"],
+      },
+
+
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
