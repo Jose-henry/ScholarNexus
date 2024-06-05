@@ -22,7 +22,6 @@ export default function Home() {
       <Link href="/sign-up">
       Sign up
         </Link>
-        Sign up
       </Button>
 
     </div>
