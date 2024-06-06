@@ -17,6 +17,7 @@
     "@nextui-org/system": "^2.2.1",
     "@nextui-org/theme": "^2.2.5",
     "@uploadthing/react": "^6.6.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
     "mongoose": "^8.4.1",
     "next": "14.2.3",
@@ -24,6 +25,7 @@
     "react": "^18",
     "react-dom": "^18",
     "svix": "^1.24.0",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.12.0"
   },
