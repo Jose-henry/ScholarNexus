@@ -3,6 +3,7 @@
 // import { auth } from "@clerk/nextjs/server";
 import DashboardCard from "@/components/cards/DashboardCard";
 import ThreadCard from "@/components/cards/ThreadCard";
+import ThreadCard1 from "@/components/cards/ThreadCard1";
 import VideoCard from "@/components/cards/VideoCard";
 import { Button } from "@nextui-org/button";
 import { Metadata } from "next";
@@ -25,12 +26,24 @@ export const metadata: Metadata = {
             <Button variant="shadow" size="sm" radius="full" className="w-[80px] font-bold">Videos</Button> 
           </div>
           <div className="grid gap-[30px] grid-cols-3 grid-rows-2 h-full">
-            <ThreadCard imageUrl=""/>
-            <ThreadCard imageUrl=""/>
-            <ThreadCard imageUrl=""/>
-            <ThreadCard imageUrl=""/>
-            <ThreadCard imageUrl=""/>
-            <ThreadCard imageUrl=""/>
+            <ThreadCard videoUrl="/misc/vid1.mp4"/>
+            <ThreadCard videoUrl="/misc/vid2.mp4"/>
+            <ThreadCard1 
+            imageUrl="/misc/pic1.jpg"
+            w={5238}
+            h={3648}
+            />
+            <ThreadCard videoUrl="/misc/vid3.mp4"/>
+            <ThreadCard1 
+            imageUrl="/misc/pic2.jpg"
+            w={4912}
+            h={6545}
+            />
+            <ThreadCard1 
+            imageUrl="/misc/pic3.jpg"
+            w={3470}
+            h={5206}
+            />
           </div>
         </div>
         <div className="h-full pl-[10px] pr-[20px]">

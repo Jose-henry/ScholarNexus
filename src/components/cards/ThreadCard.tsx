@@ -1,9 +1,14 @@
+"use client"
 
-interface Props {imageUrl:string};
+interface Props {
+    videoUrl:string;
 
-export default function ThreadCard({imageUrl}:Props) {
+};
+
+export default function ThreadCard({videoUrl}:Props) {
     return (
-        <div className="bg-gray-400 rounded-[3px]">
+        <div className="bg-gray-400 rounded-[3px] relative overflow-hidden">
+            <video src={videoUrl} controls  className="absolute w-full h-full object-cover top-0 left-0"></video>
             
         </div>
     );

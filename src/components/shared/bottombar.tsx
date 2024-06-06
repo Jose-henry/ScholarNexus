@@ -18,7 +18,7 @@ export default function BottomBar(){
                     <Link 
                     href={link.route}
                     key = {link.label}
-                    className={`relative flex justify-start gap-2 rounded-lg p-2 pl-[9px] ${isActive && 'bg-green-500'}`}>
+                    className={`relative flex justify-start gap-2 rounded-lg p-2 pl-[9px] ${isActive && 'bg-[grey]'}`}>
                         <Image src = {link.imgURL} alt = {link.label} width ={24} height = {24} />
 
                         {/* <p className="text-subtle-medium text-light-1 max-sm:hidden">{link.label.split(/\s+./)[0]}</p>
