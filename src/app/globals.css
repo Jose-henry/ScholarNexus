@@ -36,6 +36,72 @@ body {
       background-image: linear-gradient( 109.6deg,  rgba(228,107,232,1) 11.2%, rgba(87,27,226,1) 96.7% );
     }
 
+    .aurora-gradient {
+      background-image: repeating-linear-gradient(100deg, var(--blue-500) 10%, var(--indigo-300) 15%, var(--blue-300) 20%, var(--violet-200) 25%, var(--blue-400) 30%);
+      background-size: 200%, 100%;
+      animation: aurora 3s infinite;
+    }
+  
+    .white-gradient {
+      background-image: repeating-linear-gradient(100deg, var(--white) 0%, var(--white) 7%, var(--transparent) 10%, var(--transparent) 12%, var(--white) 16%);
+      background-size: 300%, 200%;
+    }
+  
+    .dark-gradient {
+      background-image: repeating-linear-gradient(100deg, var(--black) 0%, var(--black) 7%, var(--transparent) 10%, var(--transparent) 12%, var(--black) 16%);
+      background-size: 300%, 200%;
+    }
+  
+    @keyframes aurora {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .page .sidebar-3-page::after {
+      @apply fixed;
+      @apply inset-0;
+      background: rgba(0, 0, 0, 0.15);
+    }
+    .sidebar-3 {
+    
+      @apply transition-all duration-200;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+    .sidebar-3-burger {
+      @apply text-[#f9f9f9];
+    }
+
+    .sidebar-3 nav > a {
+      @apply flex;
+      @apply gap-3;
+      @apply items-center;
+      @apply h-11;
+      @apply w-11;
+      @apply text-sm;
+      @apply capitalize;
+      @apply leading-none;
+      @apply px-3;
+      @apply rounded-lg;
+      @apply opacity-70;
+      @apply text-[#f9f9f9];
+    }
+  
+    .sidebar-3 nav > a:hover {
+      @apply bg-[rgba(0,0,0,0.3)];
+      @apply opacity-100;
+    }
+  
+    .sidebar-3:not(.open) nav > a:hover p {
+      @apply opacity-100;
+      @apply bg-[rgba(0,0,0,0.7)];
+      @apply p-1;
+      @apply rounded-md;
+      @apply translate-x-2.5;
+    }
+
+
 }
 
 

@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     template: "%s | Scholar Nexus",
 },
   description: "An Educational Productivity tool",
+  icons: {
+    icon: ""
+  }
 };
 
 
@@ -32,7 +35,7 @@ export default function RootLayout({
       variables: { colorPrimary: '#9cb9d2' },
     }} >
     <html lang="en">
-    <body className={`${nunito.className} bg-gradient-to-r from-Navbar-primary to-Navbar-secondary`}>
+    <body className={`${nunito.className} `} style={{ backgroundImage: `url('/misc/bg.jpeg')`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' } }>
       <div className="w-full flex justify-center items-center min-h-screen">{children}</div>
       </body>
     </html>

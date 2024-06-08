@@ -11,7 +11,7 @@ export default function BottomBar(){
     const pathname = usePathname()
     return(
         <footer>
-            <div className="bg-gray-400  p- text-black flex justify-between p-[15px] md:hidden background-image">
+            <div className=" p- text-black flex backdrop-opacity-10 backdrop-blur-md page sidebar-3 sidebar-3-page    justify-between p-[15px] md:hidden ">
             {sidebarLinks.map((link) => {
                     const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
                 return (

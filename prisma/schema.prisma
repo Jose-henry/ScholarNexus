@@ -1,0 +1,142 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @default(auto()) @map("_id") @db.ObjectId
+  clerkId       String         @unique
+  username      String         @unique
+  email         String         @unique
+  firstName     String
+  lastName      String
+  middleName    String?
+  dateOfBirth   DateTime
+  programme     String
+  school        String?
+  level         Int?
+  image         String
+  bio           String
+  onboarded     Boolean
+  interests     String[]
+  statistics    Json?
+  settings      Json?
+  notes         Note[]
+  folders       Folder[]
+  collaborators Collaborator[]
+  // collaborators @relation("collaborators", fields: [collaboratorsId], references: [id])
+  // collaboratorsId      String   @db.ObjectId
+  savedPosts    Post[]
+  toDo          ToDo[]
+  // questions  Question[]
+  // jobs       Job[]
+  // studyGroups StudyGroup[]
+}
+
+model Note {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  content    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  createdBy  User     @relation(fields: [authorId], references: [id])
+  authorId   String   @db.ObjectId
+  noteFolder Folder   @relation(fields: [folderId], references: [id])
+  folderId   String   @db.ObjectId
+
+  @@index([title])
+}
+
+model Folder {
+  id             String         @id @default(auto()) @map("_id") @db.ObjectId
+  folderName     String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  createdBy      User           @relation(fields: [createdById], references: [id])
+  createdById    String         @db.ObjectId
+  notes          Note[]
+  subfolders     Folder[]       @relation("subfolders")
+  collaborators  Collaborator[] @relation("collaborators")
+  flashcards     Flashcard[]
+  quizzes        Quiz[]
+  parentFolder   Folder?        @relation("subfolders", fields: [parentFolderId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  parentFolderId String?        @db.ObjectId
+
+  @@index([folderName])
+}
+
+model Collaborator {
+  id                 String @id @default(auto()) @map("_id") @db.ObjectId
+  collaboratedBy     User   @relation(fields: [collaboratorsId], references: [id])
+  collaboratorsId    String @db.ObjectId
+  collaboratedFolder Folder @relation("collaborators", fields: [folderId], references: [id])
+  folderId           String @db.ObjectId
+}
+
+model Flashcard {
+  id              String  @id @default(auto()) @map("_id") @db.ObjectId
+  flashcardName   String?
+  question        String //by AI
+  answer          String //by AI
+  flashcardFolder Folder  @relation(fields: [folderId], references: [id])
+  folderId        String  @db.ObjectId
+
+  @@index([flashcardName])
+}
+
+model Quiz {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  quizName   String?
+  question   String //by AI
+  answer     String[] // by AI
+  quizFolder Folder   @relation(fields: [folderId], references: [id])
+  folderId   String   @db.ObjectId
+
+  @@index([quizName])
+}
+
+
+//by AI, no need for validation
+model Post {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  postName    String
+  description String?
+  savedBy     User    @relation(fields: [userId], references: [id])
+  userId      String  @db.ObjectId
+
+  @@index([postName])
+}
+
+model ToDo {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String?
+  deadline    DateTime
+  completed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  priority    String?
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String   @db.ObjectId
+}
+
+// model Question{
+
+// }
+// model Job{
+
+// }
+
+// model StudyGroup{
+
+// }

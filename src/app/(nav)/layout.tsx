@@ -11,7 +11,7 @@ import { Metadata } from "next";
 
 const nunito = Nunito({ 
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
   variable: '--font-nunito' 
 });
 
@@ -33,12 +33,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className={nunito.className} style={{ height: "100vh" }} >
-        <div id="wrapper" className="h-[100%] flex sm:p-0 bg-white gap-[2%]">
+      <body className={nunito.className} style={{ height: "100vh", backgroundImage: "url('/misc/bg.jpeg')", backgroundSize: "cover", backgroundRepeat: "no-repeat" }} >
+        <div id="wrapper" className="h-[100%] flex sm:p-0  gap-[2%] ">
           <NavBar />
-          <div id="container" className="bg-white w-[100%] flex flex-col h-[100%]">
+          <div id="container" className=" w-[100%] flex flex-col h-[100%]  bg-no-repeat">
             <TopBar />
-            <main className="flex-1 ml-[12px]">
+            <main className="flex-1 ml-[12px] ">
                 {children}
             </main>
               <BottomBar />
