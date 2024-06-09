@@ -11,10 +11,10 @@ interface Params {
     firstName: string;
     lastName: string;
     middleName: string;
-    dateOfBirth: Date;
+    dateOfBirth: string;
     programme: string;
     school: string;
-    level: number;
+    level: string;
     image: string;
     bio: string;
     onboarded: boolean;
@@ -51,6 +51,7 @@ interface Params {
                 programme,
                 school,
                 level,
+                email,
                 image,
                 bio,
                 interests,

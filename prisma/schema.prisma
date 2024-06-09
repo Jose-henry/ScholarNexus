@@ -24,7 +24,7 @@ model User {
   dateOfBirth   DateTime
   programme     String
   school        String?
-  level         Int?
+  level         String?
   image         String
   bio           String
   onboarded     Boolean

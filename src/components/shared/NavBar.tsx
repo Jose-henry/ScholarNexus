@@ -16,8 +16,8 @@ export default function NavBar(){
         <nav className="flex backdrop-opacity-10 backdrop-blur-sm flex-col justify-between items-center mt-4 ml-4 rounded-[20px] page sidebar-3 sidebar-3-page bg-(url('/misc/bg.jpeg'))  bg-cover bg-no-repeat  max-md:hidden w-[100px] h-[96%] pt-[10px] pb-[10px]">
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
-                    {/* <Image src="/assets/logo28.svg" alt="" width={50} height={50} className="ml-[-5px]">
-                    </Image> */}
+                    <Image src="/assets/scholar-nexus-logo.svg" alt="" width={70} height={70} className="ml-[-5px]">
+                    </Image>
                 </Link>
             <div className=" gap-[30px] flex flex-col items-start justify-start">
             {sidebarLinks.map((link) => {
