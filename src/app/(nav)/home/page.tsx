@@ -27,30 +27,44 @@ export const metadata: Metadata = {
             <div className="h-full flex flex-col gap-[30px]">
                 <VideoCard />
                 <div className="flex gap-[10px] border-t-1.5 border-t-[#e0e0e0] pt-[8px]">
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-dark-300 bg-purple-300">All</Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-dark-300 bg-purple-300">Articles</Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-dark-300 bg-purple-300">Videos</Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-slate-300 bg-[#17132a] opacity-70">All</Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-slate-300 bg-[#17132a] opacity-70">Articles</Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-slate-300 bg-[#17132a] opacity-70">Videos</Button>
                 </div>
-                <div className="grid gap-[25px] grid-cols-3 grid-rows-2 h-full">
+                <div className="grid gap-[25px] grid-cols-3 h-[330px] overflow-y-scroll items-start p-[15px]"> 
                     <ThreadCard videoUrl="/misc/vid1.mp4" />
                     <ThreadCard videoUrl="/misc/vid2.mp4" />
                     <ThreadCard1 
                         imageUrl="/misc/pic1.jpg"
-                        w={5238}
-                        h={3648}
+                        w={5000}
+                        h={2000}
                         blurDataURL="/misc/pic1-blur.jpg"
+                    
                     />
                     <ThreadCard videoUrl="/misc/vid3.mp4" />
                     <ThreadCard1 
                         imageUrl="/misc/pic2.jpg"
-                        w={4912}
-                        h={6545}
+                        w={5000}
+                        h={2000}
                         blurDataURL="blurDataURL"
                     />
                     <ThreadCard1 
                         imageUrl="/misc/pic3.jpg"
-                        w={3470}
-                        h={5206}
+                        w={5000}
+                        h={2000}
+                        blurDataURL="/misc/pic3-blur.jpg"
+                    />
+                    <ThreadCard videoUrl="/misc/vid3.mp4" />
+                    <ThreadCard1 
+                        imageUrl="/misc/pic2.jpg"
+                        w={5000}
+                        h={2000}
+                        blurDataURL="blurDataURL"
+                    />
+                    <ThreadCard1 
+                        imageUrl="/misc/pic3.jpg"
+                        w={5000}
+                        h={2000}
                         blurDataURL="/misc/pic3-blur.jpg"
                     />
                 </div>
