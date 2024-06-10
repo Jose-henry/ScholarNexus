@@ -11,7 +11,7 @@ interface Params {
     firstName: string;
     lastName: string;
     middleName: string;
-    dateOfBirth: string;
+    dateOfBirth: Date;
     programme: string;
     school: string;
     level: string;
@@ -22,7 +22,7 @@ interface Params {
     path: string;
   }
 
-  export async function create_Or_Update_User({
+  export async function Upsert({
     clerkId,
     username,
     email,

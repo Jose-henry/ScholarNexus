@@ -1,6 +1,6 @@
 "use client"
 //import { currentUser } from "@clerk/nextjs/server"
-import { ChangeEvent, useEffect, useState } from "react"
+import { ChangeEvent, useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm}  from "react-hook-form"
 import { z } from "zod"
@@ -21,7 +21,7 @@ import { useUploadThing } from "@/lib/uploadthing"
 import { isBase64Image } from "@/utils/utils"
 import Image from "next/image"
 import { Button } from "../ui/button"
-import { create_Or_Update_User } from "@/lib/actions/user.action"
+import { Upsert } from "@/lib/actions/user.action"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
 import { Calendar } from "@/components/ui/calendar"
@@ -43,28 +43,6 @@ import {
 } from "@/components/ui/command"
 
 
-
-
-
-
-
-// interface Params {
-//   clerkId: string;
-//   username: string;
-//   email: string;
-//   firstName: string;
-//   lastName: string;
-//   middleName: string;
-//   dateOfBirth: Date;
-//   programme: string;
-//   school: string;
-//   level: number;
-//   image: string;
-//   bio: string;
-//   onboarded: boolean;
-//   interests: string[];
-//   path: string;
-// }
 
 
 const levels = [
@@ -165,14 +143,14 @@ export function ProfileForm ({user, btnTitle}: Props) {
         
     }
       setIsLoading(true); // Optional loading state
-      await create_Or_Update_User({
+      await Upsert({
         clerkId: user?.clerkId,
-        username: values.username, 
+        username: user?.username, 
         email: user?.email, 
         firstName: values.fname,
         lastName: values.lname,
         middleName: values.mname,
-        dateOfBirth: values.dob.toISOString().split('T')[0],
+        dateOfBirth: values.dob,
         programme: values.programme,
         school: values.school,
         level: values.level,
@@ -277,26 +255,6 @@ export function ProfileForm ({user, btnTitle}: Props) {
             render={({ field }) => (
               <FormItem className="flex flex-col w-full gap-3">
                 <FormLabel className="text-base-semibold text-light-2">Middlename
-                </FormLabel>
-                <FormControl>
-                  <Input
-                  type="text"
-                  className = "account-form_input no-focus"
-                  {...field}
-                  />
-                  </FormControl>
-                  <FormMessage />
-              </FormItem>
-            )}
-          />
-
-
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-                <FormItem className="flex flex-col w-full gap-3">
-                <FormLabel className="text-base-semibold text-light-2">Username
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -443,8 +401,8 @@ export function ProfileForm ({user, btnTitle}: Props) {
                     <CommandInput placeholder="Search level..." />
                     <CommandEmpty>No level found.</CommandEmpty>
                     <CommandGroup>
-                      {levels.map((level) => (
-                        <CommandList>
+                      {levels.map((level, index) => (
+                        <CommandList key={index}>
                         <CommandItem
                           value={level.label}
                           key={level.value}

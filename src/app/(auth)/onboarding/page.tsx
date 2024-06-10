@@ -32,7 +32,7 @@ export default async function Onboarding() {
     
   
     const userInfo = await getUserByClerkId(User?.id);
-    if (userInfo?.onboarded) redirect("/");
+    if (userInfo?.onboarded) redirect("/home");
 
 
 
@@ -64,7 +64,7 @@ export default async function Onboarding() {
     firstName: userInfo?.firstName || User?.firstName || "",
     lastName: userInfo?.lastName || User?.lastName || "",
     middleName: userInfo?.middleName || "",
-    dateOfBirth: userInfo?.dateOfBirth || "",
+    dateOfBirth: userInfo?.dateOfBirth || new Date(),
     programme: userInfo?.programme || "",
     school: userInfo?.school || "",
     level: userInfo?.level || "",
