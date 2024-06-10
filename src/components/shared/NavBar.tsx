@@ -13,13 +13,12 @@ export default function NavBar(){
     const pathname = usePathname()
     const { userId } = useAuth()
     return(
-        <nav className="flex backdrop-opacity-10 backdrop-blur-sm flex-col justify-between items-center mt-4 ml-4 rounded-[20px] page sidebar-3 sidebar-3-page bg-(url('/misc/bg.jpeg'))  bg-cover bg-no-repeat  max-md:hidden w-[100px] h-[96%] pt-[10px] pb-[10px]">
+        <nav className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page bg-[#044a42]  max-md:hidden w-[60px] h-[100%] pt-[20px] pb-[10px]">
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
-                    <Image src="/assets/scholar-nexus-logo.svg" alt="" width={70} height={70} className="ml-[-5px]">
-                    </Image>
+                    <img width="34" height="34" src="https://img.icons8.com/glyph-neue/64/FFFFFF/education.png" alt="education"/>
                 </Link>
-            <div className=" gap-[30px] flex flex-col items-start justify-start">
+            <div className=" gap-[30px] flex flex-col items-center justify-center">
             {sidebarLinks.map((link) => {
                     const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
 
@@ -29,11 +28,11 @@ export default function NavBar(){
                         <Link 
                         href={link.route}
                         key = {link.label}
-                        className={`relative flex justify-start gap-2 rounded-lg p-2 pl-[9px] ${
-                            isActive && 'bg-[#cfcfcf] rounded-[2px] pt-[5px] pb-[5px] pr-[10px]'
-                          } hover:bg-[#17132a] hover:rounded-md hover:transition-all`}
+                        className={`relative flex justify-start gap-2 rounded-sm p-2 pl-[5px] ${
+                            isActive && 'bg-[#f0d78c] rounded-sm pt-[5px] pb-[5px] pr-[5px]'
+                        } hover:bg-[#17132a] hover:rounded-md hover:transition-all`}
                         >
-                            <Image src = {link.imgURL} alt = {link.label} width ={24} height = {24} />
+                            <Image src = {link.imgURL} alt = {link.label} width ={20} height = {20} />
 
                             {/* <p className="text-light-1 max-lg:hidden">{link.label}</p> */}
                         </Link>
@@ -44,8 +43,8 @@ export default function NavBar(){
             <div>
             <SignedIn>
                         <SignOutButton redirectUrl="/sign-in">
-                            <div className="flex cursor-pointer gap-4 p-4 hover:bg-[#17132a] hover:rounded-md hover:transition-all">
-                                <Image src='/assets/logout.svg' alt="logout" width ={24} height ={24} />
+                            <div className="flex cursor-pointer gap-4 p-2 hover:bg-[#17132a] hover:rounded-md hover:transition-all">
+                                <Image src='/assets/logout.svg' alt="logout" width ={20} height ={20} />
                                 {/* <p className="text-light-2 max-lg:hidden">Logout</p> */}
                             </div>
                         </SignOutButton>

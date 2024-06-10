@@ -23,15 +23,15 @@ export const metadata: Metadata = {
 
 
     return (
-        <div className="w-[100%] grid h-full gap-[2%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2fr 1fr" }}>
+        <div className="w-[100%] grid h-full gap-[2%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
             <div className="h-full flex flex-col gap-[30px]">
                 <VideoCard />
-                <div className="flex gap-[10px] border-t-1.5 border-t-[#e0e0e0] pt-[8px]">
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-slate-300 bg-[#17132a] opacity-70">All</Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-slate-300 bg-[#17132a] opacity-70">Articles</Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-black text-slate-300 bg-[#17132a] opacity-70">Videos</Button>
+                <div className="flex gap-[10px]">
+                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">All</Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">Articles</Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">Videos</Button>
                 </div>
-                <div className="grid gap-[25px] grid-cols-3 h-[330px] overflow-y-scroll items-start p-[15px]"> 
+                <div className="grid gap-[25px] grid-cols-3 h-[330px] overflow-y-scroll items-start p-[15px] scroll-smooth"> 
                     <ThreadCard videoUrl="/misc/vid1.mp4" />
                     <ThreadCard videoUrl="/misc/vid2.mp4" />
                     <ThreadCard1 

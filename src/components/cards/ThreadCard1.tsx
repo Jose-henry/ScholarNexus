@@ -10,7 +10,7 @@ interface Props {
 
 export default function ThreadCard1({ imageUrl, w, h, blurDataURL }: Props) {
     return (
-        <div className=" bg-black opacity-80 p-[12px] rounded-xl grid gap-[10px] justify-between hover:shadow-xl hover:shadow-black transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
+        <div className=" bg-black opacity-80 p-[12px] rounded-sm grid gap-[10px] justify-between hover:shadow-lg hover:shadow-slate-600 transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
             <div className="h-[150px] cursor-pointer">
             <Image 
                 src={imageUrl} 
@@ -19,15 +19,15 @@ export default function ThreadCard1({ imageUrl, w, h, blurDataURL }: Props) {
                 height={h}  
                 placeholder="blur" 
                 blurDataURL={blurDataURL} 
-                className="h-full w-full object-cover rounded-xl"
+                className="h-full w-full object-cover rounded-sm"
                 
             />
             </div>
 
 
-            <div className="text-neutral-600 hover:translate-x-4 transition duration-200">
-            <h2 className="font-black">The Dawn of Innovation</h2>
-            <p className="text-left text-sm ">Explore the birth of groundbreaking ideas and inventions.</p>
+            <div className="text-neutral-600 hover:translate-y-2 transition duration-200">
+            <h2 className="font-bold text-[#eeeeee]">The Dawn of Innovation</h2>
+            <p className="text-left text-[12.5px] text-[#f2f2f2]">Explore the birth of groundbreaking ideas and inventions in the phenomenal world of tech!</p>
             </div>
             <Image src="/assets/bookmark.svg" alt="" width={20} height={20} className="justify-self-end cursor-pointer"></Image>
         </div>

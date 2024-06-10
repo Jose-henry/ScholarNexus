@@ -17,7 +17,7 @@ export default function TopBar(){
     }
     return(
         <header className="p-[15px] pr-[25px] flex justify-between">
-        <div className="flex  bg-[url('/misc/bg.jpeg')] w-full md:w-[400px] xs:w-[300px] h-[30px] gap-[3%] p-[0.5px] rounded-[3px]">
+        <div className="flex w-full md:w-[400px] xs:w-[300px] h-[30px] gap-[3%] p-[0.5px] rounded-[3px] border border-gray-300">
       <Input
         isClearable
         radius="sm"
@@ -29,6 +29,7 @@ export default function TopBar(){
             "text-black/90 dark:text-white/90",
             "placeholder:text-default-700/50 dark:placeholder:text-white/60", "w-full", 
             "h-full", 
+            "text-[13px]"
           ],
           innerWrapper: "bg-transparent",
           inputWrapper: [
@@ -47,7 +48,7 @@ export default function TopBar(){
         }}
         placeholder="Type to search..."
         startContent={
-            <Image width="18" height="18" src="/assets/search-gray.svg" alt="search"/>
+          <img width="17" height="17" className="mr-2" src="https://img.icons8.com/metro/26/search.png" alt="search"/>
         }
       />
     </div>
@@ -86,12 +87,9 @@ export default function TopBar(){
                 </button>
                 </div>
                 <div className="flex gap-4 items-center">
-                <Image src="/assets/bell-ringblack.svg" alt="notification" width={20} height={20} className="hidden md:block cursor-pointer">
-                </Image>
-                <Image src="/assets/settingsblack.svg" alt="settings" width={20} height={2} className="hidden md:block cursor-pointer">
-                </Image>
-                <Avatar showFallback  isBordered radius="full" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" size="sm" className='cursor-pointer'>
-                </Avatar>
+                <img width="22" height="22" className='cursor-pointer' src="https://img.icons8.com/skeuomorphism/32/appointment-reminders.png" alt="appointment-reminders"/>
+                <img width="22" height="22" className='cursor-pointer' src="https://img.icons8.com/skeuomorphism/32/settings.png" alt="settings"/>
+                <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer'> </Avatar>
                 </div>
             </div>
         </header>

@@ -6,9 +6,12 @@ import UserWelcomeCard from "./UserWelcomeCard";
 export default function DashboardCard() {
     return (
         
-        <div className="bg-[#17132a]  shadow-md shadow-slate-600 transform opacity-80 bg-(url('/noise.webp')) w-[100%] h-[100%] rounded-[10px] p-[25px]">
-            <h2 className="font-black text-slate-300">Dashboard</h2>
-            <div className="h-[97%] flex flex-col justify-between w-[100%] pt-[10px] pb-[10px]">
+        <div className="bg-[#044a42] w-[100%] h-[100%] shadow-lg rounded-sm p-[20px] relative">
+            <div className="flex gap-2">
+                <img width="24" height="24" src="https://img.icons8.com/material-sharp/24/f0d78c/dashboard-layout.png" alt="dashboard-layout"/>
+                <h2 className="font-bold text-[#eef2e2] text-[14px]">Dashboard</h2>
+            </div>
+            <div className="h-[97%] flex flex-col gap-7 w-[100%] pt-[10px] pb-[10px]">
                 <UserWelcomeCard />
                 <DashboardTask />
                 <DashboardFriends />

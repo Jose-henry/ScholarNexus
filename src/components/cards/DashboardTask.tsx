@@ -2,7 +2,6 @@
 
 export default function DashboardTask() {
     return (
-        <div className="w-[100%] h-[150px] bg-white rounded-[10px]  cursor-pointer ">
-        </div>
+        <div className="w-[100%] h-[200px] bg-white rounded-[2px] cursor-pointer shadow-lg]"> </div>
     );
 }
