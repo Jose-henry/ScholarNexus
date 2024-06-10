@@ -58,9 +58,9 @@ export default async function Onboarding() {
 
     
   const formData = {
-    clerkId: User?.id ,
+    clerkId: User?.id || "",
     username: userInfo?.username || User?.username || "",
-    email: User?.emailAddresses[0].emailAddress || userInfo?.email,
+    email: User?.emailAddresses[0].emailAddress || userInfo?.email || "",
     firstName: userInfo?.firstName || User?.firstName || "",
     lastName: userInfo?.lastName || User?.lastName || "",
     middleName: userInfo?.middleName || "",

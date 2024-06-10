@@ -62,13 +62,13 @@ const levels = [
 
 interface Props{
   user: {
-      clerkId: any;
+      clerkId: string;
       username: string;
-      email: any;
+      email: string;
       firstName: string;
       lastName: string;
       middleName: string;
-      dateOfBirth: any;
+      dateOfBirth: Date;
       programme: string;
       school: string;
       level: string;

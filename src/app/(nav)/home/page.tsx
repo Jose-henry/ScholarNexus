@@ -21,6 +21,8 @@ export const metadata: Metadata = {
 
   export default async function Home() {    
 
+    //TODO: get user info and add a check to see if user has onboarded and field in interests if not then redirect to interest & onboarding
+
 
     return (
         <div className="w-[100%] grid h-full gap-[2%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
