@@ -5,9 +5,11 @@ import DashboardCard from "@/components/cards/DashboardCard";
 import ThreadCard from "@/components/cards/ThreadCard";
 import ThreadCard1 from "@/components/cards/ThreadCard1";
 import VideoCard from "@/components/cards/VideoCard";
-
+import { getUserByClerkId } from "@/lib/actions/user.action";
+import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "@nextui-org/button";
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 
 
@@ -23,6 +25,12 @@ export const metadata: Metadata = {
 
     //TODO: get user info and add a check to see if user has onboarded and field in interests if not then redirect to interest & onboarding
 
+    const User = await currentUser();
+    if (!User) return null; // to avoid typescript warnings
+    const userInfo = await getUserByClerkId(User?.id);
+    if (userInfo?.onboarded === false && (userInfo?.interests === undefined || userInfo?.interests.length === 0 || userInfo?.interests === null)) {
+        redirect("/onboarding/interest");
+    }
 
     return (
         <div className="w-[100%] grid h-full gap-[2%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>

@@ -23,10 +23,9 @@ export default async function Interest() {
     const User = await currentUser();
     if (!User) return null; // to avoid typescript warnings
 
+
     const userInfo = await getUserByClerkId(User?.id);
-    if (userInfo?.onboarded && (userInfo?.interests === undefined || userInfo?.interests.length === 0 || userInfo?.interests === null)) {
-        redirect("/onboarding/interest");
-      } else if (userInfo?.onboarded && userInfo?.interests?.length > 0) {
+      if (userInfo?.onboarded === true && userInfo?.interests?.length > 0) {
         redirect("/home");
       }
     

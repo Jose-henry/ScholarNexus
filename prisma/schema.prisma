@@ -28,7 +28,7 @@ model User {
   level         String?
   image         String
   bio           String
-  onboarded     Boolean
+  onboarded     Boolean  @default(false)
   interests     String[]
   statistics    Json?
   settings      Json?
