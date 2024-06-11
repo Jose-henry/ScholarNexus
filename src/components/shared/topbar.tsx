@@ -17,8 +17,8 @@ export default function TopBar(){
     }
     return(
         <header className="p-[15px] pr-[25px] flex justify-between">
-        <div className="flex w-full md:w-[400px] xs:w-[300px] h-[30px] gap-[3%] p-[0.5px] rounded-[3px] border border-gray-300">
-      <Input
+        <div className="flex w-full md:w-[400px] sm:w-[350px] h-[30px] gap-[3%] p-[0.5px] rounded-[3px] border border-gray-300">
+        <Input
         isClearable
         radius="sm"
         size="md"
@@ -48,50 +48,46 @@ export default function TopBar(){
         }}
         placeholder="Type to search..."
         startContent={
-          <img width="17" height="17" className="mr-2" src="https://img.icons8.com/metro/26/search.png" alt="search"/>
+            <Image width="18" height="18" className="mr-2" src="/assets/search-icon.svg" alt="search"/>
         }
       />
     </div>
 
-            <div className='relative flex gap-[15px] items-center'>
-            
-                <motion.div 
-                className={`absolute p-[5px] mt-[12px] top-full rounded-[5px] right-0 w-40 bg-gradient-to-r from-Navbar-primary to-Navbar-secondary flex text-white flex-col gap-2 shadow-md${isClick ? '' : 'hidden'} md:hidden`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isClick ? 1 : 0 }}
-                transition={{ duration: 0.5 }}>
-                <div className="flex items-center gap-2">
-                  <Image src="/assets/bell-ringggg.svg" alt="notification" width={18} height={18} />
-                  <span>Notifications</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Image src="/assets/settingssss.svg" alt="settings" width={18} height={18} />
-                  <span>Settings</span>
-                </div>
+      <div className='relative flex gap-[15px] items-center'> 
+      <motion.div className={'absolute p-[7px] mt-[12px] top-full rounded-sm md:hidden z-10 right-0 w-40 bg-[#393e46] flex text-[#eef2e2] text-[12.5px] flex-col gap-2 shadow-md' + (isClick ? '' : ' hidden')} initial={{ opacity: 0 }} animate={{ opacity: isClick ? 1 : 0 }} transition={{ duration: 0.3 }}> 
+          <div className="flex items-center gap-2"> 
+              <Image src="/assets/notification-icon.svg" alt="notification" width={18} height={18} /> 
+              <span className='hover:underline cursor-pointer'>Notifications</span> 
+          </div> 
+          <div className="flex items-center gap-2"> 
+              <Image src="/assets/settings-icon.svg" alt="settings" width={18} height={18} /> 
+              <span className='hover:underline cursor-pointer'>Settings</span> 
+          </div> 
+          <SignedIn> 
+              <SignOutButton> 
+                  <div className="flex items-center gap-2"> 
+                      <Image src="/assets/logout.svg" alt="logout" width={18} height={18}/> 
+                      <span className='hover:underline cursor-pointer'>Logout</span> 
+                  </div> 
+              </SignOutButton> 
+          </SignedIn> 
+      </motion.div> 
+      <div className="md:hidden flex"> 
+          <button className={'inline-flex items-center justify-center p-2 rounded-md text-black md:text-black' + (isClick ? 'focus:ring-2 focus:ring-inset focus:ring-green-500' : '')} aria-label="Menu" onClick={() => toggleMenubar()}> 
+              <Bars3CenterLeftIcon className="size-6 text-dark-1 " /> 
+          </button> 
+      </div> 
+      <div className="flex gap-4 items-center"> 
+          <Image src="/assets/notification-icon.svg" alt="notification" width={20} height={20} className="hidden md:block cursor-pointer"> 
+          </Image> 
+          <Image src="/assets/settings-icon.svg" alt="settings" width={20} height={20} className="hidden md:block cursor-pointer"> 
+          </Image> 
+          <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'> 
+          </Avatar> 
+      </div> 
+  </div>
 
-                <SignedIn>
-                <SignOutButton>
-                <div className="flex items-center gap-2">
-                  <Image src="/assets/logout.svg" alt="logout" width={18} height={18}/>
-                  <span>Logout</span>
-                </div>
-                </SignOutButton>
-                </SignedIn>
-                </motion.div>
-
-                <div className="md:hidden flex">
-                <button className={`inline-flex items-center justify-center p-2 rounded-md text-white md:text-white hover:text-white ${isClick ? 'focus:ring-2 focus:ring-inset focus:ring-green-500' : ''}`}
-                aria-label="Menu"
-                onClick={() => toggleMenubar()}>
-                <Bars3CenterLeftIcon className="size-6 text-dark-1 " />
-                </button>
-                </div>
-                <div className="flex gap-4 items-center">
-                <img width="22" height="22" className='cursor-pointer' src="https://img.icons8.com/skeuomorphism/32/appointment-reminders.png" alt="appointment-reminders"/>
-                <img width="22" height="22" className='cursor-pointer' src="https://img.icons8.com/skeuomorphism/32/settings.png" alt="settings"/>
-                <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer'> </Avatar>
-                </div>
-            </div>
-        </header>
+      </header>
     )
 }
+  

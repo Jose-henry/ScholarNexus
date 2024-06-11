@@ -16,7 +16,7 @@ export default function NavBar(){
         <nav className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page bg-[#044a42]  max-md:hidden w-[60px] h-[100%] pt-[20px] pb-[10px]">
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
-                    <img width="34" height="34" src="https://img.icons8.com/glyph-neue/64/FFFFFF/education.png" alt="education"/>
+                    <Image width="32" height="32" src="/assets/logo-icon.svg" alt="education"/>
                 </Link>
             <div className=" gap-[30px] flex flex-col items-center justify-center">
             {sidebarLinks.map((link) => {
@@ -28,9 +28,9 @@ export default function NavBar(){
                         <Link 
                         href={link.route}
                         key = {link.label}
-                        className={`relative flex justify-start gap-2 rounded-sm p-2 pl-[5px] ${
+                        className={`relative flex justify-start gap-2 rounded-sm p-2 pl-[6px] ${
                             isActive && 'bg-[#f0d78c] rounded-sm pt-[5px] pb-[5px] pr-[5px]'
-                        } hover:bg-[#17132a] hover:rounded-md hover:transition-all`}
+                        } hover:bg-[#17132a] hover:rounded-sm hover:transition-all hover:pl-[6px]`}
                         >
                             <Image src = {link.imgURL} alt = {link.label} width ={20} height = {20} />
 
@@ -43,7 +43,7 @@ export default function NavBar(){
             <div>
             <SignedIn>
                         <SignOutButton redirectUrl="/sign-in">
-                            <div className="flex cursor-pointer gap-4 p-2 hover:bg-[#17132a] hover:rounded-md hover:transition-all">
+                            <div className="flex cursor-pointer gap-4 p-[5px] hover:bg-[#17132a] hover:rounded-sm hover:transition-all">
                                 <Image src='/assets/logout.svg' alt="logout" width ={20} height ={20} />
                                 {/* <p className="text-light-2 max-lg:hidden">Logout</p> */}
                             </div>
