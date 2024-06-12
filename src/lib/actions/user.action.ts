@@ -22,6 +22,7 @@ interface Params {
     path: string;
   }
 
+
   export async function Upsert({
     clerkId,
     username,
@@ -54,7 +55,7 @@ interface Params {
                 email,
                 image,
                 bio,
-                interests,
+                interests: { set: interests },
             },
             create: {
                 clerkId,
@@ -70,7 +71,7 @@ interface Params {
                 image,
                 bio,
                 onboarded,
-                interests,
+                interests: { set: interests },
             },
         });
         if (path === "/profile/edit") {
@@ -78,6 +79,17 @@ interface Params {
         }
     } catch (error:any) {
         throw new Error("Error creating or updating user:", error.message);
+    }
+}
+
+export async function updateInterests(clerkId: string, interests: string[]) {
+    try {
+        await prisma.user.update({
+            where: { clerkId },
+            data: { interests: { set: interests } },
+        });
+    } catch (error) {
+        console.error("Error updating interests:", error);
     }
 }
 

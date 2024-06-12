@@ -29,13 +29,16 @@ export default async function Interest() {
         redirect("/home");
       }
     
-    return (
+      return (
         <div className="flex flex-col justify-between w-[750px] p-7 h-[90%] rounded-sm shadow-md bg-[#f7f7f2]">
-            <div className="flex flex-col gap-1 items-center">
-              <h1 className="font-black text-black text-[18px]">Select at most 5 interests</h1>
-              <p className="text-center text-[12.5px] text-black">Let's get to know your interests! Sharing your tastes with us will help us curate a personalized feed of posts and articles that resonate with you, right on your homepage.</p>
-            </div>
-            <InterestForm />
+          <div className="flex flex-col gap-1 items-center">
+            <h1 className="font-black text-black text-[18px]">Select at most 5 interests</h1>
+            <p className="text-center text-[12.5px] text-black">
+              Let's get to know your interests! Sharing your tastes with us will help us curate a personalized feed of posts and articles that resonate with you, right on your homepage.
+            </p>
+          </div>
+          <InterestForm clerkId={User?.id} />
         </div>
-    )
-}
+      );
+    }
+    
