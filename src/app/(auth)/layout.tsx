@@ -3,6 +3,9 @@ import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Metadata } from "next";
 import { dark } from "@clerk/themes";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const nunito = Nunito({ 
   subsets: ["latin"],
@@ -32,7 +35,7 @@ export default function RootLayout({
   return (
     <ClerkProvider appearance={{
       baseTheme: [dark],
-      variables: { colorPrimary: '#9cb9d2' },
+      variables: { colorPrimary: '#9cb9d2' }, 
     }} >
     <html lang="en">
     <body
@@ -43,6 +46,11 @@ export default function RootLayout({
       backgroundPosition: 'center',
     }}>
       <div className="w-full flex justify-center items-center h-screen">{children}</div>
+      <ToastContainer
+      hideProgressBar={true}
+      theme="dark"
+      position="bottom-right"
+      autoClose={4000} />
     </body>
     </html>
     </ClerkProvider>

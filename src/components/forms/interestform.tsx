@@ -5,6 +5,9 @@ import { Button } from "@nextui-org/button";
 import InterestBtn from "@/components/forms/InterestBtn";
 import Image from "next/image";
 import { updateInterests } from "@/lib/actions/user.action";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 interface props{
     clerkId: string
@@ -20,32 +23,39 @@ export default function InterestForm(   {clerkId}: props) {
     
     const onSubmit = async () => {
         if (count < 1) {
-          alert("Please select at least 1 interest");
+          toast.error("Please select at least one");
           return;
         }
         if (count > 5) {
-          alert("You can only select at most 5 interests");
+          toast.error("You can only select at most five interests");
           return;
         }
         await updateInterests(clerkId, selectedInterests);
+        toast.success("Interests updated successfully!");
         router.push("/onboarding");
       };
     
 
 
-  const handleSelect = (text: string, selected: boolean) => {
-    if (selected) {
-      if (count < 5) {
-        setSelectedInterests((prevInterests) => [...prevInterests, text]);
-        setCount((prevCount) => prevCount + 1);
-      } else {
-        alert("You can only select at most 5 interests");
-      }
-    } else {
-      setSelectedInterests((prevInterests) => prevInterests.filter((interest) => interest !== text));
-      setCount((prevCount) => prevCount - 1);
-    }
+      const handleSelect = (text: string, selected: boolean) => {
+        if (selected) {
+          if (count < 5) {
+            setSelectedInterests((prevInterests) => [...prevInterests, text]);
+            setCount((prevCount) => prevCount + 1);
+          } else {
+            toast.error("You can only select at most five interests");
+          }
+        } else {
+          setSelectedInterests((prevInterests) => prevInterests.filter((interest) => interest !== text));
+          setCount((prevCount) => prevCount - 1);
+        }
+      };
+
+  const deselectAll = () => {
+    setSelectedInterests([]);
+    setCount(0);
   };
+
 
 
 
@@ -215,6 +225,8 @@ export default function InterestForm(   {clerkId}: props) {
                     </div>
                 </div>
             </div>
+
+            <div className="flex flex-col gap-4">
             <Button
             size="sm"
             className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[14px] font-bold shadow-lg w-[200px] mx-auto"
@@ -223,6 +235,16 @@ export default function InterestForm(   {clerkId}: props) {
                 Next
                 <Image width="20" height="20" src="/assets/next-icon.svg" alt="next"/>
             </Button>
+            { selectedInterests.length > 0 &&( <Button
+          size="sm"
+          className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[14px] font-bold shadow-lg w-[100px] mx-auto"
+          onClick={deselectAll}
+        >
+          Deselect all
+        </Button>)}
+        </div>
+        
+
         </>
     )
 }
