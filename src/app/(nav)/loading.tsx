@@ -1,6 +1,12 @@
+"use client";
+
+import React from 'react';
+import CircularWithValueLabel from './loadingComponent';
 
 export default function Loading() {
-    return (
-        <div>Loading...</div>
-    );
+  return (
+    <div>
+      <CircularWithValueLabel />
+    </div>
+  );
 }

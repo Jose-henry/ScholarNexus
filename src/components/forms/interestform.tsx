@@ -10,7 +10,7 @@ export default function InterestForm() {
     return (
         <>
             <div className="flex flex-col gap-10 h-[530px] pb-5 pt-5 align-middle overflow-scroll">
-                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
+                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
                     <div className="flex gap-1">
                         <h2 className="text-[13px] font-semibold">Art and Design</h2>
                         <Image width="20" height="20" src="/assets/art-icon.svg" alt="art"/>
@@ -28,7 +28,7 @@ export default function InterestForm() {
                         <InterestBtn text="Architecture" />
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
+                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
                     <div className="flex gap-1">
                         <h2 className="text-[13px] font-semibold">Business and Entrepreneurship</h2>
                         <Image width="20" height="20" src="/assets/business-icon.svg" alt="business"/>
@@ -46,7 +46,7 @@ export default function InterestForm() {
                         <InterestBtn text="Business Analytics" />
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
+                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
                     <div className="flex gap-1">
                         <h2 className="text-[13px] font-semibold">Computer Science and Technology</h2>
                         <Image width="20" height="20" src="/assets/tech-icon.svg" alt="tech"/>
@@ -64,7 +64,7 @@ export default function InterestForm() {
                         <InterestBtn text="Software Engineering" />
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
+                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
                     <div className="flex gap-1">
                         <h2 className="text-[13px] font-semibold">Engineering</h2>
                         <Image width="20" height="20" src="/assets/eng-icon.svg" alt="enginering"/>
@@ -81,10 +81,10 @@ export default function InterestForm() {
                         <InterestBtn text="Material Science" />
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
+                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
                     <div className="flex gap-1">
                         <h2 className="text-[13px] font-semibold">Creative Writing and Journalism</h2>
-                        <Image width="20" height="20" src="/assets/eng-icon.svg" alt="enginering"/>
+                        <Image width="20" height="20" src="/assets/writing-icon.svg" alt="writing"/>
                     </div>
                     <div className="flex gap-1 flex-wrap">
                         <InterestBtn text="Fiction Writing" />
@@ -102,7 +102,7 @@ export default function InterestForm() {
                 <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
                     <div className="flex gap-1">
                         <h2 className="text-[13px] font-semibold">Environmental Science and Sustainability</h2>
-                        <Image width="20" height="20" src="/assets/eng-icon.svg" alt="enginering"/>
+                        <Image width="20" height="20" src="/assets/sustainability-icon.svg" alt="sustainability"/>
                     </div>
                     <div className="flex gap-1 flex-wrap">
                         <InterestBtn text="Conservation" />
@@ -117,10 +117,10 @@ export default function InterestForm() {
                         <InterestBtn text="Geology" />
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
+                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
                     <div className="flex gap-1">
                         <h2 className="text-[13px] font-semibold">Health and Wellness</h2>
-                        <Image width="20" height="20" src="/assets/eng-icon.svg" alt="enginering"/>
+                        <Image width="20" height="20" src="/assets/health-icon.svg" alt="health"/>
                     </div>
                     <div className="flex gap-1 flex-wrap">
                         <InterestBtn text="Medicine" />
@@ -135,10 +135,10 @@ export default function InterestForm() {
                         <InterestBtn text="Health Policy" />
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
+                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
                     <div className="flex gap-1">
                         <h2 className="text-[13px] font-semibold">Mathematics</h2>
-                        <Image width="20" height="20" src="/assets/eng-icon.svg" alt="enginering"/>
+                        <Image width="20" height="20" src="/assets/math-icon.svg" alt="mathematics"/>
                     </div>
                     <div className="flex gap-1 flex-wrap">
                         <InterestBtn text="Pure Mathematics" />
@@ -151,10 +151,10 @@ export default function InterestForm() {
                         <InterestBtn text="Number Theory" />
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-sm rounded-sm border">
-                    <div className="flex gap-1">
+                <div className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
+                    <div className="flex gap-1 items-center">
                         <h2 className="text-[13px] font-bold">Humanities</h2>
-                        <Image width="20" height="20" src="/assets/eng-icon.svg" alt="enginering"/>
+                        <Image width="28" height="28" src="/assets/humanities-icon.svg" alt="humanities"/>
                     </div>
                     <div className="flex gap-1 flex-wrap">
                         <InterestBtn text="History" />

@@ -33,17 +33,21 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className={nunito.className} style={{ height: "100vh"}} >
-        <div id="wrapper" className="h-[100%] flex sm:p-0  gap-[2%] ">
-          <NavBar />
-          <div id="container" className=" w-[100%] flex flex-col h-[100%]  bg-no-repeat">
-            <TopBar />
-            <main className="flex-1 ml-[12px] ">
-                {children}
-            </main>
-              <BottomBar />
+      <body
+      className={nunito.className}
+      style={{
+        height: "100vh"
+      }}>
+        <div id="wrapper" className="h-[100%] flex sm:p-0  gap-[2%]">
+            <NavBar />
+            <div id="container" className="w-[100%] flex flex-col h-[100%]">
+              <TopBar />
+              <main className="flex-1 ml-[12px] ">
+                  {children}
+              </main>
+                <BottomBar />
+            </div>
           </div>
-        </div>
       </body>
     </html>
 
