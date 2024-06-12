@@ -9,6 +9,7 @@ import { getUserByClerkId } from "@/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "@nextui-org/button";
 import { Metadata } from "next";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 
 
@@ -36,10 +37,27 @@ export const metadata: Metadata = {
         <div className="w-[100%] grid h-full gap-[2%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
             <div className="h-full flex flex-col gap-[30px]">
                 <VideoCard />
-                <div className="flex gap-[10px]">
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">All</Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">Articles</Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[80px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">Videos</Button>
+                <div className="flex gap-[10px] border-t-[1px] border-t-[#402a23] pt-3">
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                        <Image width="16" height="16" src="/assets/all-icon.svg" alt="next"/>
+                        All
+                    </Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                        <Image width="16" height="16" src="/assets/articles-icon.svg" alt="next"/>
+                        Articles
+                    </Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                        <Image width="16" height="16" src="/assets/videos-icon.svg" alt="next"/>
+                        Videos
+                    </Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                        <Image width="16" height="16" src="/assets/course-icon.svg" alt="next"/>
+                        Courses
+                    </Button>
+                    <Button variant="light" size="sm" radius="full" className="w-[110px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                        <Image width="16" height="16" src="/assets/filled-bookmark-icon.svg" alt="next"/>
+                        Bookmarked
+                    </Button>
                 </div>
                 <div className="grid gap-[25px] grid-cols-3 h-[330px] overflow-y-scroll items-start p-[15px] scroll-smooth"> 
                     <ThreadCard videoUrl="/misc/vid1.mp4" />

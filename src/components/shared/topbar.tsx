@@ -17,7 +17,7 @@ export default function TopBar(){
     }
     return(
         <header className="p-[15px] pr-[25px] flex justify-between">
-        <div className="flex w-full md:w-[400px] sm:w-[350px] h-[30px] gap-[3%] p-[0.5px] rounded-[3px] border border-gray-300">
+        <div className="flex w-full md:w-[400px] sm:w-[350px] h-[30px] gap-[3%] p-[1px] rounded-[3px] border border-[#e0e0e0]">
         <Input
         isClearable
         radius="sm"
@@ -29,11 +29,12 @@ export default function TopBar(){
             "text-black/90 dark:text-white/90",
             "placeholder:text-default-700/50 dark:placeholder:text-white/60", "w-full", 
             "h-full", 
-            "text-[13px]"
+            "text-[13px]",
+            "p-[2px]"
           ],
           innerWrapper: "bg-transparent",
           inputWrapper: [
-            "shadow-xl",
+            "shadow-md",
             "bg-default-200/50",
             "dark:bg-default/60",
             "backdrop-blur-xl",

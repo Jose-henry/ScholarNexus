@@ -175,7 +175,7 @@ export function ProfileForm ({user, btnTitle}: Props) {
 
   return (
     <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-start gap-10">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-start gap-8">
           <FormField
             control={form.control}
             name="profile_photo"
@@ -185,8 +185,8 @@ export function ProfileForm ({user, btnTitle}: Props) {
                     <Image 
                     src = {field.value}
                     alt = "profile photo"
-                    width = {96}
-                    height = {96}
+                    width = {55}
+                    height = {55}
                     priority
                     className="rounded-full object-contain" />) : (
                         <Image 
@@ -198,7 +198,7 @@ export function ProfileForm ({user, btnTitle}: Props) {
                     
                 )}
                 </FormLabel>
-                <FormControl className = "flex-1 text-base-semibold text-gray-200">
+                <FormControl className = "flex-1 text-base-semibold text-gray-400 text-[13px]">
                   <Input
                   type= "file"
                   accept = "image/*"
@@ -217,13 +217,13 @@ export function ProfileForm ({user, btnTitle}: Props) {
             control={form.control}
             name="fname"
             render={({ field }) => (
-              <FormItem className="flex flex-col w-full gap-3">
-                <FormLabel className="text-base-semibold text-light-2">Firstname
+              <FormItem className="flex flex-col w-full gap-1">
+                <FormLabel className="text-base-semibold text-light-2 text-[13.5px]">Firstname
                 </FormLabel>
-                <FormControl>
+                <FormControl className="rounded-sm border-0">
                   <Input
                   type="text"
-                  className = "account-form_input no-focus"
+                  className = "account-form_input no-focus text-[13px]"
                   {...field}
                   />
                   </FormControl>
@@ -235,13 +235,13 @@ export function ProfileForm ({user, btnTitle}: Props) {
             control={form.control}
             name="lname"
             render={({ field }) => (
-              <FormItem className="flex flex-col w-full gap-3">
-                <FormLabel className="text-base-semibold text-light-2">Lastname
+              <FormItem className="flex flex-col w-full gap-1">
+                <FormLabel className="text-base-semibold text-light-2 text-[13.5px]">Lastname
                 </FormLabel>
-                <FormControl>
+                <FormControl className="rounded-sm border-0">
                   <Input
                   type="text"
-                  className = "account-form_input no-focus"
+                  className = "account-form_input no-focus text-[13px]"
                   {...field}
                   />
                   </FormControl>
@@ -253,13 +253,13 @@ export function ProfileForm ({user, btnTitle}: Props) {
             control={form.control}
             name="mname"
             render={({ field }) => (
-              <FormItem className="flex flex-col w-full gap-3">
-                <FormLabel className="text-base-semibold text-light-2">Middlename
+              <FormItem className="flex flex-col w-full gap-1">
+                <FormLabel className="text-base-semibold text-light-2 text-[13.5px]">Middlename
                 </FormLabel>
-                <FormControl>
+                <FormControl className="rounded-sm border-0">
                   <Input
                   type="text"
-                  className = "account-form_input no-focus"
+                  className = "account-form_input no-focus text-[13px]"
                   {...field}
                   />
                   </FormControl>
@@ -274,21 +274,21 @@ export function ProfileForm ({user, btnTitle}: Props) {
           name="dob"
           render={({ field }) => (
             <FormItem className="flex flex-col">
-              <FormLabel>Date of birth</FormLabel>
+              <FormLabel className="text-[13.5px]">Date of birth</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
-                  <FormControl>
+                  <FormControl className="rounded-sm border-0 shadow-md">
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-[240px] pl-3 text-left font-normal",
+                        "w-[240px] pl-3 text-left font-normal text-[13px]",
                         !field.value && "text-muted-foreground"
                       )}
                     >
                       {field.value ? (
                         format(field.value, "PPP")
                       ) : (
-                        <span>Pick a date</span>
+                        <span className="text-[13px]">Pick a date</span>
                       )}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>
@@ -303,10 +303,11 @@ export function ProfileForm ({user, btnTitle}: Props) {
                       date > new Date() || date < new Date("1900-01-01")
                     }
                     initialFocus
+                    className="text-sm"
                   />
                 </PopoverContent>
               </Popover>
-              <FormDescription>
+              <FormDescription className="text-[12px]">
                 Your date of birth is used to calculate your age.
               </FormDescription>
               <FormMessage />
@@ -318,13 +319,13 @@ export function ProfileForm ({user, btnTitle}: Props) {
             control={form.control}
             name="bio"
             render={({ field }) => (
-                <FormItem className="flex flex-col w-full gap-3">
-                <FormLabel className="text-base-semibold text-light-2">Bio
+                <FormItem className="flex flex-col w-full gap-1">
+                <FormLabel className="text-base-semibold text-light-2 text-[13.5px]">Bio
                 </FormLabel>
-                <FormControl>
+                <FormControl className="rounded-sm border-0">
                   <Textarea
                   rows ={10}
-                  className = "account-form_input no-focus"
+                  className = "account-form_input no-focus text-[13px]"
                   {...field}
                   />
                   </FormControl>
@@ -336,13 +337,13 @@ export function ProfileForm ({user, btnTitle}: Props) {
             control={form.control}
             name="school"
             render={({ field }) => (
-                <FormItem className="flex flex-col w-full gap-3">
-                <FormLabel className="text-base-semibold text-light-2">School
+                <FormItem className="flex flex-col w-full gap-1">
+                <FormLabel className="text-base-semibold text-light-2 text-[13.5px]">School
                 </FormLabel>
-                <FormControl>
+                <FormControl className="rounded-sm border-0">
                   <Input
                   type="text"
-                  className = "account-form_input no-focus"
+                  className = "account-form_input no-focus text-[13px]"
                   {...field}
                   />
                   </FormControl>
@@ -355,13 +356,13 @@ export function ProfileForm ({user, btnTitle}: Props) {
             control={form.control}
             name="programme"
             render={({ field }) => (
-                <FormItem className="flex flex-col w-full gap-3">
-                <FormLabel className="text-base-semibold text-light-2">Programme
+                <FormItem className="flex flex-col w-full gap-1">
+                <FormLabel className="text-base-semibold text-light-2 text-[13.5px]">Programme
                 </FormLabel>
-                <FormControl>
+                <FormControl className="rounded-sm border-0">
                   <Input
                   type="text"
-                  className = "account-form_input no-focus"
+                  className = "account-form_input no-focus text-[13px]"
                   {...field}
                   />
                   </FormControl>
@@ -375,15 +376,15 @@ export function ProfileForm ({user, btnTitle}: Props) {
           name="level"
           render={({ field }) => (
             <FormItem className="flex flex-col">
-              <FormLabel>level</FormLabel>
+              <FormLabel className="text-[13.5px]">Level</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
-                  <FormControl>
+                  <FormControl className="rounded-sm border-0">
                     <Button
                       variant="outline"
                       role="combobox"
                       className={cn(
-                        "w-[200px] justify-between",
+                        "w-[200px] justify-between text-[12.5px]",
                         !field.value && "text-muted-foreground"
                       )}
                     >
@@ -398,8 +399,8 @@ export function ProfileForm ({user, btnTitle}: Props) {
                 </PopoverTrigger>
                 <PopoverContent className="w-[200px] p-0">
                   <Command>
-                    <CommandInput placeholder="Search level..." />
-                    <CommandEmpty>No level found.</CommandEmpty>
+                    <CommandInput placeholder="Search level..." className="text-[12.5px]" />
+                    <CommandEmpty className="text-[12px]">No level found.</CommandEmpty>
                     <CommandGroup>
                       {levels.map((level, index) => (
                         <CommandList key={index}>
@@ -409,6 +410,7 @@ export function ProfileForm ({user, btnTitle}: Props) {
                           onSelect={() => {
                             form.setValue("level", level.value)
                           }}
+                          className="text-[12.5px]"
                         >
                           <Check
                             className={cn(
@@ -426,8 +428,8 @@ export function ProfileForm ({user, btnTitle}: Props) {
                   </Command>
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                This is the level that will be used in the dashboard.
+              <FormDescription className="text-[12px]">
+                Level will be displayed in the dashboard.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -435,7 +437,7 @@ export function ProfileForm ({user, btnTitle}: Props) {
         />
 
 
-          <Button type="submit" className="bg-primary-500">Submit</Button>
+          <Button type="submit" className="bg-[#393e46] text-white">Submit</Button>
         </form>
       </Form>
     )

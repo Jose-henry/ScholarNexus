@@ -16,7 +16,7 @@ export default function NavBar(){
         <nav className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page bg-[#044a42]  max-md:hidden w-[60px] h-[100%] pt-[20px] pb-[10px]">
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
-                    <Image width="32" height="32" src="/assets/logo-icon.svg" alt="education"/>
+                    <Image width="32" height="32" src="/assets/education-icon.svg" alt="education"/>
                 </Link>
             <div className=" gap-[30px] flex flex-col items-center justify-center">
             {sidebarLinks.map((link) => {

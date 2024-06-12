@@ -7,6 +7,7 @@ import { SignedIn } from "@clerk/nextjs";
 
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 
 /* Todo: in profile component
@@ -77,16 +78,23 @@ export default async function Onboarding() {
 
     return (
       <SignedIn>
-      <main className='mx-auto flex max-w-3xl flex-col justify-start px-10 py-20'>
-      <h1 className='head-text'>Onboarding</h1>
-      <p className='mt-3 text-base-regular text-light-2'>
-          Complete your profile now, to use Scholar Nexus.
-      </p>
-      
-       <section className='mt-9 bg-dark-2 p-10'>
-      <ProfileForm user={formData} btnTitle='Continue'/>
-      </section>
-      </main>
+        <main className='mx-auto grid w-[900px] justify-start h-[650px] rounded-sm grid-cols-2 overflow-hidden shadow-lg border border-[#e3e3e3]'>
+          <div className="bg-[#393e46] flex items-center justify-center">
+            <Image width="250" height="250" src="/assets/onboard-logo.svg" alt="education" />
+          </div>
+          <div className="p-[15px] pl-[20px] overflow-scroll bg-[#f7f7f2]">
+            <div className="flex gap-1 items-center justify-center">
+              <p className='mt-3 text-base-regular text-light-2 text-center border-b-[1px] border-b-solid border-b-gray-400 pb-2 text-[13px] font-medium'>
+                  Complete your profile now, to use Scholar Nexus. 
+              </p>
+              <Image width="22" height="22" src="/assets/party-icon.svg" alt="education"/>
+            </div>
+            
+            <section className='mt-9 bg-dark-2'>
+            <ProfileForm user={formData} btnTitle='Continue'/>
+            </section>
+          </div>
+        </main>
   </SignedIn>
 );
 }

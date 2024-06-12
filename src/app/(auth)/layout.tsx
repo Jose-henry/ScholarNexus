@@ -35,9 +35,15 @@ export default function RootLayout({
       variables: { colorPrimary: '#9cb9d2' },
     }} >
     <html lang="en">
-    <body className={`${nunito.className} `}>
-      <div className="w-full flex justify-center items-center min-h-screen">{children}</div>
-      </body>
+    <body
+    className={`${nunito.className}`}
+    style={{
+      backgroundImage: 'url("/assets/bg-img.jpg")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
+      <div className="w-full flex justify-center items-center h-screen">{children}</div>
+    </body>
     </html>
     </ClerkProvider>
   );
