@@ -9,7 +9,7 @@ export default function DashboardTask() {
                 <h2 className="text-[12.5px] text-[#070f4e] font-extrabold">Tasks</h2>
                 <Image width="16" height="16" src="/assets/task-icon.svg" alt="deselect"/>
             </div>
-            <div className="w-full h-[88%] bg-[#f2f2f2]">
+            <div className="w-full h-[88%] bg-[#f2f2f2] rounded-sm shadow-md">
 
             </div>
         </div>

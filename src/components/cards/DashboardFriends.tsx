@@ -9,7 +9,7 @@ export default function DashboardFriends() {
                 <h2 className="text-[12.5px] text-[#070f4e] font-extrabold">Friend Suggestions</h2>
                 <Image width="18" height="18" src="/assets/friends-icon.svg" alt="deselect"/>
             </div>
-            <div className="w-full h-[88%] bg-[#f2f2f2]">
+            <div className="w-full h-[88%] bg-[#f2f2f2] rounded-sm shadow-md">
                 
             </div>
         </div>
