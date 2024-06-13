@@ -13,7 +13,10 @@ export default function NavBar(){
     const pathname = usePathname()
     const { userId } = useAuth()
     return(
-        <nav className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page bg-[#005f69]  max-md:hidden w-[58px] h-[100%] pt-[20px] pb-[10px]">
+        <nav   className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page max-md:hidden w-[58px] h-[100%] pt-[20px] pb-[10px]" 
+        style={{ 
+          backgroundImage: 'linear-gradient(110.3deg, rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7%)'
+        }}>
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
                     <Image width="32" height="32" src="/assets/education-icon.svg" alt="education"/>

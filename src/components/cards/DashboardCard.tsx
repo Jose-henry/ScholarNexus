@@ -9,7 +9,7 @@ export default function DashboardCard() {
         <div 
         className="w-[100%] h-[100%] shadow-lg rounded-sm p-[20px] relative"
         style={{ 
-            backgroundImage: 'radial-gradient(circle 1292px at -13.6% 51.7%, rgba(0,56,68,1) 0%, rgba(163,217,185,1) 51.5%, rgba(255,252,247,1) 88.6%)'
+            backgroundImage: 'linear-gradient(110.3deg, rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7%)'
         }}
         >
         <div className="flex gap-2">
