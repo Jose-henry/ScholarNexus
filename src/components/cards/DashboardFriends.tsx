@@ -12,7 +12,7 @@ export default function DashboardFriends() {
                     <Image width="16" height="16" src="/assets/follow-icon.svg" alt="friend"/>
                     <h2 className="text-[12.5px] text-[#070f4e] font-extrabold">Friend Suggestions</h2>
                 </div>
-                <Link></Link>
+                <Link href="/tasks" aria-label="">See All</Link>
             </div>
             <div className="w-full h-[85%] bg-[#f2f2f2] shadow-md shadow-[#50595c] flex flex-col justify-between p-2">
                 <FriendDashboard firstName="John" lastName="Doe" level="100" friendImage="/assets/friend1.png"/>
