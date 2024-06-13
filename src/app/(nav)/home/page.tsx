@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     // }
 
     return (
-        <div className="w-[100%] grid h-full gap-[2%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
+        <div className="w-[100%] grid h-full gap-[1%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
             <div className="h-full flex flex-col gap-[30px]">
                 <VideoCard />
                 <div className="flex gap-[10px] border-t-[1px] border-t-[#63686e] pt-3">

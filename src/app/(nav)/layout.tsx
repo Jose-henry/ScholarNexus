@@ -38,7 +38,7 @@ export default function RootLayout({
       style={{
         height: "100vh"
       }}>
-        <div id="wrapper" className="h-[100%] flex sm:p-0  gap-[2%]">
+        <div id="wrapper" className="h-[100%] flex sm:p-0  gap-[1%]">
             <NavBar />
             <div id="container" className="w-[100%] flex flex-col h-[100%]">
               <TopBar />
