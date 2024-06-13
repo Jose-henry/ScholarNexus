@@ -42,19 +42,19 @@ export const metadata: Metadata = {
                         <Image width="16" height="16" src="/assets/all-icon.svg" alt="next"/>
                         All
                     </Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#9a9a9a] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/articles-icon.svg" alt="next"/>
                         Articles
                     </Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#9a9a9a] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/videos-icon.svg" alt="next"/>
                         Videos
                     </Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#9a9a9a] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/course-icon.svg" alt="next"/>
                         Courses
                     </Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[110px] font-bold text-white bg-[#044a42] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[110px] font-bold text-white bg-[#9a9a9a] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/filled-bookmark-icon.svg" alt="next"/>
                         Bookmarked
                     </Button>
