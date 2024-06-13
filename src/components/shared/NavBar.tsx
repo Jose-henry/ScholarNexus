@@ -13,7 +13,7 @@ export default function NavBar(){
     const pathname = usePathname()
     const { userId } = useAuth()
     return(
-        <nav   className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page max-md:hidden w-[58px] h-[100%] pt-[20px] pb-[10px]" 
+        <nav   className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page max-md:hidden w-[56px] h-[100%] pt-[20px] pb-[10px]" 
         style={{ 
           backgroundImage: 'linear-gradient(110.3deg, rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7%)'
         }}>
@@ -31,9 +31,9 @@ export default function NavBar(){
                         <Link 
                         href={link.route}
                         key = {link.label}
-                        className={`relative flex justify-start gap-2 rounded-sm p-2 pl-[5px] ${
-                            isActive && 'bg-[#9ba6a5] rounded-sm pt-[4px] pb-[4px] pr-[4px]'
-                        } hover:bg-[#17132a] hover:rounded-sm hover:transition-all hover:pl-[5px]`}
+                        className={`relative flex justify-start gap-2 rounded-sm ${
+                            isActive && 'bg-[#9ba6a5] rounded-sm p-[4px]'
+                        } hover:bg-[#17132a] hover:rounded-sm hover:transition-all hover:p-[4px]`}
                         >
                             <Image src = {link.imgURL} alt = {link.label} width ={20} height = {20} />
 
