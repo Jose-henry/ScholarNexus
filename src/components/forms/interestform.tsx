@@ -244,7 +244,7 @@ export default function InterestForm(   {clerkId}: props) {
             </Button>
             { selectedInterests.length > 0 &&( <Button
           size="sm"
-          className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[14px] font-bold shadow-lg w-[100px] mx-auto"
+          className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[13px] font-bold shadow-lg w-[200px] mx-auto"
           onClick={deselectAll}
         >
           Deselect all
