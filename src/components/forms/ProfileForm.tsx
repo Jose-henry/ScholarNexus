@@ -223,7 +223,7 @@ export function ProfileForm ({user, btnTitle}: Props) {
                 <FormControl className="rounded-sm border-0">
                   <Input
                   type="text"
-                  className = "account-form_input no-focus text-[13px]"
+                  className = "account-form_input no-focus text-[13px] bg-white"
                   {...field}
                   />
                   </FormControl>
