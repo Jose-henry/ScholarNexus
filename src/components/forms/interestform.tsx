@@ -248,7 +248,7 @@ export default function InterestForm(   {clerkId}: props) {
           onClick={deselectAll}
         >
           Deselect All
-          <Image width="16" height="16" src="/assets/deselect-icon.svg" alt="next"/>
+          <Image width="16" height="16" src="/assets/deselect-icon.svg" alt="deselect"/>
         </Button>)}
         </div>
         

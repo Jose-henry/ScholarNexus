@@ -5,12 +5,10 @@ export default function UserWelcomeCard() {
     color: '#eef2e2',
     fontSize: '25px',
     fontWeight: 1000,
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' /* Add text shadow */
+    textShadow: '10px 10px 11px rgba(0, 0, 0, 0.4)' /* Add text shadow */
   };
 
   const shineStyle: React.CSSProperties = {
-    background: 'linear-gradient(90deg, #ffffff, #f0f0f0, #ffffff)',
-    backgroundSize: '200% 100%',
     animation: 'shine-animation 1.5s infinite linear'
   };
 
@@ -24,7 +22,9 @@ export default function UserWelcomeCard() {
         src="(link unavailable)"
       />
       <h3 style={{ ...titleStyle, ...shineStyle }}>Welcome Ella!</h3>
-      <p className="text-white text-[14px] mt-[-3px]">Keep the learning going!</p>
+      <div>
+        <p className="text-white text-[14px] mt-[-3px]">Keep the learning going!</p>
+      </div>
     </div>
   );
 }
