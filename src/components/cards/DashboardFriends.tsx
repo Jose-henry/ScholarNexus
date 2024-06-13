@@ -15,9 +15,9 @@ export default function DashboardFriends() {
                 <Link href="/groups" aria-label="" className="underline text-[11px]">Find more</Link>
             </div>
             <div className="w-full h-[85%] bg-[#f2f2f2] shadow-md shadow-[#50595c] flex flex-col justify-between p-2">
-                <FriendDashboard firstName="John" lastName="Doe" level="100" friendImage="/assets/friend1.png"/>
-                <FriendDashboard firstName="Jane" lastName="Piper" level="200" friendImage="/assets/friend1.png"/>
-                <FriendDashboard firstName="Marywell" lastName="Wilder" level="300" friendImage="/assets/friend1.png"/>
+                <FriendDashboard firstName="John" lastName="Doe" programme="Aerospace Engineering" friendImage="/assets/friend1.png"/>
+                <FriendDashboard firstName="Jane" lastName="Piper" programme="Mechanical Engineering" friendImage="/assets/friend1.png"/>
+                <FriendDashboard firstName="Marywell" lastName="Wilder" programme="Law &Justice" friendImage="/assets/friend1.png"/>
             </div>
         </div>
     );
