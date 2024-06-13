@@ -74,7 +74,7 @@ interface Params {
                 interests: { set: interests },
             },
         });
-        if (path === "/profile/edit") {
+        if (path === "/profile/edit" || path === "/profile") {
             revalidatePath(path);
         }
     } catch (error:any) {
@@ -82,12 +82,15 @@ interface Params {
     }
 }
 
-export async function updateInterests(clerkId: string, interests: string[]) {
+export async function updateInterests(clerkId: string, interests: string[], path: string) {
     try {
         await prisma.user.update({
             where: { clerkId },
             data: { interests: { set: interests } },
         });
+        if (path === "/profile/edit" || path === "/profile") {
+            revalidatePath(path);
+        }
     } catch (error) {
         console.error("Error updating interests:", error);
     }

@@ -1,12 +1,13 @@
 "use client"
 import React, { useState } from "react";
-import {useRouter} from "next/navigation"
+import {usePathname, useRouter} from "next/navigation"
 import { Button } from "@nextui-org/button";
 import InterestBtn from "@/components/forms/InterestBtn";
 import Image from "next/image";
 import { updateInterests } from "@/lib/actions/user.action";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import path from "path";
 
 
 interface props{
@@ -15,6 +16,7 @@ interface props{
 
 export default function InterestForm(   {clerkId}: props) {
     const router = useRouter();
+    const pathname = usePathname();
     const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
     const [count, setCount] = useState(0);
 
@@ -30,9 +32,14 @@ export default function InterestForm(   {clerkId}: props) {
           toast.error("You can only select at most five interests");
           return;
         }
-        await updateInterests(clerkId, selectedInterests);
+        await updateInterests(clerkId, selectedInterests,pathname);
         toast.success("Interests updated successfully!");
         router.push("/onboarding");
+        if(pathname === '/profile/edit'){
+            router.back();
+        } else {
+          router.push('/onboarding');
+        }
       };
     
 
