@@ -3,7 +3,6 @@
 import prisma from "@/utils/connect";
 import { revalidatePath } from "next/cache";
 
-
 interface Params {
     clerkId: string;
     username: string;

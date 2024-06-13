@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     const User = await currentUser();
     if (!User) return null; // to avoid typescript warnings
     const userInfo = await getUserByClerkId(User?.id);
-    if (userInfo?.onboarded === false || (userInfo?.interests === undefined || userInfo?.interests.length === 0 || userInfo?.interests === null)) {
-        redirect("/onboarding");
-    }
+    // if (userInfo?.onboarded === false || (userInfo?.interests === undefined || userInfo?.interests.length === 0 || userInfo?.interests === null)) {
+    //     redirect("/onboarding");
+    // }
 
     return (
         <div className="w-[100%] grid h-full gap-[2%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>

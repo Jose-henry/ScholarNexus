@@ -6,8 +6,7 @@ import UserWelcomeCard from "./UserWelcomeCard";
 
 export default function DashboardCard() {
     return (
-        
-        <div className="bg-[#044a42] w-[100%] h-[100%] shadow-lg rounded-sm p-[20px] relative">
+        <div className= "w-[100%] h-[100%] shadow-lg rounded-sm p-[20px] bg-[#005f69] relative">
             <div className="flex gap-2">
                 <Image width="25" height="25" src="/assets/dashboard-icon.svg" alt="next"/>
                 <h2 className="font-bold text-[#eef2e2] text-[14px]">Dashboard</h2>

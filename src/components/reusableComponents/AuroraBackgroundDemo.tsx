@@ -30,14 +30,14 @@ export default function AuroraBackgroundDemo() {
         </div>
         <div className="flex gap-[10px] ">
         <Link href="/sign-in">
-        <button className="bg-black gap-3 dark:bg-white rounded-full w-[120px] shadow-xl text-white text-md font-bold dark:text-black px-4 py-2">
+        <button className="bg-black gap-3 dark:bg-white rounded-full w-[120px] shadow-sm shadow-white text-white text-md font-bold dark:text-black px-4 py-2">
           Sign in 
         </button>
         </Link>
 
        
         <Link href="/sign-in">
-        <button className="bg-black dark:bg-white rounded-full w-[120px] shadow-xl text-white text-md font-bold dark:text-black px-4 py-2">
+        <button className="bg-black dark:bg-white rounded-full w-[120px] shadow-sm shadow-white text-white text-md font-bold dark:text-black px-4 py-2">
           Sign up 
         </button>
         </Link>
