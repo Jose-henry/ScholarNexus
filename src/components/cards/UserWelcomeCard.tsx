@@ -23,9 +23,9 @@ export default function UserWelcomeCard() {
         src="(link unavailable)"
       />
       <h3 style={{ ...titleStyle, ...shineStyle }}>Welcome Ella!</h3>
-      <div className="flex">
+      <div className="flex gap-1">
         <p className="text-white text-[14px] mt-[-3px]">Keep the learning going!</p>
-        <Image width="16" height="16" src="/assets/party-icon.svg" alt="next"/>
+        <Image width="18" height="18" src="/assets/party-icon.svg" alt="next"/>
       </div>
     </div>
   );
