@@ -14,9 +14,8 @@ export default async function Groups() {
   const User = await currentUser();
     if (!User) return null; // to avoid typescript warnings
     const userInfo = await getUserByClerkId(User?.id);
-    if (userInfo?.onboarded === false || (userInfo?.interests === undefined || userInfo?.interests.length === 0 || userInfo?.interests === null)) {
-        redirect("/onboarding");
-    }
+    if (userInfo?.onboarded === false) {
+      redirect("/onboarding");}
   return (
     <></>
   );
