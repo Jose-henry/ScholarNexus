@@ -90,7 +90,7 @@ export const metadata: Metadata = {
                     variant="light" 
                     size="sm" 
                     radius="full" 
-                    className="w-[110px] font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1"
+                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1"
                     style={{ 
                     backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
                     }}
