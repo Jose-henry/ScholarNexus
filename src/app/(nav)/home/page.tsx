@@ -46,7 +46,7 @@ export const metadata: Metadata = {
                         <Image width="16" height="16" src="/assets/articles-icon.svg" alt="next"/>
                         Articles
                     </Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#545454] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#0C243C] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/videos-icon.svg" alt="next"/>
                         Videos
                     </Button>
