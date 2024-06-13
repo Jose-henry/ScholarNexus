@@ -1,4 +1,5 @@
 import { Avatar } from "@nextui-org/avatar";
+import Image from "next/image";
 
 export default function UserWelcomeCard() {
   const titleStyle: React.CSSProperties = {
@@ -22,7 +23,7 @@ export default function UserWelcomeCard() {
         src="(link unavailable)"
       />
       <h3 style={{ ...titleStyle, ...shineStyle }}>Welcome Ella!</h3>
-      <div >
+      <div className="flex">
         <p className="text-white text-[14px] mt-[-3px]">Keep the learning going!</p>
         <Image width="16" height="16" src="/assets/deselect-icon.svg" alt="next"/>
       </div>
