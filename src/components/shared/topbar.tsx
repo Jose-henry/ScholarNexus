@@ -30,11 +30,13 @@ export default function TopBar(){
             "placeholder:text-default-700/50 dark:placeholder:text-white/60", "w-full", 
             "h-full", 
             "text-[13px]",
-            "p-[2px]"
+            "p-[2px]",
+            "bg-white"
           ],
           innerWrapper: "bg-transparent",
           inputWrapper: [
-            "shadow-md",
+            "shadow-sm",
+            "shadow-black",
             "bg-default-200/50",
             "dark:bg-default/60",
             "backdrop-blur-xl",
