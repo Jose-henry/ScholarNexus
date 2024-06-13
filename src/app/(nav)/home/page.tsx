@@ -54,7 +54,7 @@ export const metadata: Metadata = {
                         <Image width="16" height="16" src="/assets/course-icon.svg" alt="next"/>
                         Courses
                     </Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[110px] font-bold text-white bg-[#545454] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[110px] font-bold text-white bg-[#0C243C] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/filled-bookmark-icon.svg" alt="next"/>
                         Bookmarked
                     </Button>
