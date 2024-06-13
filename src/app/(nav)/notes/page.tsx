@@ -15,7 +15,8 @@ export default async function Notes() {
     if (!User) return null; // to avoid typescript warnings
     const userInfo = await getUserByClerkId(User?.id);
     if (userInfo?.onboarded === false) {
-      redirect("/onboarding");}
+      redirect("/onboarding");
+    }
   
   return (
     <>
