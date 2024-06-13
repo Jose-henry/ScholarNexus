@@ -11,9 +11,9 @@ export default function DashboardFriends() {
                 <Image width="18" height="18" src="/assets/friends-icon.svg" alt="deselect"/>
             </div>
             <div className="w-full h-[88%] bg-[#f2f2f2] shadow-md shadow-[#50595c]">
-                <FriendDashboard firstName="John" lastName="Doe" friendImage="/assets/friend1.png"/>
-                <FriendDashboard firstName="John" lastName="Doe" friendImage="/assets/friend1.png"/>
-                <FriendDashboard firstName="John" lastName="Doe" friendImage="/assets/friend1.png"/>
+                <FriendDashboard firstName="John" lastName="Doe" level="100" friendImage="/assets/friend1.png"/>
+                <FriendDashboard firstName="Jane" lastName="Piper" level="200" friendImage="/assets/friend1.png"/>
+                <FriendDashboard firstName="Marywell" lastName="Wilder" level="300" friendImage="/assets/friend1.png"/>
             </div>
         </div>
     );
