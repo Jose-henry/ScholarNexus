@@ -236,7 +236,7 @@ export default function InterestForm(   {clerkId}: props) {
             <div className="flex flex-col gap-4">
             <Button
             size="sm"
-            className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[14px] font-bold shadow-lg w-[200px] mx-auto"
+            className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[13.5px] font-bold shadow-lg w-[200px] mx-auto"
             onClick={onSubmit}
         >
                 Next
@@ -244,10 +244,11 @@ export default function InterestForm(   {clerkId}: props) {
             </Button>
             { selectedInterests.length > 0 &&( <Button
           size="sm"
-          className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[13px] font-bold shadow-lg w-[200px] mx-auto"
+          className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[13.5px] font-bold shadow-lg w-[200px] mx-auto"
           onClick={deselectAll}
         >
-          Deselect all
+          Deselect All
+          <Image width="16" height="16" src="/assets/deselect-icon.svg" alt="next"/>
         </Button>)}
         </div>
         
