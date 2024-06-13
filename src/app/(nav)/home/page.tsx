@@ -38,11 +38,11 @@ export const metadata: Metadata = {
             <div className="h-full flex flex-col gap-[30px]">
                 <VideoCard />
                 <div className="flex gap-[10px] border-t-[1px] border-t-[#63686e] pt-3">
-                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#001f2b] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#0C243C] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/all-icon.svg" alt="next"/>
                         All
                     </Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#545454] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#001f2b] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/articles-icon.svg" alt="next"/>
                         Articles
                     </Button>
