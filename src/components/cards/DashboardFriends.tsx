@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import FriendDashboard from "../ui/friendDashboard";
 
 export default function DashboardFriends() {
     return (
@@ -10,6 +11,7 @@ export default function DashboardFriends() {
                 <Image width="18" height="18" src="/assets/friends-icon.svg" alt="deselect"/>
             </div>
             <div className="w-full h-[88%] bg-[#f2f2f2] shadow-md shadow-[#50595c]">
+                
                 <div>
 
                 </div>
