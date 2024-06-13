@@ -24,8 +24,8 @@ export default function FriendDashboard({firstName, lastName, level, friendImage
                 </div> 
             </div>
             <div className="flex gap-1 items-center">
-                <Button size="lg" className="underline text-[12px]">follow</Button>
-                <Image width="16" height="16" src="/assets/follow-icon.svg" alt="follow"/>
+                
+                <Image width="15" height="15" src="/assets/follow-icon.svg" alt="follow"/>
             </div>
         </div>
     );
