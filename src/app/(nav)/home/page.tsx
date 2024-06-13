@@ -59,7 +59,7 @@ export const metadata: Metadata = {
                     backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
                     }}
                 >
-                    <Image width="16" height="16" src="/assets/articles-icon.svg" alt="next"/>
+                    <Image width="12" height="12" src="/assets/articles-icon.svg" alt="next"/>
                     Articles
                 </Button>
                 <Button 
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
                     backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
                     }}
                 >
-                    <Image width="16" height="16" src="/assets/videos-icon.svg" alt="next"/>
+                    <Image width="13" height="13" src="/assets/videos-icon.svg" alt="next"/>
                     Videos
                 </Button>
                 <Button 
