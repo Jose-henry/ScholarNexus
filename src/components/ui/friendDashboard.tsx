@@ -14,7 +14,7 @@ interface Props {
 
 export default function FriendDashboard({firstName, lastName, level, friendImage}: Props) {
     return (
-        <div className="bg-gray-400 w-[100%] cursor-pointer rounded-[3px] flex justify-between p-1 pl-2 pr-2"> 
+        <div className="bg-[#ffe9e3] w-[100%] cursor-pointer rounded-[3px] flex justify-between p-1 pl-2 pr-2 shadow-sm shadow-black"> 
             <div className="flex gap-2 items-center">
                 <Avatar showFallback isBordered radius="full" src={friendImage} size="sm" className='cursor-pointer bg-slate-300 h-[22px] w-[22px]'> 
                 </Avatar>    
