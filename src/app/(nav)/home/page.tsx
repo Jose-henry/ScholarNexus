@@ -42,7 +42,7 @@ export const metadata: Metadata = {
                         <Image width="16" height="16" src="/assets/all-icon.svg" alt="next"/>
                         All
                     </Button>
-                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#001f2b] text-[12px] shadow-lg">
+                    <Button variant="light" size="sm" radius="full" className="w-[90px] font-bold text-white bg-[#0C243C] text-[12px] shadow-lg">
                         <Image width="16" height="16" src="/assets/articles-icon.svg" alt="next"/>
                         Articles
                     </Button>
