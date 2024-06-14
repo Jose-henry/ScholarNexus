@@ -20,7 +20,7 @@ export default async function Task() {
       redirect("/onboarding");}
 
   return (
-    <div className="h-full flex flex-col gap-4">
+    <div className="h-full flex flex-col gap-4 pr-5 pt-5">
       <AnalyticsCard/>
       <div>
         <ComboboxDropdownMenu />
