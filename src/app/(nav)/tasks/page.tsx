@@ -19,8 +19,12 @@ export default async function Task() {
       redirect("/onboarding");}
 
   return (
-    <>
-      <ComboboxDropdownMenu />
-    </>
+    <div>
+      <div id="analytics"></div>
+      <div>
+        <ComboboxDropdownMenu />
+        <div id="completed"></div>
+      </div>
+    </div>
   );
 }
