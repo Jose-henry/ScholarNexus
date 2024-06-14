@@ -14,7 +14,7 @@ export default function DashboardTask() {
                 <Link href="/tasks" aria-label="" className="underline text-[10px] hover:no-underline font-semibold">View all</Link>
             </div>
             <div className="w-full h-[85%] bg-[#f2f2f2] shadow-md shadow-[#50595c]">
-
+                
             </div>
         </div>
     );
