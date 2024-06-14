@@ -26,13 +26,18 @@ export default async function Task() {
         <div className="w-[100%] h-[50px] shadow-sm rounded-sm border border-[#dee1ec]">
 
         </div>
-        <div className="flex flex-col gap-2 h-[390px] overflow-y-scroll">
-          <ComboboxDropdownMenu />
-          <ComboboxDropdownMenu />
-          <ComboboxDropdownMenu />
-          <ComboboxDropdownMenu />
-          <ComboboxDropdownMenu />
-          <ComboboxDropdownMenu />
+        <div className="h-[390px] grid grid-cols-2">
+          <div className="flex flex-col gap-2 h-full overflow-y-scroll border border-black">
+            <ComboboxDropdownMenu />
+            <ComboboxDropdownMenu />
+            <ComboboxDropdownMenu />
+            <ComboboxDropdownMenu />
+            <ComboboxDropdownMenu />
+            <ComboboxDropdownMenu />
+          </div>
+          <div className="border border-black">
+
+          </div>
         </div>
       </div>
     </div>
