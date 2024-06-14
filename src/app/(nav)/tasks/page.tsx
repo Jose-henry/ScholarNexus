@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getUserByClerkId } from "@/lib/actions/user.action";
 import { Metadata } from "next";
 import { ComboboxDropdownMenu } from "@/components/forms/toDo";
+import AnalyticsCard from "@/components/cards/analyticsCard";
 
 
 
@@ -20,7 +21,7 @@ export default async function Task() {
 
   return (
     <div>
-      <div id="analytics"></div>
+      <AnalyticsCard/>
       <div>
         <ComboboxDropdownMenu />
         <div id="completed"></div>
