@@ -23,7 +23,7 @@ export default async function Task() {
     <div className="h-full flex flex-col gap-4 pr-5 pt-5">
       <AnalyticsCard/>
       <div className="flex flex-col gap-2">
-        <div className="w-[100%] h-[50px] shadow-sm rounded-sm border border-b-slate-700">
+        <div className="w-[100%] h-[50px] shadow-sm rounded-sm border border-[#dee1ec]">
 
         </div>
         <div className="flex flex-col gap-2 h-[390px] overflow-y-scroll">
