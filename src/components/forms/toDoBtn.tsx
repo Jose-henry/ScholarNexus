@@ -15,6 +15,7 @@ export default function ToDoBtn() {
           width="20"
           height="20"
           alt="done"
+          className="cursor-pointer"
         />
       ) : (
         <Image
@@ -22,6 +23,7 @@ export default function ToDoBtn() {
           width="20"
           height="20"
           alt="plus"
+          className="cursor-pointer"
         />
       )}
     </div>
