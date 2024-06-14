@@ -50,7 +50,7 @@ export function ComboboxDropdownMenu() {
           <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
             {label}
           </span>
-          <input className="p-2 outline-none bg-[#fafafa] w-[80%]" placeholder="Add a task"></input>
+          <input className="p-2 outline-none bg-[#fafafa] w-[80%]" placeholder="Enter task..."></input>
         </p>
       </div>
       <DropdownMenu open={open} onOpenChange={setOpen}>

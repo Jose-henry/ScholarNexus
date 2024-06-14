@@ -23,8 +23,12 @@ export default async function Task() {
     <div className="h-full flex flex-col gap-4 pr-5 pt-5">
       <AnalyticsCard/>
       <div>
-        <ComboboxDropdownMenu />
-        <div id="completed"></div>
+        <div className="w-[100%] h-[50px] border border-black">
+
+        </div>
+        <div>
+          <ComboboxDropdownMenu />
+        </div>
       </div>
     </div>
   );
