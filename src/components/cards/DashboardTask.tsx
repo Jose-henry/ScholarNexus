@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ComboboxDropdownMenu } from "../forms/toDo";
+import TaskDashboard from "../ui/taskDashboard";
 
 export default function DashboardTask() {
     return (
@@ -14,7 +16,8 @@ export default function DashboardTask() {
                 <Link href="/tasks" aria-label="" className="underline text-[10px] hover:no-underline font-semibold">View all</Link>
             </div>
             <div className="w-full h-[85%] bg-[#fafafa] shadow-md shadow-[#929aab]">
-                
+                <TaskDashboard
+                task="read for exams"/>
             </div>
         </div>
     );

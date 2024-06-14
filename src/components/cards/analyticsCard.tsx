@@ -9,7 +9,7 @@ export default function AnalyticsCard() {
                 <Image width="200" height="200" src="/assets/task-illustration.svg" alt="health"/>
                 <div className="pr-3">
                     <div>
-                        <h2 className="font-bold mb-2">Keep all your tasks organize 🎉</h2>
+                        <h2 className="font-bold mb-2">Keep all your tasks organized 🎉</h2>
                         <p className=" text-[13px]">"The purpose of organization is to help you achieve your goals and reduce stress, not to create more work for yourself."</p>
                     </div>
                     <p className="text-[13px] mt-1 font-semibold">~ Laura Leist</p>

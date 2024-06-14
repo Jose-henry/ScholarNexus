@@ -6,15 +6,14 @@ import { Button } from "@nextui-org/button";
 import Image from "next/image";
 
 interface Props {
-    checked: boolean;
     task: string;
-    props: number;
-    friendImage: string;
 }
 
-export default function TaskDashboard({checked, task, props}: Props) {
+export default function TaskDashboard({task}: Props) {
     return (
         <div className=""> 
+            <Image width="20" height="20" src="/assets/completed.svg" alt="tikcet"/>
+            <p>{task}</p>
         </div>
     );
 }
