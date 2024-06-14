@@ -2,6 +2,8 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { getUserByClerkId } from "@/lib/actions/user.action";
 import { Metadata } from "next";
+import { ComboboxDropdownMenu } from "@/components/forms/toDo";
+
 
 
 export const metadata: Metadata = {
@@ -17,6 +19,8 @@ export default async function Task() {
       redirect("/onboarding");}
 
   return (
-    <></>
+    <>
+      <ComboboxDropdownMenu />
+    </>
   );
 }
