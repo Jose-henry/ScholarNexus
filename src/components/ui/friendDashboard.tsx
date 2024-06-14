@@ -23,7 +23,7 @@ export default function FriendDashboard({firstName, lastName, programme, friendI
                     <p className="text-[10px]">{programme}</p>
                 </div> 
             </div>
-            <Button size="lg" className="underline text-[10px] text-white font-semibold hover:no-underline bg-[#142d4c] rounded-full">follow</Button>
+            <Button size="lg" className="text-[10px] text-white font-semibold hover:bg-[#497285]  bg-[#142d4c] rounded-sm w-[60px] pt-0.5 pb-0.5">follow</Button>
         </div>
     );
 }

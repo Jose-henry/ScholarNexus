@@ -9,9 +9,9 @@ export default function DashboardTask() {
             <div className="flex gap-1 items-center justify-between">
                 <div className="flex gap-1 items-center">
                     <Image width="16" height="16" src="/assets/task-icon.svg" alt="task"/>
-                    <h2 className="text-[12.5px] text-[#070f4e] font-extrabold">Tasks</h2>
+                    <h2 className="text-[12px] text-[#070f4e] font-bold">Tasks</h2>
                 </div>
-                <Link href="/tasks" aria-label="" className="underline text-[11px]">View All</Link>
+                <Link href="/tasks" aria-label="" className="underline text-[10px] hover:no-underline font-semibold">View all</Link>
             </div>
             <div className="w-full h-[85%] bg-[#f2f2f2] shadow-md shadow-[#50595c]">
 
