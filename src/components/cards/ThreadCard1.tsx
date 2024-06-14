@@ -10,7 +10,7 @@ interface Props {
 
 export default function ThreadCard1({ imageUrl, w, h, blurDataURL }: Props) {
     return (
-        <div className="bg-white shadow-md shadow-[#929aab]  p-[12px] rounded-sm grid gap-[10px] justify-between hover:shadow-lg hover:shadow-slate-600 transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
+        <div className="bg-white shadow-md shadow-slate-600 p-[12px] rounded-sm grid gap-[10px] justify-between hover:shadow-lg hover:shadow-slate-700 transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
             <div className="h-[150px] cursor-pointer">
             <Image 
                 src={imageUrl} 

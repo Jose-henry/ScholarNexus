@@ -41,10 +41,7 @@ export const metadata: Metadata = {
                     variant="light" 
                     size="sm" 
                     radius="full" 
-                    className="w-[80px] font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1"
-                    style={{ 
-                    backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
-                    }}
+                    className="w-[80px] font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1 bg-[#142d4c]"
                 >
                     <Image width="12" height="12" src="/assets/all-icon.svg" alt="next"/>
                     All
@@ -53,10 +50,7 @@ export const metadata: Metadata = {
                     variant="light" 
                     size="sm" 
                     radius="full" 
-                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1"
-                    style={{ 
-                    backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
-                    }}
+                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1 bg-[#142d4c]"
                 >
                     <Image width="12" height="12" src="/assets/articles-icon.svg" alt="next"/>
                     Articles
@@ -65,10 +59,7 @@ export const metadata: Metadata = {
                     variant="light" 
                     size="sm" 
                     radius="full" 
-                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1"
-                    style={{ 
-                    backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
-                    }}
+                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1 bg-[#142d4c]"
                 >
                     <Image width="13" height="13" src="/assets/videos-icon.svg" alt="next"/>
                     Videos
@@ -77,10 +68,7 @@ export const metadata: Metadata = {
                     variant="light" 
                     size="sm" 
                     radius="full" 
-                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1"
-                    style={{ 
-                    backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
-                    }}
+                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1 bg-[#142d4c]"
                 >
                     <Image width="12" height="12" src="/assets/course-icon.svg" alt="next"/>
                     Courses
@@ -89,10 +77,7 @@ export const metadata: Metadata = {
                     variant="light" 
                     size="sm" 
                     radius="full" 
-                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1"
-                    style={{ 
-                    backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
-                    }}
+                    className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1 bg-[#142d4c]"
                 >
                     <Image width="12" height="12" src="/assets/white-bookmark.svg" alt="next"/>
                     Bookmarked

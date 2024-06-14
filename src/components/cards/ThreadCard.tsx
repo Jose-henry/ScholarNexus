@@ -9,7 +9,7 @@ interface Props {
 
 export default  async function ThreadCard({videoUrl}:Props) {
     return (
-        <div className="gap-[10px] bg-white shadow-md shadow-[#929aab] p-[12px] grid rounded-sm justify-between op hover:shadow-lg hover:shadow-slate-600 transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
+        <div className="gap-[10px] bg-white shadow-md shadow-slate-600 p-[12px] grid rounded-sm justify-between op hover:shadow-lg hover:shadow-slate-700 transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
             <div className="h-[150px] cursor-pointer">
                 <video src={videoUrl} controls autoPlay loop muted className="h-full w-full object-cover rounded-sm"></video>
             </div>
