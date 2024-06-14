@@ -46,11 +46,11 @@ export function ComboboxDropdownMenu() {
     <div className="flex w-full flex-col items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center shadow-sm">
       <div className="flex gap-4 items-center w-[90%]">
         <ToDoBtn />
-        <p className="text-sm font-medium leading-none">
+        <p className="text-sm font-medium leading-none w-[100%]">
           <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
             {label}
           </span>
-          <input className="p-2 outline-none bg-[#fafafa] w-[90%]" placeholder="Add a task"></input>
+          <input className="p-2 outline-none bg-[#fafafa] w-[80%]" placeholder="Add a task"></input>
         </p>
       </div>
       <DropdownMenu open={open} onOpenChange={setOpen}>
