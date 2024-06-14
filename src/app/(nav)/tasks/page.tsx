@@ -4,6 +4,7 @@ import { getUserByClerkId } from "@/lib/actions/user.action";
 import { Metadata } from "next";
 import { ComboboxDropdownMenu } from "@/components/forms/toDo";
 import AnalyticsCard from "@/components/cards/analyticsCard";
+import Image from "next/image";
 
 
 
@@ -22,12 +23,10 @@ export default async function Task() {
   return (
     <div className="h-full flex flex-col gap-4 pr-5 pt-5">
       <AnalyticsCard/>
-      <div className="flex flex-col gap-2">
-        <div className="w-[100%] h-[50px] shadow-sm rounded-sm border border-[#dee1ec]">
-
-        </div>
-        <div className="h-[390px] grid grid-cols-2">
-          <div className="flex flex-col gap-2 h-full overflow-y-scroll border border-black">
+      <div className="flex flex-col gap-4 border-t-[1px] border-t-black">
+        <Image width="30" height="30" src="/assets/add-task-icon.svg" alt="health" className="ml-3" />
+        <div className="h-[390px] grid grid-cols-2 gap-4">
+          <div className="flex flex-col h-full overflow-y-scroll p-0.5 justify-between">
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
@@ -35,7 +34,7 @@ export default async function Task() {
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
           </div>
-          <div className="border border-black">
+          <div className="shadow-sm rounded-sm border border-[#dee1ec]">
 
           </div>
         </div>
