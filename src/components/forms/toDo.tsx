@@ -43,14 +43,14 @@ export function ComboboxDropdownMenu() {
   const [open, setOpen] = React.useState(false)
 
   return (
-    <div className="flex w-full flex-col items-start justify-between rounded-sm px-3 py-2 sm:flex-row sm:items-center shadow-sm shadow-[#393e46] bg-white">
+    <div className="flex w-full flex-col items-start justify-between px-3 py-2 sm:flex-row sm:items-center bg-white border-b-[1px] border-b-[#929aab]">
       <div className="flex gap-4 items-center w-[90%]">
         <ToDoBtn />
         <p className="text-sm font-medium leading-none w-[100%]">
-          <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
+          <span className="mr-2 rounded-full w-[80px] px-2 py-1 text-xs text-primary-foreground bg-[#142d4c]">
             {label}
           </span>
-          <input className="p-2 outline-none bg-[#fafafa] w-[80%]" placeholder="Enter task..."></input>
+          <input className="p-2 outline-none bg-white w-[80%] text-[13px]" placeholder="Enter task..."></input>
         </p>
       </div>
       <DropdownMenu open={open} onOpenChange={setOpen}>

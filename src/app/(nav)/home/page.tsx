@@ -94,7 +94,7 @@ export const metadata: Metadata = {
                     backgroundImage: 'radial-gradient(circle 590px at 8.2% 13.8%, rgba(18,35,60,1) 0%, #bbb 90%)'
                     }}
                 >
-                    <Image width="12" height="12" src="/assets/filled-bookmark-icon.svg" alt="next"/>
+                    <Image width="12" height="12" src="/assets/white-bookmark.svg" alt="next"/>
                     Bookmarked
                 </Button>
                 </div>

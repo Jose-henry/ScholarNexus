@@ -21,12 +21,12 @@ export default async function Task() {
       redirect("/onboarding");}
 
   return (
-    <div className="h-full flex flex-col gap-4 pr-5 pt-5">
+    <div className="h-full flex flex-col gap-7 pr-5 pt-5">
       <AnalyticsCard/>
-      <div className="flex flex-col gap-4 border-t-[1px] border-t-black">
-        <Image width="30" height="30" src="/assets/add-task-icon.svg" alt="health" className="ml-3" />
+      <div className="flex flex-col gap-4">
+        <button className="self-start size-sm border-0 shadow-md text-[12px] bg-[#142d4c] w-[80px] text-white font-bold p-1 rounded-full">Add Task</button>
         <div className="h-[390px] grid grid-cols-2 gap-4">
-          <div className="flex flex-col h-full overflow-y-scroll p-0.5 justify-between">
+          <div className="flex flex-col h-full overflow-y-scroll p-0.5">
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />

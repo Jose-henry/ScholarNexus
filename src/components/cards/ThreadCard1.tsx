@@ -10,7 +10,7 @@ interface Props {
 
 export default function ThreadCard1({ imageUrl, w, h, blurDataURL }: Props) {
     return (
-        <div className=" bg-black opacity-80 p-[12px] rounded-sm grid gap-[10px] justify-between hover:shadow-lg hover:shadow-slate-600 transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
+        <div className="bg-white shadow-md shadow-[#929aab]  p-[12px] rounded-sm grid gap-[10px] justify-between hover:shadow-lg hover:shadow-slate-600 transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
             <div className="h-[150px] cursor-pointer">
             <Image 
                 src={imageUrl} 
@@ -26,8 +26,8 @@ export default function ThreadCard1({ imageUrl, w, h, blurDataURL }: Props) {
 
 
             <div className="text-neutral-600 hover:translate-y-2 transition duration-200">
-            <h2 className="font-bold text-white text-[14.5px]">The Dawn of Innovation</h2>
-            <p className="text-left text-[12.5px] text-[#f2f2f2]">Explore the birth of groundbreaking ideas and inventions in the phenomenal world of tech!</p>
+            <h2 className="font-bold text-black text-[14.5px]">The Dawn of Innovation</h2>
+            <p className="text-left text-[12.5px] text-black">Explore the birth of groundbreaking ideas and inventions in the phenomenal world of tech!</p>
             </div>
             <Image src="/assets/filled-bookmark-icon.svg" alt="" width={18} height={18} className="justify-self-end cursor-pointer"></Image>
         </div>

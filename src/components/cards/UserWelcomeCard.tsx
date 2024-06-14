@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function UserWelcomeCard() {
   const titleStyle: React.CSSProperties = {
-    color: '#eef2e2',
+    color: 'white',
     fontSize: '25px',
     fontWeight: 1000,
     textShadow: '10px 10px 11px rgba(0, 0, 0, 0.4)' /* Add text shadow */
