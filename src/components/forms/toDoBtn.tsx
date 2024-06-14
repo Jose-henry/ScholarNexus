@@ -1,17 +1,15 @@
 import Image from "next/image";
+import { useState } from "react";
 
-interface Props {
-  selected: boolean;
-  onClick: (clicked: boolean) => void;
-}
+export default function ToDoBtn() {
+  const [completed, setCompleted] = useState(false);
 
-export default function ToDoBtn({ selected, onClick }: Props) {
   return (
     <div
       className="flex flex-col items-center justify-center"
-      onClick={() => onClick(!selected)} // toggle the selected state on click
+      onClick={() => setCompleted(!completed)}
     >
-      {selected ? (
+      {completed ? (
         <Image
           src="/assets/circle-completed.svg"
           width="20"
