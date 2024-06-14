@@ -17,7 +17,7 @@ export default function TopBar(){
     }
     return(
         <header className="p-[15px] pr-[25px] flex justify-between">
-        <div className="flex w-full md:w-[400px] sm:w-[350px] h-[30px] gap-[3%] p-[1px] rounded-[3px] border border-[#e0e0e0]">
+        <div className="flex w-full md:w-[400px] sm:w-[350px] h-[30px] gap-[3%] p-[1px] rounded-[3px] border border-[#e0e0e0] bg-white">
         <Input
         isClearable
         radius="sm"
