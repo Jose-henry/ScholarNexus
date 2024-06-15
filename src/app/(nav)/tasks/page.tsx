@@ -38,7 +38,7 @@ export default async function Task() {
           <div className="shadow-sm rounded-sm border border-[#dee1ec] p-2 flex flex-col gap-2 overflow-y-scroll">
             <h2 className="text-[13px] font-semibold">Completed</h2>
             <div>
-              <CompletedDropdownMenu />
+              <CompletedDropdownMenu title="See Dr Azu and submit paperwork." />
             </div>
           </div>
         </div>

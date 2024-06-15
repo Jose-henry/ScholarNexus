@@ -1,31 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { Calendar, MoreHorizontal, Tags, Trash, User } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import Image from "next/image"
 import ToDoBtn from "./toDoBtn"
 
 const labels = [
@@ -42,7 +17,7 @@ interface Props {
     title: string;
 }
 
-export function CompletedDropdownMenu() {    
+export function CompletedDropdownMenu({title}: Props) {    
   const [label, setLabel] = React.useState("label")
   const [open, setOpen] = React.useState(false)
 
