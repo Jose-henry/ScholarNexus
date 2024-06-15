@@ -180,8 +180,8 @@ export default function InterestForm(   {clerkId}: props) {
         toast.success("Interests updated successfully!");
         router.push("/onboarding");
         if(pathname === '/profile/edit'){
-            router.back();
-        } 
+            router.back()
+        }; 
       };
     
 
