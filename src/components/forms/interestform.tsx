@@ -21,7 +21,12 @@ const interests = [
 
         {
             key: "Business and Entrepreneurship",
-            value: ["Entrepreneurship", "Finance", "Marketing", "Management", "Consulting", "Finance", "Entrepreneurship", "Leadership", "Human Resources", "International Business", "E-Commerce", "Supply Chain", "Business Analytics"]
+            value: ["Entrepreneurship", "Marketing", "Management", "Consulting", "Finance", "Leadership", "Human Resources", "International Business", "E-Commerce", "Supply Chain", "Business Analytics"]
+        },
+
+        {
+            key: "Computer Science and Technology",
+            value: []
         }
 
 
