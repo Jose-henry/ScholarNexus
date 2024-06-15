@@ -11,28 +11,6 @@ import path from "path";
 
 
 
-
-const interests = [
-    {
-        key:"Art and Design",
-        value: ["Graphic Design", "Painting", "Photography", "Sculpture", "Drawing",
-            "Illustration", "Animation", "Fashion Design", "Interior Design", "Architecture"]
-        },
-
-        {
-            key: "Business and Entrepreneurship",
-            value: ["Entrepreneurship", "Marketing", "Management", "Consulting", "Finance", "Leadership", "Human Resources", "International Business", "E-Commerce", "Supply Chain", "Business Analytics"]
-        },
-
-        {
-            key: "Computer Science and Technology",
-            value: []
-        }
-
-
-]
-
-
 interface props{
     clerkId: string
 }
