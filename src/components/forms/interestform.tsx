@@ -15,7 +15,9 @@ import path from "path";
 const interests = [
     {
         key:"Art and Design",
-        value: ["Graphic Design", "Painting", "Photography", "Sculpture", ],
+        value: ["Graphic Design", "Painting", "Photography", "Sculpture", "Drawing",
+            "Illustration", "Animation", "Fashion Design", "Interior Design", "Architecture"
+        ],
         }
 
 
