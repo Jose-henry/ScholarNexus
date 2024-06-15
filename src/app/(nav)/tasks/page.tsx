@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { ComboboxDropdownMenu } from "@/components/forms/toDo";
 import AnalyticsCard from "@/components/cards/analyticsCard";
 import Image from "next/image";
+import { CompletedDropdownMenu } from "@/components/forms/completed";
 
 
 
@@ -34,8 +35,11 @@ export default async function Task() {
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
           </div>
-          <div className="shadow-sm rounded-sm border border-[#dee1ec] p-2">
+          <div className="shadow-sm rounded-sm border border-[#dee1ec] p-2 flex flex-col gap-2 overflow-y-scroll">
             <h2 className="text-[13px] font-semibold">Completed</h2>
+            <div>
+              <CompletedDropdownMenu />
+            </div>
           </div>
         </div>
       </div>
