@@ -25,9 +25,9 @@ export default async function Interest() {
 
 
     const userInfo = await getUserByClerkId(User?.id);
-      if (userInfo?.onboarded === true && userInfo?.interests?.length > 0) {
-        redirect("/home");
-      }
+      // if (userInfo?.onboarded === true && userInfo?.interests?.length > 0) {
+      //   redirect("/home");
+      // }
     
       return (
         <div className="flex flex-col justify-between w-[750px] p-7 h-[90%] rounded-sm shadow-md bg-[#f7f7f2]">
