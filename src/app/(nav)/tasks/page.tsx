@@ -19,7 +19,7 @@ export default async function Task() {
     if (!User) return null; // to avoid typescript warnings
     const userInfo = await getUserByClerkId(User?.id)
     if (userInfo?.onboarded === false) {
-      redirect("/onboarding")}
+      redirect("/onboarding")};
 
   return (
     <div className="h-full flex flex-col gap-7 pr-5 pt-5">
