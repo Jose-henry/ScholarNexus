@@ -181,9 +181,7 @@ export default function InterestForm(   {clerkId}: props) {
         router.push("/onboarding");
         if(pathname === '/profile/edit'){
             router.back();
-        } else {
-          router.push('/onboarding');
-        }
+        } 
       };
     
 
