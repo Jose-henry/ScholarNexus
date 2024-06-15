@@ -152,24 +152,8 @@ const interests = [
         "Theology",
       ],
     },
-    //************************************************************************** */
-    {
-        key: "Humanities",
-        icon: "/assets/humanities-icon.svg",
-        value: [
-          "History",
-          "Philosophy",
-          "Linguistics",
-          "Anthropology",
-          "Sociology",
-          "Psychology",
-          "Political Science",
-          "International Relations",
-          "Cultural Studies",
-          "Theology",
-        ],
-      },
-  ];  
+    
+  ];
 
 interface props{
     clerkId: string
