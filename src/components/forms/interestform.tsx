@@ -153,7 +153,7 @@ const interests = [
       ],
     },
     
-  ];
+  ]
 
 interface props{
     clerkId: string
