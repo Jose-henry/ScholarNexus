@@ -28,6 +28,7 @@ const interests = [
     },
     {
       key: "Business and Entrepreneurship",
+      icon: "/assets/business-icon.svg",
       value: [
         "Entrepreneurship",
         "Marketing",
@@ -44,6 +45,7 @@ const interests = [
     },
     {
       key: "Computer Science and Technology",
+      icon: "/assets/tech-icon.svg",
       value: [
         "Programming",
         "Web Development",
@@ -59,6 +61,7 @@ const interests = [
     },
     {
       key: "Engineering",
+      icon: "/assets/eng-icon.svg",
       value: [
         "Mechanical Engineering",
         "Electrical Engineering",
@@ -73,6 +76,7 @@ const interests = [
     },
     {
       key: "Creative Writing and Journalism",
+      icon: "/assets/writing-icon.svg",
       value: [
         "Fiction Writing",
         "Poetry",
@@ -88,6 +92,7 @@ const interests = [
     },
     {
       key: "Environmental Science and Sustainability",
+      icon: "/assets/sustainability-icon.svg",
       value: [
         "Conservation",
         "Ecology",
