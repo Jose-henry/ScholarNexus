@@ -213,7 +213,7 @@ export default function InterestForm(   {clerkId}: props) {
 
     return (
         <>
-            <div className="flex flex-col gap-10 h-[530px] pb-5 pt-5 align-middle overflow-scroll">
+        <div className="flex flex-col gap-10 h-[530px] pb-5 pt-5 align-middle overflow-scroll">
         {interests.map((interest, index) => (
           <div key={index} className="flex flex-col gap-2 p-4 bg-[#ffff] shadow-md rounded-sm border">
             <div className="flex gap-1">
