@@ -10,6 +10,18 @@ import 'react-toastify/dist/ReactToastify.css';
 import path from "path";
 
 
+
+
+const interests = [
+    {
+        key:"Art and Design",
+        value: ["Graphic Design", "Photography", "Sculpture"],
+        }
+
+
+]
+
+
 interface props{
     clerkId: string
 }
@@ -76,9 +88,7 @@ export default function InterestForm(   {clerkId}: props) {
                         <Image width="20" height="20" src="/assets/art-icon.svg" alt="art"/>
                     </div>
                     <div className="flex gap-1 flex-wrap">
-                        <InterestBtn text="Graphic Design" selected={selectedInterests.includes("Graphic Design")}
-              onSelect={handleSelect}
-            />
+                        <InterestBtn text="Graphic Design" selected={selectedInterests.includes("Graphic Design")} onSelect={handleSelect} />
                         <InterestBtn text="Painting" selected={selectedInterests.includes("Painting")} onSelect={handleSelect} />
                         <InterestBtn text="Photography" selected={selectedInterests.includes("Photography")} onSelect={handleSelect} />
                         <InterestBtn text="Scultpture" selected={selectedInterests.includes("Scultpture")} onSelect={handleSelect} />
