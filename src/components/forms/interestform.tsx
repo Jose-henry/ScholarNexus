@@ -156,7 +156,7 @@ const interests = [
 
 interface props{
     clerkId: string
-};
+}
 
 export default function InterestForm(   {clerkId}: props) {
     const router = useRouter();
