@@ -205,7 +205,7 @@ export default function InterestForm(   {clerkId}: props) {
   const deselectAll = () => {
     setSelectedInterests([]);
     setCount(0);
-  }
+  };
 
 
 
