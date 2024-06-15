@@ -16,8 +16,12 @@ const interests = [
     {
         key:"Art and Design",
         value: ["Graphic Design", "Painting", "Photography", "Sculpture", "Drawing",
-            "Illustration", "Animation", "Fashion Design", "Interior Design", "Architecture"
-        ],
+            "Illustration", "Animation", "Fashion Design", "Interior Design", "Architecture"]
+        },
+
+        {
+            key: "Business and Entrepreneurship",
+            value: ["Entrepreneurship", "Finance", "Marketing", "Management", "Consulting", "Finance", "Entrepreneurship"]
         }
 
 
