@@ -12,6 +12,7 @@ import path from "path";
 const interests = [
     {
       key: "Art and Design",
+      icon: "/assets/art-icon.svg",
       value: [
         "Graphic Design",
         "Painting",
