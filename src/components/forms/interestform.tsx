@@ -9,7 +9,141 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import path from "path";
 
-
+const interests = [
+    {
+      key: "Art and Design",
+      value: [
+        "Graphic Design",
+        "Painting",
+        "Photography",
+        "Sculpture",
+        "Drawing",
+        "Illustration",
+        "Animation",
+        "Fashion Design",
+        "Interior Design",
+        "Architecture",
+      ],
+    },
+    {
+      key: "Business and Entrepreneurship",
+      value: [
+        "Entrepreneurship",
+        "Marketing",
+        "Management",
+        "Consulting",
+        "Finance",
+        "Leadership",
+        "Human Resources",
+        "International Business",
+        "E-Commerce",
+        "Supply Chain",
+        "Business Analytics",
+      ],
+    },
+    {
+      key: "Computer Science and Technology",
+      value: [
+        "Programming",
+        "Web Development",
+        "Mobile App Development",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Science",
+        "Cybersecurity",
+        "Networking",
+        "Data Management",
+        "Software Engineering",
+      ],
+    },
+    {
+      key: "Engineering",
+      value: [
+        "Mechanical Engineering",
+        "Electrical Engineering",
+        "Civil Engineering",
+        "Chemical Engineering",
+        "Aerospace Engineering",
+        "Biomedical Engineering",
+        "Computer Engineering",
+        "Industrial Engineering",
+        "Material Science",
+      ],
+    },
+    {
+      key: "Creative Writing and Journalism",
+      value: [
+        "Fiction Writing",
+        "Poetry",
+        "Playwriting",
+        "Screenwriting",
+        "Journalism",
+        "Editing",
+        "Publishing",
+        "Nonfiction Writing",
+        "Blogging",
+        "Copywriting",
+      ],
+    },
+    {
+      key: "Environmental Science and Sustainability",
+      value: [
+        "Conservation",
+        "Ecology",
+        "Environmental Policy",
+        "Sustainability",
+        "Climate Change",
+        "Renewable Energy",
+        "Green Technology",
+        "Wildlife Management",
+        "Forestry",
+        "Geology",
+      ],
+    },
+    {
+      key: "Health and Wellness",
+      value: [
+        "Medicine",
+        "Nursing",
+        "Public Health",
+        "Health Education",
+        "Nutrition",
+        "Fitness",
+        "Mental Health",
+        "Counseling",
+        "Healthcare Management",
+        "Health Policy",
+      ],
+    },
+    {
+      key: "Mathematics",
+      value: [
+        "Pure Mathematics",
+        "Applied Mathematics",
+        "Statistics",
+        "Probability",
+        "Algebra",
+        "Geometry",
+        "Calculus",
+        "Number Theory",
+      ],
+    },
+    {
+      key: "Humanities",
+      value: [
+        "History",
+        "Philosophy",
+        "Linguistics",
+        "Anthropology",
+        "Sociology",
+        "Psychology",
+        "Political Science",
+        "International Relations",
+        "Cultural Studies",
+        "Theology",
+      ],
+    },
+  ];  
 
 interface props{
     clerkId: string
