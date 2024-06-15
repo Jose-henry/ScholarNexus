@@ -108,6 +108,7 @@ const interests = [
     },
     {
       key: "Health and Wellness",
+      icon: "/assets/health-icon.svg",
       value: [
         "Medicine",
         "Nursing",
@@ -123,6 +124,7 @@ const interests = [
     },
     {
       key: "Mathematics",
+      icon: "/assets/math-icon.svg",
       value: [
         "Pure Mathematics",
         "Applied Mathematics",
@@ -136,6 +138,7 @@ const interests = [
     },
     {
       key: "Humanities",
+      icon: "/assets/humanities-icon.svg",
       value: [
         "History",
         "Philosophy",
