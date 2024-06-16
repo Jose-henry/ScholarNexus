@@ -20,7 +20,7 @@ import { redirect } from "next/navigation";
 
 
 export const metadata: Metadata = {
-  title:"Home" };
+  title:"Home" }
 
   export default async function Home() {    
 
