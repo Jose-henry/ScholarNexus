@@ -20,7 +20,7 @@ export default async function Interest() {
     
 
 
-    const User = await currentUser()
+    const User = await currentUser();
     if (!User) return null; // to avoid typescript warnings
 
 
