@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     //fetching news based on interest
     const news = await getNews(userInfo);
     console.log(news)
+    console.log(userInfo?.interests)
         
         
         
