@@ -19,6 +19,6 @@ export default async function getNews(userInfo: any) {
       // Handle the error here, e.g. by displaying an error message to the user
       
     }
-  }
+  };
 
   
