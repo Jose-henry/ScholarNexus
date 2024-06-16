@@ -14,7 +14,8 @@ export default async function Profile() {
         redirect("/onboarding");
     }
   return (
-    <>
-    Profile </>
+      <div>
+        
+      </div>
   );
 }
