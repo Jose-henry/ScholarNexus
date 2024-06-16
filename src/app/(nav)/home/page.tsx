@@ -38,12 +38,12 @@ export const metadata: Metadata = {
 
     //fetching news based on interest
     const news = await getNews(userInfo);
-    console.log(news)
+    //console.log(news)
     console.log(userInfo?.interests);
 
     //fetching youtube based on interest
     const youtube = await getYoutube(userInfo);
-    console.log(youtube)
+    //console.log(youtube)
 
     //fetching books based on interest
     const books = await getBooks(userInfo);
