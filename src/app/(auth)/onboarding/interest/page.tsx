@@ -28,6 +28,9 @@ export default async function Interest() {
       if (userInfo?.onboarded === true && userInfo?.interests?.length > 0) {
         redirect("/home");
       }
+      if (userInfo?.onboarded === false) {
+        redirect("/onboarding");
+      }
     
       return (
         <div className="flex flex-col justify-between w-[750px] p-7 h-[90%] rounded-sm shadow-md bg-[#f7f7f2]">
