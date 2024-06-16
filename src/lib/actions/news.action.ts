@@ -7,7 +7,7 @@ export default async function getNews(userInfo: any) {
     const querys= encodeURIComponent(query);
     const today = new Date();
     const oneWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
-  const fromDate = oneWeekAgo.toISOString().split('T')[0];
+  const fromDate = oneWeekAgo.toISOString().split('T')[0]
 
 
     const url = `https://newsapi.org/v2/everything?q=${querys}&from=${fromDate}&sortBy=relevancy&pageSize=9&apiKey=${apiKey}`;
