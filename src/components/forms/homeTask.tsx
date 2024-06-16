@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
 import ToDoBtn from "./toDoBtn"
+import TaskDashboard from "../ui/taskDashboard"
 
 const labels = [
   "feature",
@@ -56,7 +57,11 @@ export function HomeTaskMenu({task_title, label}: TaskMenuProps) {
         </div>
       </div>
       <div>
-        
+        <TaskDashboard task="Read for exams." date="12/3/24" />
+        <TaskDashboard task="See Dr Azu and submit paperwork." date="20/3/24"/>
+        <TaskDashboard task="Meet course-rep submit and col..." date="22/3/24" />
+        <TaskDashboard task="Revise CSC221" date="22/3/24" />
+        <TaskDashboard task="Test on Wednesday." date="25/3/24" />
       </div>
     </div>
   )
