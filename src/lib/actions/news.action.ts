@@ -17,6 +17,7 @@ export default async function getNews(userInfo: any) {
     } catch (error) {
       console.error(error);
       // Handle the error here, e.g. by displaying an error message to the user
+      console.log("Hello");
       
     }
   };
