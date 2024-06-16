@@ -13,7 +13,8 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import getNews from "@/lib/actions/news.action";
 import getYoutube from "@/lib/actions/youtube.action";
-import getBooks from "@/lib/actions/book.action";
+import getBooks, { getBookCovers } from "@/lib/actions/book.action";
+import getQuotes from "@/lib/actions/quote.action";
 
 
 
@@ -39,15 +40,20 @@ export const metadata: Metadata = {
     //fetching news based on interest
     const news = await getNews(userInfo);
     //console.log(news)
-    console.log(userInfo?.interests);
 
     //fetching youtube based on interest
     const youtube = await getYoutube(userInfo);
-    console.log(youtube)
+    //console.log(youtube)
 
     //fetching books based on interest
     const books = await getBooks(userInfo);
     //console.log(books)
+    const bookCovers = await getBookCovers(userInfo);
+
+    //fetching quotes
+    const quotes = await getQuotes();
+    //console.log(quotes)
+
         
         
         

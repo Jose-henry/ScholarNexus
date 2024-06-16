@@ -2,7 +2,7 @@
 "use server"
 
 
-export default async function getBooks(userInfo: any) {
+export async function getBooks(userInfo: any) {
     const interests = userInfo?.interests; // assuming interests is an array of strings
  // replace with your actual API key
     const query = interests?.join(' OR '); // join interests with ' OR ' for the search query
@@ -18,3 +18,21 @@ export default async function getBooks(userInfo: any) {
       
     }
   }
+
+
+  
+  export async function getBookCovers(userInfo: any) {
+    // Fetching books based on interest
+    const booksData = await getBooks(userInfo);
+    const books = booksData.docs; // Accessing the 'docs' property for book information
+
+    let covers = [];
+    for (let book of books) {
+        if (book.cover_i) {
+            const coverID = book.cover_i;
+            const url = `https://covers.openlibrary.org/b/id/${coverID}-M.jpg`;
+            covers.push(url);
+        }
+    }
+    return covers; // Return an array of cover URLs
+}
