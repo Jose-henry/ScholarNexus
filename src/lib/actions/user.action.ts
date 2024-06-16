@@ -88,7 +88,7 @@ export async function updateInterests(clerkId: string, interests: string[], path
             data: { interests: { set: interests } },
         });
         if (path === "/profile/edit" || path === "/profile") {
-            revalidatePath(path);
+            revalidatePath(path)
         }
     } catch (error) {
         console.error("Error updating interests:", error);
