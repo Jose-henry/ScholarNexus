@@ -43,11 +43,11 @@ export const metadata: Metadata = {
 
     //fetching youtube based on interest
     const youtube = await getYoutube(userInfo);
-    //console.log(youtube)
+    console.log(youtube)
 
     //fetching books based on interest
     const books = await getBooks(userInfo);
-    console.log(books)
+    //console.log(books)
         
         
         
