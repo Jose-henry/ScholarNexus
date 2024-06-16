@@ -7,7 +7,7 @@ export default async function getBooks(userInfo: any) {
  // replace with your actual API key
     const query = interests?.join(' OR '); // join interests with ' OR ' for the search query
 
-    const url = `https://openlibrary.org/search.json?subject=${query}&limit=9`;
+    const url = `https://openlibrary.org/search.json?subject=${query}`;
     try {   
       const response = await fetch(url);
       const data = await response.json()
