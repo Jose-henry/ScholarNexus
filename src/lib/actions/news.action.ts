@@ -9,7 +9,7 @@ export default async function getNews(userInfo: any) {
   const fromDate = oneWeekAgo.toISOString().split('T')[0];
 
 
-    const url = `https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&sortBy=popularity&pageSize=9&apiKey=${apiKey}`;
+    const url = `https://newsapi.org/v2/everything?q=${query}&from=${fromDate}&sortBy=relevancy&pageSize=9&apiKey=${apiKey}`;
     try {
       const response = await fetch(url);
       const data = await response.json();
