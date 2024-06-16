@@ -44,6 +44,7 @@ export default function RootLayout({
       backgroundImage: 'url("/assets/bg-img.jpg")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
+      overflowY: 'hidden',
     }}>
       <div className="w-full flex justify-center items-center h-screen">{children}</div>
       <ToastContainer
