@@ -26,7 +26,7 @@ export default async function Interest() {
 
     const userInfo = await getUserByClerkId(User?.id);
       if (userInfo?.onboarded === true && userInfo?.interests?.length > 0) {
-        redirect("/home");
+        redirect("/home")
       }
     
       return (
