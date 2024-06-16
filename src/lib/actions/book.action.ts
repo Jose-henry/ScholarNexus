@@ -10,7 +10,7 @@ export default async function getBooks(userInfo: any) {
     const url = `https://openlibrary.org/search.json?subject=${query}`;
     try {   
       const response = await fetch(url);
-      const data = await response.json()
+      const data = await response.json();
       return data.items; // return the articles array
     } catch (error) {
       console.error(error);
