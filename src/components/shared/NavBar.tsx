@@ -19,7 +19,7 @@ export default function NavBar(){
         }}>
             <div className="flex flex-col gap-[30px]">
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
-                    <Image width="32" height="32" src="/assets/education-icon.svg" alt="education"/>
+                    <Image width="32" height="32" src="/assets/education-icon.svg" alt="logo"/>
                 </Link>
             <div className=" gap-[30px] flex flex-col items-center justify-center">
             {sidebarLinks.map((link) => {
