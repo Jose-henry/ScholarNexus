@@ -12,6 +12,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import getNews from "@/lib/actions/news.action";
+import getYoutube from "@/lib/actions/youtube.action";
 
 
 
@@ -37,7 +38,11 @@ export const metadata: Metadata = {
     //fetching news based on interest
     const news = await getNews(userInfo);
     console.log(news)
-    console.log(userInfo?.interests)
+    console.log(userInfo?.interests);
+
+    //fetching youtube based on interest
+    const youtube = await getYoutube(userInfo);
+    console.log(youtube)
         
         
         
