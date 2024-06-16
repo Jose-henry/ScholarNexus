@@ -13,7 +13,7 @@ export default function NavBar(){
     const pathname = usePathname()
     const { userId } = useAuth()
     return(
-        <nav   className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page max-md:hidden w-[56px] h-[100%] pt-[20px] pb-[10px]" 
+        <nav   className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page max-md:hidden w-[54px] h-[100%] pt-[20px] pb-[10px]" 
         style={{ 
           backgroundImage: 'linear-gradient(110.3deg, rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7%)'
         }}>
