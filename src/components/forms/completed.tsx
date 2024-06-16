@@ -30,7 +30,6 @@ export function CompletedDropdownMenu({title}: Props) {
             Completed
           </span>
           <p className="line-through text-[13px]">{title}</p>
-          <p className="line-through text-[13px]">{title}</p>
         </div>
       </div>
     </div>
