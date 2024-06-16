@@ -5,7 +5,7 @@ export const sidebarLinks = [
       label: "Dashboard",
     },
     {
-      imgURL: "/assets/notes2.svg",
+      imgURL: "/assets/notes-icon.svg",
       route: "/notes",
       label: "Notes",
     },
