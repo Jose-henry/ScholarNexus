@@ -30,9 +30,9 @@ export default function NavBar(){
                         key = {link.label}
                         className={`relative flex justify-start gap-2 rounded-sm ${
                             isActive && 'bg-[#9ba6a5] rounded-sm p-[4px]'
-                        } hover:bg-[#17132a] hover:rounded-sm hover:transition-all hover:p-[4px]`}
+                        } hover:bg-[#142d4c] hover:rounded-full p-1 hover:transition-all hover:p-[4px]`}
                         >
-                            <Image src = {link.imgURL} alt = {link.label} width ={20} height = {20} />
+                            <Image src = {link.imgURL} alt = {link.label} width ={18} height = {18} />
 
                             {/* <p className="text-light-1 max-lg:hidden">{link.label}</p> */}
                         </Link>
@@ -43,7 +43,7 @@ export default function NavBar(){
             <div>
             <SignedIn>
                         <SignOutButton redirectUrl="/sign-in">
-                            <div className="flex cursor-pointer gap-4 p-[4px] hover:bg-[#17132a] hover:rounded-sm hover:transition-all">
+                            <div className="flex cursor-pointer gap-4 p-[4px] hover:bg-[#142d4c] hover:rounded-sm hover:transition-all">
                                 <Image src='/assets/logout.svg' alt="logout" width ={20} height ={20} />
                                 {/* <p className="text-light-2 max-lg:hidden">Logout</p> */}
                             </div>

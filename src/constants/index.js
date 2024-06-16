@@ -10,7 +10,7 @@ export const sidebarLinks = [
       label: "Notes",
     },
     {
-      imgURL: "/assets/todo2.svg",
+      imgURL: "/assets/toDo-icon.svg",
       route: "/tasks",
       label: "To-Do",
     },
