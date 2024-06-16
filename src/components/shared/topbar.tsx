@@ -8,6 +8,7 @@ import {Avatar} from
 
 import {Input} from "@nextui-org/input";
 import React, { useState } from "react";
+import Link from 'next/link'
 
 export default function TopBar(){
 
@@ -85,8 +86,10 @@ export default function TopBar(){
           </Image> 
           <Image src="/assets/settings-icon.svg" alt="settings" width={20} height={20} className="hidden md:block cursor-pointer"> 
           </Image> 
-          <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'> 
-          </Avatar> 
+          <Link href="/profile" aria-label="">
+            <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'> 
+            </Avatar> 
+          </Link>
       </div> 
   </div>
 
