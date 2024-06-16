@@ -16,11 +16,11 @@ export default function DashboardTask() {
                 <Link href="/tasks" aria-label="" className="underline text-[10px] hover:no-underline font-semibold">View all</Link>
             </div>
             <div className="w-full h-[85%] bg-[#fafafa] shadow-md shadow-[#929aab] p-2">
-                <TaskDashboard task="Read for exams." date="12/3/24" />
-                <TaskDashboard task="See Dr Azu and submit paperwork." date="20/3/24"/>
-                <TaskDashboard task="Meet course-rep submit and col..." date="22/3/24" />
-                <TaskDashboard task="Revise CSC221" date="22/3/24" />
-                <TaskDashboard task="Test on Wednesday." date="25/3/24" />
+                <TaskDashboard task="Read for exams." date="12/3/24" label="completed" />
+                <TaskDashboard task="See Dr Azu and submit paperwork." date="20/3/24" label="bug" />
+                <TaskDashboard task="Meet course-rep submit and col..." date="22/3/24" label="enhancement" />
+                <TaskDashboard task="Revise CSC221" date="22/3/24" label="test" />
+                <TaskDashboard task="Test on Wednesday." date="25/3/24" label="test" />
             </div>
         </div>
     );
