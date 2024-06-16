@@ -163,7 +163,7 @@ export function ProfileForm ({user, btnTitle}: Props) {
       if(pathname === '/profile/edit'){
         router.back();
     } else {
-      router.push('/')
+      router.push('/onboarding/interest');
     }
 
   }
@@ -437,7 +437,7 @@ export function ProfileForm ({user, btnTitle}: Props) {
         />
 
 
-          <Button type="submit" className="bg-[#393e46] text-white">Submit</Button>
+          <Button type="submit" className="bg-[#393e46] text-white" >Next</Button>
         </form>
       </Form>
     )

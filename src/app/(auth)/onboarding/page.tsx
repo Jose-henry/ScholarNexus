@@ -33,8 +33,7 @@ export default async function Onboarding() {
     
   
     const userInfo = await getUserByClerkId(User?.id);
-    if (userInfo?.onboarded === true) redirect("/home");
-    if ( userInfo?.interests.length === 0 ) redirect("/onboarding/interest");
+    if (userInfo?.onboarded === true && userInfo?.interests?.length > 0) redirect("/home");
     
 
     

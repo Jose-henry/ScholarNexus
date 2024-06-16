@@ -179,7 +179,7 @@ export default function InterestForm(   {clerkId}: props) {
         }
         await updateInterests(clerkId, selectedInterests,pathname);
         toast.success("Interests updated successfully!");
-        router.push("/onboarding");
+        router.push("/home");
         if(pathname === '/profile/edit'){
             router.back()
         }; 
@@ -244,7 +244,7 @@ export default function InterestForm(   {clerkId}: props) {
             className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[13.5px] font-bold shadow-lg w-[200px] mx-auto"
             onClick={onSubmit}
         >
-                Next
+                Submit
                 <Image width="20" height="20" src="/assets/next-icon.svg" alt="next"/>
             </Button>
             { selectedInterests.length > 0 &&( <Button
