@@ -70,7 +70,7 @@ export default function TopBar(){
           <SignedIn> 
               <SignOutButton> 
                   <div className="flex items-center gap-2"> 
-                      <Image src="/assets/logout.svg" alt="logout" width={18} height={18}/> 
+                      <Image src="/assets/logout-icon.svg" alt="logout" width={18} height={18}/> 
                       <span className='hover:underline cursor-pointer'>Logout</span> 
                   </div> 
               </SignOutButton> 
