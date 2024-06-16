@@ -32,6 +32,34 @@ export const metadata: Metadata = {
     if (userInfo?.onboarded === false) {
         redirect("/onboarding");}
 
+
+        //fetching news based on interest
+
+        const interests = userInfo?.interests; // assuming interests is an array of strings
+        const apiKey = process.env.GOOGLE_NEWS_API_KEY;
+        const query = interests?.join(' OR '); // join interests with ' OR ' for the search query
+
+        const fromDate = new Date(new Date().getTime() - 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0] + 'T00:00:00Z';
+        const toDate = new Date().toISOString();
+
+        const url = `https://gnews.io/api/v4/search?q= ` + query + '&lang=en&max=9&apikey=' + apiKey + '&sortby=relevance&from=' + fromDate + '&to=' + toDate;
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            const articles = data.articles;
+            for (let i = 0; i < articles.length; i++) {
+              console.log("Title: " + articles[i]['title']);
+              console.log("Description: " + articles[i]['description']);
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        }
+        
+      
+
+
     return (
         <div className="w-[100%] grid h-full gap-[1%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
             <div className="h-full flex flex-col gap-[30px]">
