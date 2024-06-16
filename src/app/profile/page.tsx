@@ -15,7 +15,7 @@ export default async function Profile() {
     }
   return (
       <div>
-        
+        <p className="text-[13px]">Profile Page</p>
       </div>
   );
 }
