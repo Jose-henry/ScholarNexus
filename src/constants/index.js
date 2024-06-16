@@ -15,17 +15,17 @@ export const sidebarLinks = [
       label: "To-Do",
     },
     {
-      imgURL: "/assets/questions3.svg",
+      imgURL: "/assets/question-icon.svg",
       route: "/questions",
       label: "Questions",
     },
     {
-      imgURL: "/assets/briefcase.svg",
+      imgURL: "/assets/briefcase-icon.svg",
       route: "/jobs",
       label: "Jobs",
     },
     {
-      imgURL: "/assets/clubs.svg",
+      imgURL: "/assets/group-icon.svg",
       route: "/groups",
       label: "Groups",
     },
