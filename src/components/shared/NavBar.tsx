@@ -18,7 +18,7 @@ export default function NavBar(){
                 <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
                     <Image width="32" height="32" src="/assets/education-icon.svg" alt="logo"/>
                 </Link>
-            <div className=" gap-[30px] flex flex-col items-center justify-center">
+            <div className=" gap-[20px] flex flex-col items-center justify-center">
             {sidebarLinks.map((link) => {
                     const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
 
@@ -29,10 +29,10 @@ export default function NavBar(){
                         href={link.route}
                         key = {link.label}
                         className={`relative flex justify-start gap-2 rounded-sm ${
-                            isActive && 'bg-[#9ba6a5] rounded-sm p-[4px]'
-                        } hover:bg-[#142d4c] hover:rounded-full p-1 hover:transition-all hover:p-[4px]`}
+                            isActive && 'bg-[black] rounded-sm p-1'
+                        } hover:bg-[#142d4c] hover:rounded-full p-2 hover:transition-all hover:p-[2px]`}
                         >
-                            <Image src = {link.imgURL} alt = {link.label} width ={18} height = {18} />
+                            <Image src = {link.imgURL} alt = {link.label} width ={20} height = {20} />
 
                             {/* <p className="text-light-1 max-lg:hidden">{link.label}</p> */}
                         </Link>
