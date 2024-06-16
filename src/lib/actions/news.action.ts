@@ -16,7 +16,7 @@ export default async function getNews(userInfo: any) {
       return data.articles; // return the articles array
     } catch (error) {
       console.error(error);
-      // Handle the error here, e.g. by displaying an error message to the user
+      // Handle the error here, e.g. by displaying an error message to the users
       
     }
   };
