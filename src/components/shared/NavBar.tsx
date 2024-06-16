@@ -29,7 +29,7 @@ export default function NavBar(){
                         href={link.route}
                         key = {link.label}
                         className={`relative flex justify-start rounded-sm ${
-                            isActive && 'bg-[black] rounded-sm'
+                            isActive && 'bg-[#142d4c] rounded-sm p-0'
                         } hover:bg-[#142d4c] hover:rounded-full p-2 hover:transition-all hover:p-2`}
                         >
                             <Image src = {link.imgURL} alt = {link.label} width ={20} height = {20} />
