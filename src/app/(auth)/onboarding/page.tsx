@@ -100,5 +100,5 @@ export default async function Onboarding() {
           </div>
         </main>
   </SignedIn>
-);
+)
 }
