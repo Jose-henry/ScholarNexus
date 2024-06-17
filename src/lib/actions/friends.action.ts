@@ -1,67 +1,55 @@
-"use server";
+// "use server";
 
-import prisma from "@/utils/connect";
-import { revalidatePath } from "next/cache";
+// import prisma from "@/utils/connect";
+// import { revalidatePath } from "next/cache";
 
-
-interface ToDoParams {
-  title: string;
-  description?: string;
-  deadline: Date;
-  completed: boolean;
-  priority?: string;
-  userId: string;
-  path: string;
-}
-
-export async function upsertToDo({
-  title,
-  description,
-  deadline,
-  completed,
-  priority,
-  userId,
-  path,
-}: ToDoParams): Promise<void> {
-  try {
-    // Check if a ToDo with the given userId exists
-    const existingToDo = await prisma.toDo.findFirst({
-      where: { userId: userId },
-    });
-
-    let todo;
-    if (existingToDo) {
-      // Update the existing ToDo
-      todo = await prisma.toDo.update({
-        where: { id: existingToDo.id },
-        data: {
-          title,
-          description,
-          deadline,
-          completed,
-          priority,
-          updatedAt: new Date(), // Set the updated date to now
-        },
-      });
-    } else {
-      // Create a new ToDo
-      todo = await prisma.toDo.create({
-        data: {
-          title,
-          description,
-          deadline,
-          completed,
-          priority,
-          userId,
-          createdAt: new Date(), // Set the created date to now
-        },
-      });
-    }
-    if (path === "/profile/edit" || path === "/tasks") {
-        revalidatePath(path);
-    }
-    // Handle success, e.g., return todo or send a success response
-  } catch (error: any) {
-    throw new Error(`Error creating or updating ToDo: ${error.message}`);
-  }
-}
+// interface Params {
+//     userId: string;
+//     accepted: boolean;
+//     rejected: boolean;
+//     pending: boolean;
+//     blocked: boolean;
+//   }
+  
+//   export async function Upsert({ userId, accepted, rejected, pending, blocked }: Params): Promise<void> {
+//     try {
+//       // Check if a friend relationship with the given userId and friendId exists
+//       const existingFriend = await prisma.friend.findFirst({
+//         where: { userId: userId},
+//       });
+  
+//       let friend;
+  
+//       if (existingFriend) {
+//         // Update the existing friend relationship
+//         friend = await prisma.friend.update({
+//           where: { id: (existingFriend.id) },
+//           data: {
+//             accepted,
+//             rejected,
+//             pending,
+//             blocked,
+//             updatedAt: new Date(), // Set the updated date to now
+//           },
+//         });
+//       } else {
+//         // Create a new friend relationship
+//         friend = await prisma.friend.create({
+//           data: {
+//             userId,
+//             accepted,
+//             rejected,
+//             pending,
+//             blocked,
+//             createdAt: new Date(), // Set the created date to now
+//           },
+//         });
+//       }
+  
+//       // Handle success, e.g., return friend or send a success response
+//     } catch (error: any) {
+//       throw new Error(`Error creating or updating friend: ${error.message}`);
+//     }
+//   }
+  
+  
