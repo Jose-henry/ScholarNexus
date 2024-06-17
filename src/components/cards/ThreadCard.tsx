@@ -17,7 +17,10 @@ export default  async function ThreadCard({videoUrl}:Props) {
                 <h2 className="font-extrabold text-[#142d4c] text-[14px]">The Dawn of Innovation</h2>
                 <p className="text-left text-[12px] text-black">Explore the birth of groundbreaking ideas and inventions in the phenomenal world of tech!</p>
             </div>
-            <Image src="/assets/bookmark-icon.svg" alt="" width={18} height={18} className="justify-self-end cursor-pointer"></Image>
-        </div>
+            <div className="flex gap-1 justify-end">
+            <Image src="/assets/filled-bookmark-icon.svg" alt="" width={18} height={18} className=" cursor-pointer"></Image>
+            <Image src="/assets/external-link.svg" alt="" width={18} height={18} className=" cursor-pointer"></Image>
+            </div>
+                    </div>
     );
 }
