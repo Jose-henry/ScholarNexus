@@ -3,7 +3,7 @@ import { Nunito } from "next/font/google";
 import "../globals.css";
 import {
   ClerkProvider
-} from '@clerk/nextjs'
+} from '@clerk/nextjs';
 import NavBar from "@/components/shared/NavBar";
 import TopBar from "@/components/shared/topbar";
 import BottomBar from "@/components/shared/bottombar";
