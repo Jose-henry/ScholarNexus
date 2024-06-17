@@ -32,25 +32,25 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body
-      className={nunito.className}
-      style={{
-        height: "100vh"
-      }}>
-        <div id="wrapper" className="h-[100%] flex sm:p-0  gap-[1%] bg-[#fafafa]">
+      <html lang="en">
+        <body className={nunito.className} style={{ height: "100vh" }}>
+          {/* Hide layout on md and below */}
+          <div id="wrapper" className="hidden lg:flex h-[100%] sm:p-0 gap-[1%] bg-[#fafafa]">
             <NavBar />
             <div id="container" className="w-[100%] flex flex-col h-[100%]">
               <TopBar />
-              <main className="flex-1 ml-[12px] ">
-                  {children}
+              <main className="flex-1 ml-[12px]">
+                {children}
               </main>
-                <BottomBar />
+              <BottomBar />
             </div>
           </div>
-      </body>
-    </html>
-
+          {/* Show message on md and below */}
+          <div className="lg:hidden flex justify-center items-center h-screen">
+            <p>Display size not optimized for responsiveness</p>
+          </div>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
