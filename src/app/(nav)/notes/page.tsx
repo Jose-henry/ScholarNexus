@@ -4,6 +4,7 @@ import VideoCard from "@/components/cards/VideoCard1";
 import { getUserByClerkId } from "@/lib/actions/user.action";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Notes",
@@ -34,6 +35,9 @@ export default async function Notes() {
             <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
             Create folder
           </button>
+          <button className="text-[13px] underline font-semibold">Personal</button>
+          <button className="text-[13px] underline font-semibold">School</button>
+          <button className="text-[13px] underline font-semibold">Work</button>
         </div>
         <div className="border-t-[1px] border-t-black pt-2">
           <div className="w-fit">
