@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     //console.log(youtube)
 
     //fetching books based on interest
-    const books = await getBooks(userInfo);
+    const books = await getBooks(userInfo)
     //console.log(books);
     const bookCovers = await getBookCovers(userInfo);
 
