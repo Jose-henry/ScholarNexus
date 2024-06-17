@@ -56,7 +56,7 @@ interface Props{
      category: string;
 
   };
-  btnTitle: string;
+  btnTitle: string
 }
 export function FolderForm ({user, btnTitle}: Props) {
   const [isLoading, setIsLoading] = useState(false); // 1. Define the state
