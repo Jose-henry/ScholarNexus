@@ -9,7 +9,7 @@ import { getUserByClerkId } from "@/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "@nextui-org/button";
 import { Metadata } from "next";
-import Image from "next/image";
+import Image from "next/image"
 import { redirect } from "next/navigation";
 import getNews from "@/lib/actions/news.action";
 import getYoutube from "@/lib/actions/youtube.action";
