@@ -57,7 +57,7 @@ export async function upsertToDo({
         },
       });
     }
-    if (path === "/profile/edit" || path === "/tasks") {
+    if (path === "/home" ||path === "/tasks") {
         revalidatePath(path);
     }
     // Handle success, e.g., return todo or send a success response
