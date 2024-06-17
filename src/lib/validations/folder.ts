@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const folderValidation = z.object({
-  foldername: z.string().min(1, { message: 'MINIMUM 1 CHARACTER' }).max(30),
+  foldername: z.string().min(1, { message: 'MINIMUM 1 CHARACTER' }).max(30).refine(value => value.trim() !== '', 'Must not be empty'),
 })
 
 

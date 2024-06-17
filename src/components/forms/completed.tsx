@@ -25,11 +25,11 @@ export function CompletedDropdownMenu({title}: Props) {
     <div className="flex w-full flex-col items-start justify-between px-3 py-2 sm:flex-row sm:items-center bg-white border-b-[1px] border-b-[#929aab]">
       <div className="flex gap-4 items-center w-[90%]">
         <ToDoBtn />
-        <div className="text-sm font-medium leading-none w-[100%] flex gap-2">
-          <span className="mr-2 rounded-full w-[80px] px-2 py-1 text-xs text-primary-foreground bg-[#142d4c]">
+        <div className="text-sm font-medium leading-none w-[100%] flex gap-2 items-center">
+          <span className="mr-2 rounded-full w-[80px] px-2 py-1 text-[11px] text-primary-foreground bg-[#142d4c] font-bold text-center">
             Completed
           </span>
-          <p className="line-through text-[13px]">{title}</p>
+          <p className="line-through text-[12px]">{title}</p>
         </div>
       </div>
     </div>

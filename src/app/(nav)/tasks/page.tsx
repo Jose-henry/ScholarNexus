@@ -35,10 +35,11 @@ export default async function Task() {
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
           </div>
-          <div className="shadow-lg rounded-sm border border-[#dee1ec] p-2 flex flex-col gap-2 overflow-y-scroll">
+          <div className="rounded-sm p-2 flex flex-col gap-2 h-[390px]">
             <h2 className="text-[13px] font-semibold">Completed</h2>
-            <div>
-              <CompletedDropdownMenu title="See Dr Azu and submit paperwork." />
+            <div className=" overflow-y-scroll h-full">
+              <CompletedDropdownMenu title="Your completed tasks will appear here." />
+              <CompletedDropdownMenu title="e.g see professor and submit paperwork." />
             </div>
           </div>
         </div>
