@@ -52,9 +52,9 @@ const Pomodoro: React.FC = () => {
   const toDoubleDigit = (num: number) => (num < 10 ? `0${num}` : `${num}`);
 
   return (
-    <div id="pomodoro-app">
-      <div className="border border-gray-800 rounded-2xl w-96 mx-auto p-5 text-center bg-gray-800">
-        <div className="text-red-500 text-6xl mx-auto border-4 border-red-500 rounded-full w-48 h-48 relative overflow-hidden">
+    <div id="pomodoro-app" className='absolute top-0 right-0 z-10'>
+      <div className="border border-gray-800 rounded-sm w-50 mx-auto p-5 text-center bg-gray-800">
+        <div className="text-white text-[20px] mx-auto border-4 border-white rounded-full w-25 h-25 relative overflow-hidden">
           <div className="relative top-20 z-10">
             <span id="minutes">{toDoubleDigit(minutes)}</span>
             <span>:</span>
@@ -70,7 +70,7 @@ const Pomodoro: React.FC = () => {
             className="bg-blue-400 text-white py-2 px-4 w-24 mx-auto rounded-full mt-2"
             onClick={() => startTimer(25)}
           >
-            Work
+            Start
           </button>
           <button
             className="bg-green-400 text-white py-2 px-4 w-24 mx-auto rounded-full mt-2"
