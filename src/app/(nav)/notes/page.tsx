@@ -35,9 +35,13 @@ export default async function Notes() {
             <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
             Create folder
           </button>
-          <button className="text-[13px] underline font-semibold">Personal</button>
-          <button className="text-[13px] underline font-semibold">School</button>
-          <button className="text-[13px] underline font-semibold">Work</button>
+          <div className="flex gap-1 items-center ml-3">
+            <Image src="/assets/filter.svg" alt="folder" width={16} height={16} />
+            <p className="text-[13.5px] font-bold text-[#132743]">Filter by: </p>
+          </div>
+          <button className="text-[12.5px] underline font-semibold">Personal</button>
+          <button className="text-[12.5px] underline font-semibold">School</button>
+          <button className="text-[12.5px] underline font-semibold">Work</button>
         </div>
         <div className="border-t-[1px] border-t-black pt-2">
           <div className="w-fit">
