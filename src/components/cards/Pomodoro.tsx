@@ -52,9 +52,9 @@ const Pomodoro: React.FC = () => {
   const toDoubleDigit = (num: number) => (num < 10 ? `0${num}` : `${num}`);
 
   return (
-    <div id="pomodoro-app" className='fixed top-0 right-0 z-10'>
+    <div id="pomodoro-app" className='fixed top-10 right-0 z-10'>
       <div className="border border-gray-800 rounded-sm w-[200px] mx-auto p-5 text-center bg-gray-800">
-      <div className="text-white text-[20px] mx-auto border-4 border-white rounded-full w-[100px] h-[100px] relative flex items-center justify-center overflow-hidden">
+      <div className="text-white text-[20px] mx-auto border-4 border-white rounded-full shadow-sm shadow-white w-[100px] h-[100px] relative flex items-center justify-center overflow-hidden">
         <div className="z-10">
             <span id="minutes">{toDoubleDigit(minutes)}</span>
             <span>:</span>
@@ -65,30 +65,30 @@ const Pomodoro: React.FC = () => {
             style={{ height: `${fillerHeight}px` }}
         ></div>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 w-[150px] grid grid-cols-2 gap-2">
           <button
-            className="bg-blue-400 text-white px-2 py-1 w-[70px] mx-auto rounded-full text-[11px]"
+            className="bg-blue-400 text-white px-2 py-1 w-full mx-auto rounded-full text-[11px]"
             onClick={() => startTimer(25)}
           >
             Start
           </button>
           <button
-            className="bg-green-400 text-white px-2 py-1  w-18 mx-auto rounded-full text-[11px]"
+            className="bg-red-500 text-white w-full px-2 py-1 mx-auto rounded-full text-[11px]"
+            onClick={stopTimer}
+          >
+            Stop
+          </button>
+          <button
+            className="bg-green-400 text-white w-full px-2 py-1 mx-auto rounded-full text-[11px]"
             onClick={() => startTimer(5)}
           >
             Short Break
           </button>
           <button
-            className="bg-green-700 text-white  px-2 py-1  w-18 mx-auto rounded-full text-[11px]"
+            className="bg-green-700 text-white w-full px-2 py-1 mx-auto rounded-full text-[11px]"
             onClick={() => startTimer(15)}
           >
             Long Break
-          </button>
-          <button
-            className="bg-red-500 text-white  px-2 py-1  w-18 mx-auto rounded-full text-[11px]"
-            onClick={stopTimer}
-          >
-            Stop
           </button>
         </div>
       </div>
