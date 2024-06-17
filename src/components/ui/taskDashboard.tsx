@@ -14,7 +14,7 @@ interface Props {
 
 export default function TaskDashboard({task, date}: Props) {
     return (
-        <div className="flex bg-white border-b-[1px] border-b-[#dee1ec] p-2 pr-2 shadow-sm pl-2 justify-between items-center "> 
+        <div className="flex bg-white border-b-[1px] border-b-[#dee1ec] px-2 py-1 shadow-sm justify-between items-center "> 
             <div className="flex gap-2">
                 <HomeToDoBtn />
                 <p className="text-[11px] font-semibold">{task}</p>
