@@ -5,7 +5,7 @@ const Pomodoro: React.FC = () => {
   const [seconds, setSeconds] = useState(0);
   const [fillerHeight, setFillerHeight] = useState(0);
   const [started, setStarted] = useState(false);
-  const [position, setPosition] = useState({ x: window.innerWidth - 260, y: 10 }); // Adjust initial x and y position here
+  const [position, setPosition] = useState({ x: '1%', y: '6%' }); // Adjust initial x and y position here
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
@@ -57,15 +57,15 @@ const Pomodoro: React.FC = () => {
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setDragging(true);
     const { clientX, clientY } = e;
-    setOffset({ x: clientX - position.x, y: clientY - position.y });
+    setOffset({ x: clientX - parseFloat(position.x), y: clientY - parseFloat(position.y) });
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (dragging) {
       const { clientX, clientY } = e;
       setPosition({
-        x: clientX - offset.x,
-        y: clientY - offset.y,
+        x: `${clientX - offset.x}px`,
+        y: `${clientY - offset.y}px`,
       });
     }
   };
@@ -79,8 +79,8 @@ const Pomodoro: React.FC = () => {
       id="pomodoro-app"
       style={{
         position: 'fixed',
-        right: `${position.x}px`, // Positioning from the right side of the screen
-        top: `${position.y}px`,
+        right: position.x,
+        top: position.y,
         zIndex: 10,
         cursor: dragging ? 'grabbing' : 'grab',
       }}
