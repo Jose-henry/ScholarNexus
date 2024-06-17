@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import VideoCard from "@/components/cards/VideoCard1";
 import { getUserByClerkId } from "@/lib/actions/user.action";
 import { Metadata } from "next";
-import Image from "next/image";
+import Image from "next/image"
 import Link from "next/link";
 
 export const metadata: Metadata = {
