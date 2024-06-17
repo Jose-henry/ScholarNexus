@@ -11,7 +11,7 @@ export default function NavBar() {
   const { userId } = useAuth();
 
   return (
-    <nav className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page max-md:hidden w-[80px] h-[100%] pt-[20px] pb-[10px] bg-white">
+    <nav className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page max-md:hidden w-[80px] h-[100%] pt-[20px] pb-[10px] bg-white border-r-[2px] border-r-[#d3d6db]">
       <div className="flex flex-col gap-[30px]">
         <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
           <Image width="32" height="32" src="/assets/logo-icon.svg" alt="logo" />
@@ -27,7 +27,7 @@ export default function NavBar() {
                 className={`relative flex justify-start gap-2 rounded-sm group ${isActive ? 'bg-[#dee1ec] rounded-sm p-[4px] hover:bg-white hover:transition-all hover:p-[6px]' : ''} hover:transition-all hover:p-[4px]`}
               >
                 <Image src={link.imgURL} alt={link.label} width={20} height={20} />
-                <p className="text-light-1 absolute text-[12px] top-[-14px] left-3 w-[70px] rounded-full text-center bg-[#eeeeee] z-10 hidden group-hover:block">
+                <p className="absolute text-[11px] font-bold top-[-14px] left-3 w-[65px] rounded-full text-center p-0.5 bg-[#eeeeee] z-10 hidden group-hover:block">
                   {link.label}
                 </p>
               </Link>
@@ -35,7 +35,8 @@ export default function NavBar() {
           })}
         </div>
       </div>
-      <div>
+      <div className="flex items-center flex-col">
+        <Image src="/assets/nav-bar-img.svg" alt="icon" height={100} width={100}></Image>
         <SignedIn>
           <SignOutButton redirectUrl="/sign-in">
             <div className="flex cursor-pointer gap-4 p-[4px] hover:bg-[#dee1ec] hover:rounded-sm hover:transition-all">

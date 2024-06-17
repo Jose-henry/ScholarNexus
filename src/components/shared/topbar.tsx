@@ -18,7 +18,7 @@ export default function TopBar(){
     }
     return(
         <header className="p-[15px] pr-[25px] flex justify-between">
-        <div className="flex w-full md:w-[400px] sm:w-[350px] h-[30px] gap-[3%] p-[1px] rounded-[3px] border border-[#e0e0e0] bg-white">
+        <div className="flex w-full md:w-[400px] sm:w-[350px] h-[30px] gap-[3%] p-[1px] rounded-[3px] bg-white">
         <Input
         isClearable
         radius="sm"
@@ -76,11 +76,13 @@ export default function TopBar(){
           </SignedIn> 
       </motion.div> 
       <div className="md:hidden flex"> 
-          <button className={'inline-flex items-center justify-center p-2 rounded-md text-black md:text-black' + (isClick ? 'focus:ring-2 focus:ring-inset focus:ring-green-500' : '')} aria-label="Menu" onClick={() => toggleMenubar()}> 
+          <button className={'inline-flex items-center justify-center p-2 rounded-md text-black md:text-black' + (isClick ? 'focus:ring-2 focus:ring-inset focus:ring-gray-600' : '')} aria-label="Menu" onClick={() => toggleMenubar()}> 
               <Bars3CenterLeftIcon className="size-6 text-dark-1 " /> 
           </button> 
       </div> 
       <div className="flex gap-4 items-center"> 
+        <Image src="/assets/time-icon.svg" alt="notification" width={20} height={20} className="hidden md:block cursor-pointer"> 
+        </Image> 
           <Image src="/assets/notification-icon.svg" alt="notification" width={20} height={20} className="hidden md:block cursor-pointer"> 
           </Image> 
           <Image src="/assets/settings-icon.svg" alt="settings" width={20} height={20} className="hidden md:block cursor-pointer"> 

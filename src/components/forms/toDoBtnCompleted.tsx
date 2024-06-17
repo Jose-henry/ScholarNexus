@@ -12,16 +12,16 @@ export default function ToDoBtn() {
       {completed ? (
         <Image
           src="/assets/circle-completed.svg"
-          width="20"
-          height="20"
+          width="16"
+          height="16"
           alt="done"
           className="cursor-pointer"
         />
       ) : (
         <Image
           src="/assets/circle.svg"
-          width="20"
-          height="20"
+          width="16"
+          height="16"
           alt="plus"
           className="cursor-pointer"
         />
