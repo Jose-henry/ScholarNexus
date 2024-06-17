@@ -36,14 +36,14 @@ export default async function Notes() {
             Create folder
           </button>
           <div className="flex gap-1 items-center ml-3">
-            <Image src="/assets/filter.svg" alt="folder" width={16} height={16} />
+            <Image src="/assets/filter.svg" alt="folder" width={14} height={14} />
             <p className="text-[13.5px] font-bold text-[#132743]">Filter by: </p>
           </div>
           <button className="text-[12.5px] underline font-semibold">Personal</button>
           <button className="text-[12.5px] underline font-semibold">School</button>
           <button className="text-[12.5px] underline font-semibold">Work</button>
         </div>
-        <div className="border-t-[1px] border-t-black pt-2">
+        <div className="border-t-[1px] border-t-black pt-2 border">
           <div className="w-fit">
             <Image src="/assets/folder-icon.svg" alt="folder" width={60} height={60} />
             <h2 className="text-[11px] font-semibold text-center">Default folder</h2>
