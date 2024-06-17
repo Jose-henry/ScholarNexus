@@ -102,6 +102,7 @@ export const metadata: Metadata = {
                     <Image width="12" height="12" src="/assets/white-bookmark.svg" alt="next"/>
                     Bookmarked
                 </Button>
+                
                 </div>
 
                 <div className="grid gap-[25px] grid-cols-3 h-[330px] overflow-y-scroll items-start p-[15px] scroll-smooth">
