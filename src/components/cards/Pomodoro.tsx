@@ -53,7 +53,7 @@ const Pomodoro: React.FC = () => {
 
   return (
     <div id="pomodoro-app" className='absolute top-0 right-0 z-10'>
-      <div className="border border-gray-800 rounded-sm w-50 mx-auto p-5 text-center bg-gray-800">
+      <div className="border border-gray-800 rounded-sm w-[200px] mx-auto p-5 text-center bg-gray-800">
         <div className="text-white text-[20px] mx-auto border-4 border-white rounded-full w-25 h-25 relative overflow-hidden">
           <div className="relative top-20 z-10">
             <span id="minutes">{toDoubleDigit(minutes)}</span>
@@ -61,31 +61,31 @@ const Pomodoro: React.FC = () => {
             <span id="seconds">{toDoubleDigit(seconds)}</span>
           </div>
           <div
-            className="absolute bottom-0 left-0 bg-green-100 w-full"
+            className="absolute bottom-0 left-0 bg-green-100 w-full text-[13px]"
             style={{ height: `${fillerHeight}px` }}
           ></div>
         </div>
         <div className="mt-5">
           <button
-            className="bg-blue-400 text-white py-2 px-4 w-24 mx-auto rounded-full mt-2"
+            className="bg-[] text-white px-2 py-1 w-[70px] mx-auto rounded-full text-[11px]"
             onClick={() => startTimer(25)}
           >
             Start
           </button>
           <button
-            className="bg-green-400 text-white py-2 px-4 w-24 mx-auto rounded-full mt-2"
+            className="bg-green-400 text-white p-2 w-18 mx-auto rounded-full text-[11px]"
             onClick={() => startTimer(5)}
           >
             Short Break
           </button>
           <button
-            className="bg-green-700 text-white py-2 px-4 w-24 mx-auto rounded-full mt-2"
+            className="bg-green-700 text-white p-2 w-18 mx-auto rounded-full text-[11px]"
             onClick={() => startTimer(15)}
           >
             Long Break
           </button>
           <button
-            className="bg-red-500 text-white py-2 px-4 w-24 mx-auto rounded-full mt-2"
+            className="bg-red-500 text-white p-2 w-18 mx-auto rounded-full text-[11px]"
             onClick={stopTimer}
           >
             Stop
