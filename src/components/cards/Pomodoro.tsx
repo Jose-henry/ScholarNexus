@@ -5,7 +5,7 @@ const Pomodoro: React.FC = () => {
   const [seconds, setSeconds] = useState(0);
   const [fillerHeight, setFillerHeight] = useState(0);
   const [started, setStarted] = useState(false);
-  const [position, setPosition] = useState({ x: 20, y: 0 }); // Adjust initial x position here
+  const [position, setPosition] = useState({ x: window.innerWidth - 260, y: 10 }); // Adjust initial x and y position here
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
@@ -77,8 +77,13 @@ const Pomodoro: React.FC = () => {
   return (
     <div
       id="pomodoro-app"
-      className='fixed top-10 right-0 z-10'
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      style={{
+        position: 'fixed',
+        right: `${position.x}px`, // Positioning from the right side of the screen
+        top: `${position.y}px`,
+        zIndex: 10,
+        cursor: dragging ? 'grabbing' : 'grab',
+      }}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
