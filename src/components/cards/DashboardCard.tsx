@@ -7,10 +7,7 @@ import UserWelcomeCard from "./UserWelcomeCard";
 export default function DashboardCard() {
     return (
         <div 
-        className="w-[100%] h-[100%] shadow-lg rounded-sm p-[20px] relative"
-        style={{ 
-            backgroundImage: 'linear-gradient(110.3deg, rgba(73,93,109,1) 4.3%, rgba(49,55,82,1) 96.7%)'
-        }}
+        className="w-[100%] h-[100%] shadow-lg rounded-sm p-[20px] relative bg-[#132743]"
         >
         <div className="flex gap-2">
             <Image width="25" height="25" src="/assets/dashboard-icon.svg" alt="next"/>

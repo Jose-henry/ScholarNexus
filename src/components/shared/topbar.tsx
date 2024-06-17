@@ -37,7 +37,6 @@ export default function TopBar(){
           innerWrapper: "bg-transparent",
           inputWrapper: [
             "shadow-md",
-            "shadow-[#9ba6a5]",
             "bg-default-200/50",
             "dark:bg-default/60",
             "backdrop-blur-xl",

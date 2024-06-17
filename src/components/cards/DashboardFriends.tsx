@@ -9,7 +9,7 @@ export default function DashboardFriends() {
         <div className="w-[100%] h-[200px] bg-white rounded-[2px] cursor-pointer shadow-md shadow-black p-3 flex flex-col justify-between">
             <div className="flex gap-1 items-center justify-between">
                 <div className="flex gap-1 justify-between items-center">
-                    <Image width="16" height="16" src="/assets/follow-icon.svg" alt="friend"/>
+                    <Image width="16" height="16" src="/assets/group-icon.svg" alt="friend"/>
                     <h2 className="text-[12px] text-[#070f4e] font-bold">Friend Suggestions</h2>
                 </div>
                 <Link href="/groups" aria-label="" className="underline text-[10px] hover:no-underline font-semibold">Find more</Link>

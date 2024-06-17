@@ -55,8 +55,8 @@ export const metadata: Metadata = {
                     radius="full" 
                     className="w-[80px] font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1 bg-[#142d4c]"
                 >
-                    <Image width="12" height="12" src="/assets/all-icon.svg" alt="next"/>
-                    All
+                    <Image width="12" height="12" src="/assets/articles-icon.svg" alt="srticle"/>
+                    Articles
                 </Button>
                 <Button 
                     variant="light" 
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
                     radius="full" 
                     className="w-fit font-bold text-white text-[12px] shadow-lg flex items-center justify-center gap-1 bg-[#142d4c]"
                 >
-                    <Image width="12" height="12" src="/assets/articles-icon.svg" alt="next"/>
-                    Articles
+                    <Image width="12" height="12" src="/assets/book-icon.svg" alt="books"/>
+                    Books
                 </Button>
                 <Button 
                     variant="light" 

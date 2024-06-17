@@ -14,6 +14,7 @@ export const sidebarLinks = [
       route: "/tasks",
       label: "To-Do",
     },
+
     {
       imgURL: "/assets/question-icon.svg",
       route: "/questions",
@@ -28,6 +29,11 @@ export const sidebarLinks = [
       imgURL: "/assets/group-icon.svg",
       route: "/groups",
       label: "Groups",
+    },
+    {
+      imgURL: "/assets/game-icon.svg",
+      route: "/games",
+      label: "Games",
     },
   ];
   
