@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     const bookCovers = await getBookCovers(userInfo);
 
     //fetching quotes
-    const quotes = await getQuotes()
+    const quotes = await getQuotes();
     //console.log(quotes)
       
 
