@@ -1,7 +1,7 @@
 "use server";
 
 import prisma from "@/utils/connect";
-import { revalidatePath } from "next/cache";
+import { revalidatePath } from "next/cache"
 
 interface Params {
     userId: string;
