@@ -4,7 +4,7 @@ import "../globals.css"
 import {
   ClerkProvider
 } from '@clerk/nextjs';
-import NavBar from "@/components/shared/NavBar";
+import NavBar from "@/components/shared/NavBar"
 import TopBar from "@/components/shared/topbar";
 import BottomBar from "@/components/shared/bottombar";
 import { Metadata } from "next";
