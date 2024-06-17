@@ -13,7 +13,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import getNews from "@/lib/actions/news.action";
 import getYoutube from "@/lib/actions/youtube.action";
-import getBooks, { getBookCovers } from "@/lib/actions/book.action";
+import { getBooks, getBookCovers } from "@/lib/actions/book.action";
 import getQuotes from "@/lib/actions/quote.action";
 
 
