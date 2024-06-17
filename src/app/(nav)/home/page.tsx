@@ -19,7 +19,7 @@ import getQuotes from "@/lib/actions/quote.action";
 
 
 // import ThreadCard from "@/components/cards/ThreadCard";
-// import VideoCard from "@/components/cards/VideoCard";
+// import VideoCard from "@/components/cards/VideoCard
 // import DashboardCard from "@/components/cards/DashboardCard";
 
 
