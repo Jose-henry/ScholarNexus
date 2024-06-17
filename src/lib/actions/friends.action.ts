@@ -22,4 +22,4 @@ export async function upsertFriend({
   blocked = false,
 }: FriendParams): Promise<void> {
     
-}
+};
