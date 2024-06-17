@@ -25,7 +25,7 @@ export default async function Task() {
     <div className="h-full flex flex-col gap-7 pr-5 pt-5">
       <AnalyticsCard/>
       <div className="flex flex-col gap-4">
-        <button className="self-start size-sm border-0 shadow-md text-[12px] bg-[#142d4c] px-2 py-1 text-white font-bold p-1 rounded-full flex items-center gap-1">
+        <button className="self-start size-sm border-0 shadow-md text-[12px] bg-[#142d4c] px-2 py-1 hover:bg-[#497285] active:bg-[#142d4c] text-white font-bold p-1 rounded-full flex items-center gap-1">
           <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
           Add Task
         </button>
