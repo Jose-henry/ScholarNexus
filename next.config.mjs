@@ -14,6 +14,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "cdn.vox-cdn.com",
+      },
+      {
+        protocol: "https",
         hostname: "images.clerk.dev",
       },
       {

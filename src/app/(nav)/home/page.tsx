@@ -13,11 +13,14 @@ import getNews from "@/lib/actions/news.action";
 import getYoutube from "@/lib/actions/youtube.action";
 import { getBooks, getBookCovers } from "@/lib/actions/book.action"
 import getQuotes from "@/lib/actions/quote.action";
+import { customLoader } from "@/utils/imageCustom";
+
 
 
 
 export const metadata: Metadata = {
   title:"Home" }
+
 
   export default async function Home() {    
 
@@ -46,10 +49,6 @@ export const metadata: Metadata = {
     //fetching quotes
     const quotes = await getQuotes();
     //console.log(quotes)
-
-        
-        
-        
       
 
 
@@ -109,13 +108,16 @@ export const metadata: Metadata = {
                     {news.map((item: any, index: number) => (
                         <ThreadCard1
                         key={index}
-                        imageUrl={item.urlToImage}
+                        imageUrl={item.urlToImage ? item.urlToImage : "/pic1.jpg"}
                         w={5000}
                         h={2000}
                         link={item.url}
                         title={item.title}
                         description={item.description}
-                        />
+                        loader={customLoader}
+                      />
+                      
+                      
                     ))}
                     </div>
 

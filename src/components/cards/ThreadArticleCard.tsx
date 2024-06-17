@@ -9,9 +9,10 @@ interface Props {
     link: string;
     title: string;
     description: string;
+    loader: any
 };
 
-export default function ThreadCard1({ imageUrl, w, h, link, title, description }: Props) {
+export default function ThreadCard1({ imageUrl, w, h, link, title, description, loader }: Props) {
     return (
         <div className="bg-white shadow-md shadow-slate-600 p-[12px] rounded-sm grid gap-[10px] justify-between hover:shadow-lg hover:shadow-slate-700 transition duration-200 " style={{ gridTemplateColumns: "1fr"}}>
             <div className="h-[150px] cursor-pointer">
@@ -20,8 +21,10 @@ export default function ThreadCard1({ imageUrl, w, h, link, title, description }
                 alt=""  
                 width={w} 
                 height={h}  
-                placeholder="blur" 
                 className="h-full w-full object-cover rounded-sm"
+                layout="responsive"
+                loader={loader}
+                unoptimized// And this line
                 
             />
             </div>
