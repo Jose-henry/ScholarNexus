@@ -27,27 +27,4 @@ interface ToDoParams {
     priority,
     userId,
   }: ToDoParams): Promise<void> {
-    try {
-      const todo = await prisma.toDo.upsert({
-        where: { userId: userId },
-        update: {
-          title,
-          description,
-          deadline,
-          completed,
-          priority,
-        },
-        create: {
-          title,
-          description,
-          deadline,
-          completed,
-          priority,
-          userId,
-        },
-      });
-      // Handle success, e.g., return todo or send a success response
-    } catch (error: any) {
-      throw new Error(`Error creating or updating ToDo: ${error.message}`);
-    }
   }
