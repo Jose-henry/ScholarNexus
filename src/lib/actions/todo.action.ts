@@ -11,6 +11,7 @@ interface ToDoParams {
   completed: boolean;
   priority?: string;
   userId: string;
+  path: string;
 }
 
 export async function upsertToDo({
@@ -20,6 +21,7 @@ export async function upsertToDo({
   completed,
   priority,
   userId,
+  path,
 }: ToDoParams): Promise<void> {
   try {
     // Check if a ToDo with the given userId exists
@@ -54,6 +56,9 @@ export async function upsertToDo({
           createdAt: new Date(), // Set the created date to now
         },
       });
+    }
+    if (path === "/profile/edit" || path === "/tasks") {
+        revalidatePath(path);
     }
     // Handle success, e.g., return todo or send a success response
   } catch (error: any) {
