@@ -53,7 +53,7 @@ const Pomodoro: React.FC = () => {
 
   return (
     <div id="pomodoro-app" className='fixed top-10 right-0 z-10'>
-      <div className="border border-gray-800 rounded-sm w-[200px] mx-auto p-5 text-center bg-gray-800">
+      <div className="border border-gray-800 rounded-sm w-[220px] mx-auto p-5 text-center bg-gray-800">
       <div className="text-white text-[20px] mx-auto border-4 border-white rounded-full shadow-sm shadow-white w-[100px] h-[100px] relative flex items-center justify-center overflow-hidden">
         <div className="z-10">
             <span id="minutes">{toDoubleDigit(minutes)}</span>
@@ -65,7 +65,7 @@ const Pomodoro: React.FC = () => {
             style={{ height: `${fillerHeight}px` }}
         ></div>
         </div>
-        <div className="mt-5 w-[150px] grid grid-cols-2 gap-2">
+        <div className="mt-5 w-[180px] grid grid-cols-2 gap-2">
           <button
             className="bg-blue-400 text-white px-2 py-1 w-full mx-auto rounded-full text-[11px]"
             onClick={() => startTimer(25)}
