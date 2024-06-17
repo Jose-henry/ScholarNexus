@@ -33,9 +33,9 @@ export default function ThreadCard1({ imageUrl, w, h, link, title, description, 
                 <p className="text-left text-[12px] text-black overflow-hidden overflow-ellipsis whitespace-nowrap">{description}</p>
             </div>
             <div className="flex gap-1 justify-end">
-                <Image src="/assets/filled-bookmark-icon.svg" alt="" width={18} height={18} className="cursor-pointer"></Image>
+                <Image src="/assets/filled-bookmark-icon.svg" alt="" width={16} height={16} className="cursor-pointer"></Image>
                 <Link href={link} className="cursor-pointer">
-                    <Image src="/assets/external-link.svg" alt="" width={18} height={18}></Image>
+                    <Image src="/assets/external-link.svg" alt="" width={16} height={16}></Image>
                 </Link>
             </div>
         </div>
