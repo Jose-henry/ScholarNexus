@@ -8,7 +8,7 @@ import NavBar from "@/components/shared/NavBar"
 import TopBar from "@/components/shared/topbar";
 import BottomBar from "@/components/shared/bottombar";
 import { Metadata } from "next";
-import Image from "next/image";
+import Image from "next/image"
 
 const nunito = Nunito({ 
   subsets: ["latin"],
