@@ -36,7 +36,6 @@ export default async function Notes() {
             <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
             Create folder
           </button>
-          
           <div className="flex gap-1 items-center ml-3">
             <Image src="/assets/filter.svg" alt="folder" width={14} height={14} />
             <p className="text-[13.5px] font-bold text-[#132743]">Filter by: </p>
