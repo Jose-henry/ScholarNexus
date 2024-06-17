@@ -9,14 +9,17 @@ import { getUserByClerkId } from "@/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "@nextui-org/button";
 import { Metadata } from "next";
-import Image from "next/image";
+import Image from "next/image"
 import { redirect } from "next/navigation";
 import getNews from "@/lib/actions/news.action";
+import getYoutube from "@/lib/actions/youtube.action";
+import { getBooks, getBookCovers } from "@/lib/actions/book.action"
+import getQuotes from "@/lib/actions/quote.action";
 
 
 
 // import ThreadCard from "@/components/cards/ThreadCard";
-// import VideoCard from "@/components/cards/VideoCard";
+// import VideoCard from "@/components/cards/VideoCard
 // import DashboardCard from "@/components/cards/DashboardCard";
 
 
@@ -36,8 +39,21 @@ export const metadata: Metadata = {
 
     //fetching news based on interest
     const news = await getNews(userInfo);
-    console.log(news)
-    console.log(userInfo?.interests)
+    //console.log(news)
+
+    //fetching youtube based on interest
+    const youtube = await getYoutube(userInfo);
+    //console.log(youtube)
+
+    //fetching books based on interest
+    const books = await getBooks(userInfo);
+    //console.log(books)
+    const bookCovers = await getBookCovers(userInfo);
+
+    //fetching quotes
+    const quotes = await getQuotes();
+    //console.log(quotes)
+
         
         
         
@@ -45,7 +61,7 @@ export const metadata: Metadata = {
 
 
     return (
-        <div className="w-[100%] grid h-full gap-[1%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
+        <div className="w-[100%] grid h-full  gap-[1%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
             <div className="h-full flex flex-col gap-[30px]">
                 <VideoCard />
                 <div className="flex gap-[10px] border-t-[1px] border-t-[#63686e] pt-3">
