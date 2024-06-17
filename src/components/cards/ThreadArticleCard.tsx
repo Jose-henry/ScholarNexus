@@ -30,7 +30,7 @@ export default function ThreadCard1({ imageUrl, w, h, link, title, description, 
             </div>
 
 
-            <div className="text-neutral-600 hover:translate-y-2 transition duration-200">
+            <div className="text-neutral-600 hover:translate-y-2 transition duration-200 h-[50px] border border-black overflow-ellipsis">
             <h2 className="font-extrabold text-[#142d4c] text-[14px]">{title}</h2>
             <p className="text-left text-[12px] text-black">{description}</p>
             </div>
