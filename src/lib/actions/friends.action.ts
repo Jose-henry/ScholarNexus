@@ -54,5 +54,30 @@ interface Params {
       throw new Error(`Error creating or updating friend: ${error.message}`);
     }
   }
-  
+
+
+  export async function getFriends(userId: string): Promise<any> {
+    try {
+      const friends = await prisma.friend.findMany({
+        where: { userId: userId },
+      });
+      return friends;
+    } catch (error: any) {
+      throw new Error(`Error getting friends: ${error.message}`);
+    }
+  }
+
+
+export async function deleteFriend(id: string, path: string): Promise<void> {
+    try {
+      // Delete the friend
+      await prisma.friend.delete({ where: { id } });
+      if (path === "/home" || path === "/groups") {
+        revalidatePath(path);
+      }
+      // Handle success, e.g., send a success response
+    } catch (error: any) {
+      throw new Error(`Error deleting friend: ${error.message}`);
+    }
+  }
   

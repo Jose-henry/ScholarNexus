@@ -65,3 +65,30 @@ export async function upsertToDo({
     throw new Error(`Error creating or updating ToDo: ${error.message}`);
   }
 }
+
+
+
+export async function deleteToDo(id: string, path: string): Promise<void> {
+  try {
+    // Delete the ToDo
+    await prisma.toDo.delete({ where: { id } });
+    if (path === "/home" ||path === "/tasks") {
+        revalidatePath(path);
+    }
+    // Handle success, e.g., send a success response
+  } catch (error: any) {
+    throw new Error(`Error deleting ToDo: ${error.message}`);
+  }
+}
+
+
+export async function getToDos(userId: string): Promise<any> {
+  try {
+    const toDos = await prisma.toDo.findMany({
+      where: { userId: userId },
+    });
+    return toDos;
+  } catch (error: any) {
+    throw new Error(`Error getting ToDos: ${error.message}`);
+  }
+}
