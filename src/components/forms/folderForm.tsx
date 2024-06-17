@@ -58,7 +58,7 @@ interface Props{
   };
   btnTitle: string;
 }
-export function ProfileForm ({user, btnTitle}: Props) {
+export function FolderForm ({user, btnTitle}: Props) {
   const [isLoading, setIsLoading] = useState(false); // 1. Define the state
 
   const router = useRouter();
