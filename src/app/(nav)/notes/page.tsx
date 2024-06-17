@@ -5,7 +5,7 @@ import { getUserByClerkId } from "@/lib/actions/user.action";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FolderForm } from "@/components/forms/folderForm";
+import { FolderForm } from "@/components/forms/folderForm"
 
 export const metadata: Metadata = {
   title: "Notes",
