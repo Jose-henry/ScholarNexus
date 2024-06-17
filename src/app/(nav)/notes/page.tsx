@@ -43,7 +43,7 @@ export default async function Notes() {
           <button className="text-[12.5px] underline font-semibold">School</button>
           <button className="text-[12.5px] underline font-semibold">Work</button>
         </div>
-        <div className="border-t-[1px] border-t-black pt-2 border">
+        <div className="border-t-[1px] border-t-black pt-2 h-[450px] overflow-y-scroll">
           <div className="w-fit">
             <Image src="/assets/folder-icon.svg" alt="folder" width={60} height={60} />
             <h2 className="text-[11px] font-semibold text-center">Default folder</h2>
