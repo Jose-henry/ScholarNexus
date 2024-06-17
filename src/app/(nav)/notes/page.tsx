@@ -30,7 +30,10 @@ export default async function Notes() {
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
-          <button className="text-[12px] font-bold bg-[#132743] text-white px-2 py-1 shadow-md rounded-full">Create folder</button>
+          <button className="text-[12px] font-bold bg-[#132743] text-white px-2 py-1 shadow-md rounded-full flex items-center gap-1">
+            <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
+            Create folder
+          </button>
         </div>
         <div className="border-t-[1px] border-t-black pt-2">
           <div className="w-fit">
