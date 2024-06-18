@@ -38,7 +38,7 @@ export default function NameCard({userName, firstName, lastName, middleName, ima
                         </div>
                     </div>
                     <div className="flex gap-2 items-center">
-                        <Image src="" alt="" height={20} width={20}></Image>
+                        <Image src="/assets/email-icon.svg" alt="" height={18} width={18}>: </Image>
                         <p>{email}</p>
                     </div>
                 </div>
