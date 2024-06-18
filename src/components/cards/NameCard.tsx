@@ -15,10 +15,10 @@ interface Props {
 
 export default function NameCard({userName, firstName, lastName, middleName, image}: Props) {
     return (
-        <div className="rounded-sm bg-white shadow-md">
-            <h2 className="font-bold text-[13px]">Bio Data</h2>
-            <div className="p-4 flex items-center gap-3">
-                <div className="w-[150px] h-[150px] rounded-full bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${image})` }}>
+        <div className="rounded-sm bg-white shadow-md p-4 flex flex-col gap-2">
+            <h2 className="font-bold text-[15px]">Biodata</h2>
+            <div className="flex items-center gap-3">
+                <div className="w-[130px] h-[130px] rounded-full bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${image})` }}>
                 </div>
                 <div>
                     <h2 className="text-[#142d4c] font-extrabold text-[30px]">{firstName} ({middleName}) {lastName}</h2>
