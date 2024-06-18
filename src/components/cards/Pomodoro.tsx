@@ -110,7 +110,7 @@ const Pomodoro: React.FC = () => {
             <span id="seconds">{toDoubleDigit(seconds)}</span>
           </div>
           <div
-            className="absolute bottom-0 left-0 bg-green-100 w-full"
+            className="absolute bottom-0 left-0 bg-[#d5def5] w-full"
             style={{ height: `${fillerHeight}px` }}
           ></div>
         </div>
