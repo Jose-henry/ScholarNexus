@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid';
 import { SignOutButton, SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
@@ -8,10 +8,17 @@ import { Input } from "@nextui-org/input";
 import React, { useState } from "react";
 import Link from 'next/link';
 import Pomodoro from '../cards/Pomodoro';
+
 export default function TopBar() {
   const [isClick, setisClick] = useState(false);
+  const [showPomodoro, setShowPomodoro] = useState(false);
+
   const toggleMenubar = () => {
     setisClick(!isClick);
+  };
+
+  const togglePomodoro = () => {
+    setShowPomodoro(!showPomodoro);
   };
 
   return (
@@ -79,8 +86,8 @@ export default function TopBar() {
           </button>
         </div>
         <div className="flex gap-4 items-center">
-          <Image src="/assets/time-icon.svg" alt="time" width={20} height={20} className="hidden md:block cursor-pointer" />
-          <Pomodoro />
+          <Image src="/assets/time-icon.svg" alt="time" width={20} height={20} className="hidden md:block cursor-pointer" onClick={togglePomodoro} />
+          {showPomodoro && <Pomodoro />}
           <Image src="/assets/notification-icon.svg" alt="notification" width={20} height={20} className="hidden md:block cursor-pointer" />
           <Image src="/assets/settings-icon.svg" alt="settings" width={20} height={20} className="hidden md:block cursor-pointer" />
           <Link href="/profile" aria-label="">

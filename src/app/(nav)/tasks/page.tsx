@@ -34,9 +34,9 @@ export default async function Task() {
             <Image src="/assets/filter.svg" alt="folder" width={14} height={14} />
             <p className="text-[13.5px] font-bold text-[#132743]">Filter by: </p>
           </div>
-          <button className="text-[12.5px] underline font-semibold hover:no-underline">Submission</button>
-          <button className="text-[12.5px] underline font-semibold hover:no-underline">Reading</button>
-          <button className="text-[12.5px] underline font-semibold hover:no-underline">Exam/Test</button>
+          <button className="text-[12.5px] underline font-semibold hover:no-underline">Label</button>
+          <button className="text-[12.5px] underline font-semibold hover:no-underline">Date</button>
+          <button className="text-[12.5px] underline font-semibold hover:no-underline">Priority</button>
         </div>
         <div className="h-[365px] grid grid-cols-2 gap-4">
           <div className="flex flex-col h-full overflow-y-scroll p-0.5">
