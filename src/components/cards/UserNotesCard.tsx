@@ -12,7 +12,7 @@ interface Props {
     date: any;
 }
 
-export default function NameCard({task, date}: Props) {
+export default function UserNotesCard({task, date}: Props) {
     return (
         <div className="flex bg-white border-b-[1px] border-b-[#dee1ec] px-2 py-1 shadow-sm justify-between items-center "> 
             <div className="flex gap-2">
