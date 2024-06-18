@@ -1,3 +1,4 @@
+import EducationCard from "@/components/cards/EducationCard";
 import JobCard from "@/components/cards/JobCard";
 import NameCard from "@/components/cards/NameCard";
 import UserNotesCard from "@/components/cards/UserNotesCard";
@@ -20,7 +21,7 @@ export default async function Profile() {
       <div className="w-full h-full pr-5 grid grid-cols-2 pb-3 gap-5 pt-2">
         <div className="grid grid-rows-3 gap-3">
           <NameCard userName="foguibe" firstName="Fortune" middleName="Oluomachukwu" lastName="Oguibe" image="/assets/profile-pic.jpg" email="foguibe@gmail.com" />
-          <div className="rounded-sm bg-white shadow-md"></div>
+          <EducationCard programme="Computer science" school="Covenant University" level="400"/>
           <div className="rounded-sm bg-white shadow-md"></div>
         </div>
         <div className="grid grid-rows-2 gap-3">
