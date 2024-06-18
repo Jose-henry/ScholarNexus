@@ -28,9 +28,9 @@ export default function ThreadCard1({ imageUrl, w, h, link, title, description, 
                 />
             </div>
 
-            <div className="text-neutral-600 hover:translate-y-2 transition duration-200 h-[80px] overflow-hidden">
-                <h2 className="font-extrabold text-[#142d4c] text-[14px] truncate">{title}</h2>
-                <p className="text-left text-[12px] text-black overflow-hidden overflow-ellipsis whitespace-nowrap">{description}</p>
+            <div className="text-neutral-600 hover:translate-y-2 transition duration-200">
+                <h2 className="font-extrabold text-[#142d4c] text-[14px]">{title}</h2>
+                <p className="text-left text-[12px] text-black">{description}</p>
             </div>
             <div className="flex gap-1 justify-end">
                 <Image src="/assets/filled-bookmark-icon.svg" alt="" width={16} height={16} className="cursor-pointer"></Image>

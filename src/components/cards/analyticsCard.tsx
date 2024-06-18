@@ -6,7 +6,7 @@ export default function AnalyticsCard() {
     return (
         <div className="w-[100%] h-[250px] grid grid-cols-3 gap-5"> 
             <div className="shadow-sm flex justify-between items-center rounded-sm bg-[#132743]">
-                <Image width="250" height="250" src="/assets/task-illustration.svg" alt="health"/>
+                <Image width="150" height="250" src="/assets/task-illustration.svg" alt="task"/>
                 <div className="px-2">
                     <div>
                         <h2 className="font-bold mb-2 text-center text-white">Keep all your tasks organized🎉</h2>

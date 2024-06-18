@@ -25,9 +25,9 @@ export default function ThreadCard1({ imageUrl, w, h, blurDataURL }: Props) {
             </div>
 
 
-            <div className="text-neutral-600 hover:translate-y-2 transition duration-200  h-[50px] overflow-hidden">
-            <h2 className="font-extrabold text-[#142d4c] text-[14px] truncate">The Dawn of Innovation</h2>
-            <p className="text-left text-[12px] text-black overflow-hidden overflow-ellipsis whitespace-nowrap">Explore the birth of groundbreaking ideas and inventions in the phenomenal world of tech!</p>
+            <div className="text-neutral-600 hover:translate-y-2 transition duration-200">
+            <h2 className="font-extrabold text-[#142d4c] text-[14px]">The Dawn of Innovation</h2>
+            <p className="text-left text-[12px] text-black">Explore the birth of groundbreaking ideas and inventions in the phenomenal world of tech!</p>
             </div>
             <Image src="/assets/filled-bookmark-icon.svg" alt="" width={16} height={16} className="justify-self-end cursor-pointer"></Image>
         </div>
