@@ -22,8 +22,8 @@ export default async function Profile() {
           <div className="rounded-sm bg-white shadow-md"></div>
         </div>
         <div className="grid grid-rows-2 gap-3">
-          <div className="rounded-sm bg-white shadow-md"></div>
-          <div className="rounded-sm bg-white shadow-md"></div>
+          <div className="rounded-sm bg-white shadow-md border border-[#d3d6db]"></div>
+          <div className="rounded-sm bg-white shadow-md border boder-[#d3d6db]"></div>
         </div>
       </div>
   );

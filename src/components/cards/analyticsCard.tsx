@@ -15,8 +15,8 @@ export default function AnalyticsCard() {
                     <p className="text-[13px] mt-2 font-bold text-center text-white">~ Laura Leist</p>
                 </div>
             </div>
-            <div className="shadow-sm bg-white rounded-sm"></div>
-            <div className="shadow-sm bg-white rounded-sm"></div>
+            <div className="shadow-md bg-white rounded-sm"></div>
+            <div className="shadow-md bg-white rounded-sm"></div>
         </div>
     );
 }
