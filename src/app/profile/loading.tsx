@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import CustomizedProgressBars from '../(nav)/loadingComponent';
+import CustomizedProgressBars from '../../components/ui/loadingComponent';
 
 
 export default function Loading() {

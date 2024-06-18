@@ -51,14 +51,14 @@ import { folderValidation } from "@/lib/validations/folder"
 
 
 interface Props{
-  user: {
+  folder: {
      folderName: string;
      category: string;
 
   };
   btnTitle: string;
 }
-export function FolderForm ({user, btnTitle}: Props) {
+export function FolderForm ({folder, btnTitle}: Props) {
   const [isLoading, setIsLoading] = useState(false); // 1. Define the state
 
   const router = useRouter();
@@ -69,7 +69,7 @@ export function FolderForm ({user, btnTitle}: Props) {
   const form =useForm({
     resolver:  zodResolver(folderValidation),
     defaultValues: {
-        foldername: user?.folderName || "",
+        foldername: folder?.folderName || "",
     }
 })
   
@@ -85,7 +85,7 @@ export function FolderForm ({user, btnTitle}: Props) {
       setIsLoading(true); // Optional loading state
       await UpsertFolder({
         folderName: values.foldername,
-        category: user?.category
+        category: folder?.category
       });
       if(pathname === '/profile/edit'){
         router.back();

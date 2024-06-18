@@ -2,6 +2,7 @@ import Image from "next/image";
 import DashboardFriends from "./DashboardFriends";
 import DashboardTask from "./DashboardTask";
 import UserWelcomeCard from "./UserWelcomeCard";
+import { Suspense } from "react";
 
 
 export default function DashboardCard() {
@@ -14,11 +15,16 @@ export default function DashboardCard() {
             <h2 className="font-bold text-[#eef2e2] text-[14px]">Dashboard</h2>
         </div>
         <div className="h-[97%] flex flex-col justify-between w-[100%] pt-[10px] pb-[10px]">
-            <UserWelcomeCard />
-            <DashboardTask />
-            <DashboardFriends />
-        </div>
-        </div>
-
-    );
+        <Suspense fallback={<div>Loading...</div>}>
+          <UserWelcomeCard />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <DashboardTask />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <DashboardFriends />
+        </Suspense>
+      </div>
+    </div>
+  );
 }

@@ -47,12 +47,13 @@ export default function RootLayout({
             </div>
           </div>
           {/* Show message on md and below */}
-          <div className="xl:hidden flex flex-col gap-3 justify-center items-center h-screen bg-black text-white">
+          <div className="flex flex-col gap-3 justify-center items-center h-screen bg-black text-white xl:hidden">
+  <Image src="/assets/eagle.svg" alt="logo" className="w-[40%] xl:w-3/4" width={30} height={30} />
+  <h2 className="text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">Display size not optimized for responsiveness. Coming Soon!!</h2>
+  <p className="text-center text-sm sm:text-base md:text-lg">Please use a larger screen</p>
+</div>
 
-          <Image src="/assets/eagle.svg" alt="logo" width={100} height={100} />
-            <h2>Display size not optimized for responsiveness. Coming Soon!!</h2>
-            <p>Please use a larger screen</p>
-          </div>
+
         </body>
       </html>
     </ClerkProvider>

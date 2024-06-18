@@ -28,7 +28,7 @@ export const sidebarLinks = [
     {
       imgURL: "/assets/group-icon.svg",
       route: "/groups",
-      label: "Groups",
+      label: "People",
     },
     {
       imgURL: "/assets/game-icon.svg",

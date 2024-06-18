@@ -70,11 +70,23 @@
     * {
       @apply border-border;
     }
-    body {
-      @apply bg-background text-foreground;
+  
+    .truncate-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     
-  }
+      body {
+        @apply bg-background text-foreground;
+      }
+    
+      /* ... other styles ... */
+    }
+        
+  
 
 
   /* Shadcn Component Styles */

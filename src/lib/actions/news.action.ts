@@ -1,53 +1,64 @@
-"use server"
+// news.actions.ts
+import NodeCache from 'node-cache';
 
+const oneWeekInSeconds = 7 * 24 * 60 * 60; // One week in seconds
+const myCache = new NodeCache({ stdTTL: oneWeekInSeconds, checkperiod: 120 });
 
-export default async function getNews(userInfo: any) {
+interface Article {
+  source: { id: string | null; name: string | null };
+  author: string | null;
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string | null;
+  publishedAt: string;
+  content: string;
+}
+
+export const getNews = async (userInfo: any, refresh: boolean = false) => {
   const interests = userInfo?.interests; // assuming interests is an array of strings
-  const apiKey = '3b955669cb7443e4bdf7ecd9a33b464a'; // replace with your actual API key
-  let articles = [];
-  let page = 1;
-  
-  while (articles.length < 9) {
-    const query = interests?.join(' OR '); // join interests with ' OR ' for the search query
-    const encodedQuery = encodeURIComponent(query);
-    const today = new Date();
-    const oneWeekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
-    const fromDate = oneWeekAgo.toISOString().split('T')[0];
-    const url = `https://newsapi.org/v2/everything?q=${encodedQuery}&from=${fromDate}&sortBy=relevancy&pageSize=100&page=${page}&apiKey=${apiKey}`;
-    
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
+  const apiKey = 'ce7e791d411a423f81a6e06e32609af7'; // replace with your actual API key
+  const cacheKey = 'news-' + interests?.join('-');
+  const cacheIndexKey = 'news-index-' + interests?.join('-');
 
-      interface Article {
-        source: { id: string | null; name: string | null };
-        author: string | null;
-        title: string;
-        description: string;
-        url: string;
-        urlToImage: string | null;
-        publishedAt: string;
-        content: string;
-      }
-      
-      // ... rest of your code ...
+  let cachedArticles = myCache.get<Article[]>(cacheKey) || [];
+  let cacheIndex = myCache.get<number>(cacheIndexKey) || 0;
 
-    const filteredArticles = data.articles.filter((article: Article) => !Object.values(article).includes('[Removed]'));
-
-// ... rest of your code ...
-
-      articles.push(...filteredArticles.slice(0, 9 - articles.length));
-      page++;
-    } catch (error) {
-      console.error(error);
-      // Handle the error here, e.g. by displaying an error message to the users
-      break;
-    }
-    
-    if (page > 10) { // Avoid too many API calls
-      break;
-    }
+  if (!cachedArticles.length) {
+    cachedArticles = await fetchArticlesFromAPI(interests, apiKey);
+    myCache.set(cacheKey, cachedArticles);
+    cacheIndex = 0;
   }
 
-  return articles.slice(0, 9); // return up to 9 valid articles
+  if (refresh) {
+    cacheIndex = cacheIndex + 12 >= cachedArticles.length ? 0 : cacheIndex + 12;
+  }
+
+  const articlesToReturn = cachedArticles.slice(cacheIndex, cacheIndex + 12);
+  myCache.set(cacheIndexKey, cacheIndex);
+
+  return articlesToReturn;
 };
+
+async function fetchArticlesFromAPI(interests: string[], apiKey: string): Promise<Article[]> {
+  const query = interests.join(' OR ');
+  const encodedQuery = encodeURIComponent(query);
+  const today = new Date();
+  const oneWeekAgo = new Date(today.getTime() - (7 * 24 * 60 * 60 * 1000));
+  const fromDate = oneWeekAgo.toISOString().split('T')[0];
+  const url = `https://newsapi.org/v2/everything?q=${encodedQuery}&from=${fromDate}&sortBy=relevancy&language=en&pageSize=100&apiKey=${apiKey}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data.articles) {
+      return data.articles.filter((article: Article) => !Object.values(article).includes('[Removed]')).slice(0, 100);
+    } else {
+      console.error('No articles found in the response');
+      return [];
+    }
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}

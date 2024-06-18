@@ -11,7 +11,6 @@ import { getUserByClerkId } from "@/lib/actions/user.action";
 
 
 
-export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
     title:"interest" };
   
