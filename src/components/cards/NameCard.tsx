@@ -15,8 +15,8 @@ interface Props {
 
 export default function NameCard({userName, firstName, lastName, middleName, image}: Props) {
     return (
-        <div className="rounded-sm bg-white shadow-md p-3 flex items-center gap-2"> 
-            <div className="w-200 h-200 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }}>
+        <div className="rounded-sm bg-white shadow-md p-4 flex items-center gap-2"> 
+            <div className="w-[150px] h-[150px] rounded-full bg-cover bg-center" style={{ backgroundImage: `url(${image})` }}>
             </div>
             <div>
                 <h2>First Name: {firstName}</h2>
