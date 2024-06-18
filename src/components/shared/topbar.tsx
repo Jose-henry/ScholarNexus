@@ -8,6 +8,7 @@ import { Input } from "@nextui-org/input";
 import React, { useState } from "react";
 import Link from 'next/link';
 import Pomodoro from '../cards/Pomodoro';
+import NotificationCard from '../cards/notificationCard';
 
 export default function TopBar() {
   const [isClick, setisClick] = useState(false);
@@ -122,6 +123,7 @@ export default function TopBar() {
               height={20}
               className="hidden md:block cursor-pointer"
             />
+            <NotificationCard/>
             <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[65px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
               Settings
             </p>
