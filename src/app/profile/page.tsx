@@ -26,7 +26,7 @@ export default async function Profile() {
           <BioCard bio="Reading is my refuge and inspiration. From classic literature to contemporary fiction, I immerse myself in diverse genres and perspectives. Books aren't just stories for me; they're gateways to understanding the world, sparking my imagination and broadening my horizons. I love engaging with fellow enthusiasts and learners. Feel free to reach out to me!"/>
         </div>
         <div className="grid grid-rows-2 gap-3">
-          <UserNotesCard/>
+          <UserNotesCard firstName="Fortune"/>
           <JobCard firstName="Fortune"/>
         </div>
       </div>
