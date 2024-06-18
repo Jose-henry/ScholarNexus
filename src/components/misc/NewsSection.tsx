@@ -6,7 +6,7 @@ import { getNews } from "@/lib/actions/news.action";
 import { customLoader } from "@/utils/imageCustom";
 import Image from "next/image";
 import VideoCard from '../cards/VideoCard';
-import DashboardCard from '../cards/DashboardCard';
+import DashboardCard from '../cards/DashboardCard'
 import { Suspense } from 'react'
 
 function NewsSection({ initialNews, userInfo }: any) {
