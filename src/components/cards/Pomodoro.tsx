@@ -96,7 +96,7 @@ const Pomodoro: React.FC = () => {
   return (
     <div
       id="pomodoro-app"
-      className="fixed z-10 w-[220px] cursor-move no-select"
+      className="fixed z-10 w-[220px] cursor-move no-select shadow-md"
       style={{ left: `${position.x}px`, top: `${position.y}px` }}
     >
       <div

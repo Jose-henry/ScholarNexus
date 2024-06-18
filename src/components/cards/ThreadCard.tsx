@@ -21,6 +21,6 @@ export default  async function ThreadCard({videoUrl}:Props) {
             <Image src="/assets/filled-bookmark-icon.svg" alt="" width={16} height={16} className=" cursor-pointer"></Image>
             <Image src="/assets/external-link.svg" alt="" width={16} height={68} className=" cursor-pointer"></Image>
             </div>
-                    </div>
+        </div>
     );
 }
