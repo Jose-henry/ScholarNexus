@@ -7,7 +7,7 @@ import { Avatar } from "@nextui-org/avatar";
 import { Input } from "@nextui-org/input";
 import React, { useState } from "react";
 import Link from 'next/link';
-import Pomodoro from '../cards/Pomodoro';
+import Pomodoro from '../cards/Pomodoro'
 
 export default function TopBar() {
   const [isClick, setisClick] = useState(false);
