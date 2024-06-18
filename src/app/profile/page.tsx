@@ -17,7 +17,7 @@ export default async function Profile() {
   return (
       <div className="w-full h-full pr-5 grid grid-cols-2 pb-3 gap-5 pt-2">
         <div className="grid grid-rows-3 gap-3">
-          <NameCard userName="foguibe" firstName="Fortune" middleName="Oluomachukwu" lastName="Oguibe" image="/assets/profile-pic.svg"/>
+          <NameCard userName="foguibe" firstName="Fortune" middleName="Oluomachukwu" lastName="Oguibe" image="/assets/profile-pic.jpg"/>
           <div className="rounded-sm bg-white shadow-md"></div>
           <div className="rounded-sm bg-white shadow-md"></div>
         </div>
