@@ -5,7 +5,7 @@ const Pomodoro: React.FC = () => {
   const [seconds, setSeconds] = useState(0);
   const [fillerHeight, setFillerHeight] = useState(0);
   const [started, setStarted] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: window.innerWidth - 230, y: 50 }); // Start 10px from right and 50px from top
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
@@ -60,39 +60,44 @@ const Pomodoro: React.FC = () => {
     setOffset({ x: clientX - position.x, y: clientY - position.y });
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (dragging) {
       const { clientX, clientY } = e;
+      const newX = clientX - offset.x;
+      const newY = clientY - offset.y;
+
+      // Ensure the new Y position is at least 20 pixels from the top
       setPosition({
-        x: clientX - offset.x,
-        y: clientY - offset.y,
+        x: newX,
+        y: newY < 20 ? 20 : newY,
       });
     }
-  };
+  }, [dragging, offset]);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setDragging(false);
-    document.removeEventListener('mousemove', handleMouseMove);
-    document.removeEventListener('mouseup', handleMouseUp);
-  };
+  }, []);
 
   useEffect(() => {
     if (dragging) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
+    } else {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
     }
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [dragging]);
+  }, [dragging, handleMouseMove, handleMouseUp]);
 
   return (
     <div
       id="pomodoro-app"
-      className='fixed top-8 right-0 z-10 w-[220px] cursor-move'
-      style={{ right: '10px', top: `${position.y}px` }}
+      className="fixed z-10 w-[220px] cursor-move no-select"
+      style={{ left: `${position.x}px`, top: `${position.y}px` }}
     >
       <div
         className="border border-gray-800 rounded-sm w-[220px] mx-auto p-5 text-center bg-gray-800 cursor-move"
