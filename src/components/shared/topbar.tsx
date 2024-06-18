@@ -1,3 +1,4 @@
+"use client"
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid';
 import Image from "next/image";
 import React, { useState } from "react";
@@ -6,12 +7,12 @@ import { Avatar } from "@nextui-org/avatar";
 import { Input } from "@nextui-org/input";
 import { motion } from 'framer-motion';
 import Pomodoro from '../cards/Pomodoro';
-import NotificationCard from '../cards/notificationCard';
+import SettingsCard from '../cards/settingsCard';
 
 export default function TopBar() {
   const [isClick, setIsClick] = useState(false);
   const [showPomodoro, setShowPomodoro] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   const toggleMenu = () => {
     setIsClick(!isClick);
@@ -21,8 +22,8 @@ export default function TopBar() {
     setShowPomodoro(!showPomodoro);
   };
 
-  const toggleNotifications = () => {
-    setShowNotifications(!showNotifications);
+  const toggleSettings = () => {
+    setShowSettings(!showSettings);
   };
 
   return (
@@ -68,7 +69,7 @@ export default function TopBar() {
       <div className='relative flex gap-[15px] items-center'>
         <motion.div className={'absolute p-[7px] mt-[12px] top-full rounded-sm md:hidden z-10 right-0 w-40 bg-[#393e46] flex text-[#eef2e2] text-[12.5px] flex-col gap-2 shadow-md' + (isClick ? '' : ' hidden')} initial={{ opacity: 0 }} animate={{ opacity: isClick ? 1 : 0 }} transition={{ duration: 0.3 }}>
           <div className="flex items-center gap-2">
-            <Image src="/assets/notification-icon.svg" alt="notification" width={18} height={18} onClick={toggleNotifications} />
+            <Image src="/assets/notification-icon.svg" alt="notification" width={18} height={18} />
             <span className='hover:underline cursor-pointer'>Notifications</span>
           </div>
           <div className="flex items-center gap-2">
@@ -105,15 +106,26 @@ export default function TopBar() {
               width={20}
               height={20}
               className="hidden md:block cursor-pointer"
-              onClick={toggleNotifications}
             />
-            {showNotifications && <NotificationCard />}
             <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
               Notifications
             </p>
           </div>
 
-          {/* Other menu items */}
+          <div className='relative group'>
+            <Image
+              src="/assets/settings-icon.svg"
+              alt="settings"
+              width={20}
+              height={20}
+              className="hidden md:block cursor-pointer"
+              onClick={toggleSettings}
+            />
+            {showSettings && <SettingsCard />}
+            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
+              Setttings
+            </p>
+          </div>
           
           <Link href="/profile" aria-label="">
             <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'>
