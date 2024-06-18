@@ -19,8 +19,8 @@ interface Article {
 export const getNews = async (userInfo: any, refresh: boolean = false) => {
   const interests = userInfo?.interests; // assuming interests is an array of strings
   const apiKey = 'ce7e791d411a423f81a6e06e32609af7'; // replace with your actual API key
-  const cacheKey = 'news-' + interests?.join('-');
-  const cacheIndexKey = 'news-index-' + interests?.join('-');
+  const cacheKey = 'news-' + (interests?.join('-') || 'default');
+  const cacheIndexKey = 'news-index-' + (interests?.join('-') || 'default');
 
   let cachedArticles = myCache.get<Article[]>(cacheKey) || [];
   let cacheIndex = myCache.get<number>(cacheIndexKey) || 0;
@@ -29,7 +29,7 @@ export const getNews = async (userInfo: any, refresh: boolean = false) => {
   const shouldRefreshCache = refresh || isCacheExpired(cacheKey);
   
   if (!cachedArticles.length || shouldRefreshCache) {
-    cachedArticles = await fetchArticlesFromAPI(interests, apiKey);
+    cachedArticles = await fetchArticlesFromAPI(interests || [], apiKey);
     myCache.set(cacheKey, cachedArticles);
     cacheIndex = 0;
   }
@@ -45,6 +45,11 @@ export const getNews = async (userInfo: any, refresh: boolean = false) => {
 };
 
 async function fetchArticlesFromAPI(interests: string[], apiKey: string): Promise<Article[]> {
+  if (!Array.isArray(interests) || interests.length === 0) {
+    console.error('Interests are not provided or are not an array');
+    return [];
+  }
+
   const query = interests.join(' OR ');
   const encodedQuery = encodeURIComponent(query);
   const today = new Date();
@@ -62,7 +67,7 @@ async function fetchArticlesFromAPI(interests: string[], apiKey: string): Promis
       return [];
     }
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching articles from API:', error);
     return [];
   }
 }
@@ -76,4 +81,3 @@ function resetCacheExpiry(cacheKey: string): void {
   myCache.del(cacheKey); // Remove current cache
   // Optionally, you can reset other related cache data or indexes here
 }
-
