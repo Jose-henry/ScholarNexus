@@ -114,13 +114,15 @@ export default function TopBar() {
           </div>
 
           <div className='relative group'>
-            <Image
-              src="/assets/notification-icon.svg"
-              alt="notification"
-              width={20}
-              height={20}
-              className="hidden md:block cursor-pointer"
-            />
+            <Link href="/notifications" aria-label="">
+              <Image
+                src="/assets/notification-icon.svg"
+                alt="notification"
+                width={20}
+                height={20}
+                className="hidden md:block cursor-pointer"
+              />
+            </Link>
             <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
               Notifications
             </p>
