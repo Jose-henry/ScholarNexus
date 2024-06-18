@@ -27,7 +27,7 @@ export default async function Profile() {
         </div>
         <div className="grid grid-rows-2 gap-3">
           <UserNotesCard/>
-          <JobCard/>
+          <JobCard firstName="Fortune"/>
         </div>
       </div>
   );

@@ -14,7 +14,7 @@ export default function JobCard({firstName}: Props) {
             <div className="flex items-center gap-0">
                 <div>
                     <Image width="17" height="17" className="mr-2 cursor-pointer" src="/assets/info.svg" alt="search" />
-                    <p>This contains jobs posted by {firstName}, including services offered and services needed.</p>
+                    <p>Explore services offered and requested by {firstName}.</p>
                 </div>
                 <h2 className="text-[14px] font-bold">Job</h2>
             </div>
