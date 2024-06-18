@@ -1,17 +1,35 @@
-"use client"
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid';
-import { SignOutButton, SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
-import { motion } from 'framer-motion';
-import { Avatar } from "@nextui-org/avatar";
-import { Input } from "@nextui-org/input";
 import React, { useState } from "react";
 import Link from 'next/link';
+import { Avatar } from "@nextui-org/avatar";
+import { Input } from "@nextui-org/input";
+import { motion } from 'framer-motion';
 import Pomodoro from '../cards/Pomodoro';
+import SettingsCard from '../cards/settingsCard';
+import { SignOutButton, SignedIn } from '@clerk/nextjs';
+
 export default function TopBar() {
-  const [isClick, setisClick] = useState(false);
-  const toggleMenubar = () => {
-    setisClick(!isClick);
+  const [isClick, setIsClick] = useState(false);
+  const [showPomodoro, setShowPomodoro] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+
+  const toggleMenu = () => {
+    setIsClick(!isClick);
+  };
+
+  const togglePomodoro = () => {
+    setShowPomodoro(!showPomodoro);
+    if (showSettings) {
+      setShowSettings(false); // Close SettingsCard if open
+    }
+  };
+
+  const toggleSettings = () => {
+    setShowSettings(!showSettings);
+    if (showPomodoro) {
+      setShowPomodoro(false); // Close Pomodoro if open
+    }
   };
 
   return (
@@ -68,21 +86,60 @@ export default function TopBar() {
             <SignOutButton>
               <div className="flex items-center gap-2">
                 <Image src="/assets/logout-icon.svg" alt="logout" width={18} height={18} />
-                <span className='hover:underline cursor-pointer'>Logout</span>
+                <span className='hover:underline'>Logout</span>
               </div>
             </SignOutButton>
           </SignedIn>
         </motion.div>
         <div className="md:hidden flex">
-          <button className={'inline-flex items-center justify-center p-2 rounded-md text-black md:text-black' + (isClick ? 'focus:ring-2 focus:ring-inset focus:ring-gray-600' : '')} aria-label="Menu" onClick={() => toggleMenubar()}>
+          <button className={'inline-flex items-center justify-center p-2 rounded-md text-black md:text-black' + (isClick ? 'focus:ring-2 focus:ring-inset focus:ring-gray-600' : '')} aria-label="Menu" onClick={toggleMenu}>
             <Bars3CenterLeftIcon className="size-6 text-dark-1 " />
           </button>
         </div>
         <div className="flex gap-4 items-center">
-          <Image src="/assets/time-icon.svg" alt="time" width={20} height={20} className="hidden md:block cursor-pointer" />
-          <Pomodoro />
-          <Image src="/assets/notification-icon.svg" alt="notification" width={20} height={20} className="hidden md:block cursor-pointer" />
-          <Image src="/assets/settings-icon.svg" alt="settings" width={20} height={20} className="hidden md:block cursor-pointer" />
+          <div className='relative group'>
+            <Image
+              src="/assets/time-icon.svg"
+              alt="time"
+              width={20}
+              height={20}
+              className="hidden md:block cursor-pointer"
+              onClick={togglePomodoro}
+            />
+            {showPomodoro && <Pomodoro />}
+            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[65px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
+              Pomodoro
+            </p>
+          </div>
+
+          <div className='relative group'>
+            <Image
+              src="/assets/notification-icon.svg"
+              alt="notification"
+              width={20}
+              height={20}
+              className="hidden md:block cursor-pointer"
+            />
+            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
+              Notifications
+            </p>
+          </div>
+
+          <div className='relative group'>
+            <Image
+              src="/assets/settings-icon.svg"
+              alt="settings"
+              width={20}
+              height={20}
+              className="hidden md:block cursor-pointer"
+              onClick={toggleSettings}
+            />
+            {showSettings && <SettingsCard />}
+            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
+              Settings
+            </p>
+          </div>
+          
           <Link href="/profile" aria-label="">
             <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'>
             </Avatar>
