@@ -13,6 +13,7 @@ interface Props {
 export default function EducationCard({programme, school, level}: Props) {
     return (
         <div> 
+            
         </div>
     );
 }
