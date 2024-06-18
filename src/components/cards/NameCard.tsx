@@ -15,14 +15,8 @@ interface Props {
 
 export default function NameCard({userName, firstName, lastName, middleName, image}: Props) {
     return (
-        <div className="rounded-sm bg-white shadow-md p-3
-        "> 
-            <Avatar
-                isBordered
-                showFallback
-                className="w-20 h-20 cursor-pointer"
-                src={image || "https://via.placeholder.com/150"}
-            />
+        <div className="rounded-sm bg-white shadow-md p-3"> 
+            <Image src={image} alt="image" width={20} height={20}></Image>
             <div>
                 <h2>First Name: {firstName}</h2>
                 <h2>Middle Name: {middleName}</h2>
