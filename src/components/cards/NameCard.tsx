@@ -15,8 +15,14 @@ interface Props {
 
 export default function NameCard({userName, firstName, lastName, middleName, image}: Props) {
     return (
-        <div className="rounded-sm bg-white shadow-md p-3"> 
-            <Image src={image} alt="image" width={20} height={20}></Image>
+        <div className="rounded-sm bg-white shadow-md p-3 flex items-center gap-2"> 
+            <Image 
+                src={image} 
+                alt="image" 
+                width={200} 
+                height={200} 
+                className="rounded-full object-cover" 
+            />
             <div>
                 <h2>First Name: {firstName}</h2>
                 <h2>Middle Name: {middleName}</h2>
@@ -24,5 +30,6 @@ export default function NameCard({userName, firstName, lastName, middleName, ima
                 <h2>Username: {userName}</h2>
             </div>
         </div>
+
     );
 }
