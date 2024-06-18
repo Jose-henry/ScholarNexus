@@ -16,7 +16,8 @@ interface Props {
 
 export default function NameCard({userName, firstName, lastName, middleName, image}: Props) {
     return (
-        <div className="border border-black w-full"> 
+        <div className="rounded-sm bg-white shadow-md p-3
+        "> 
             <Avatar showFallback isBordered radius="full" src="{image}" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'>
             </Avatar>
             <div>
