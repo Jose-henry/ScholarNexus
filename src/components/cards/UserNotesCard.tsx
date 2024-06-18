@@ -13,26 +13,38 @@ export default function UserNotesCard() {
                 <div className="">
 
                 </div>
-                <div className="bg-[#dee1ec] p-2 rounded-sm  h-[280px] overflow-y-scroll flex flex-wrap gap-3 items-start">
+                <div className="bg-[#dee1ec] p-2 rounded-sm  h-[280px] overflow-y-scroll gap-x-3 items-start">
                     <div className="w-[100px] flex flex-col items-center">
                         <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
                         <h2 className="text-[11px] font-semibold text-center w-[90%]">Default folder</h2>
                     </div>
-                    <div className="w-50 flex flex-col items-center">
+                    <div className="w-[100px] flex flex-col items-center">
                         <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
-                        <h2 className="text-[11px] font-semibold text-center">Default folder</h2>
+                        <h2 className="text-[11px] font-semibold text-center w-[90%]">Default folder</h2>
                     </div>
-                    <div className="w-50 flex flex-col items-center">
+                    <div className="w-[100px] flex flex-col items-center">
                         <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
-                        <h2 className="text-[11px] font-semibold text-center">Default folder</h2>
+                        <h2 className="text-[11px] font-semibold text-center w-[90%]">Default folder</h2>
                     </div>
-                    <div className="w-50 flex flex-col items-center">
+                    <div className="w-[100px] flex flex-col items-center">
                         <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
-                        <h2 className="text-[11px] font-semibold text-center">Default folder</h2>
+                        <h2 className="text-[11px] font-semibold text-center w-[90%]">Default folder</h2>
                     </div>
-                    <div className="w-50 flex flex-col items-center">
+                    <div className="w-[100px] flex flex-col items-center">
                         <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
-                        <h2 className="text-[11px] font-semibold text-center">Default folder</h2>
+                        <h2 className="text-[11px] font-semibold text-center w-[90%]">Default folder</h2>
+                    </div>
+                    <div className="w-[100px] flex flex-col items-center">
+                        <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
+                        <h2 className="text-[11px] font-semibold text-center w-[90%]">Default folder</h2>
+                    </div>
+                    <div className="w-[100px] flex flex-col items-center">
+                        <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
+                        <h2 className="text-[11px] font-semibold text-center w-[90%]">Default folder</h2>
+                    </div>
+                    <div className="w-[100px] flex flex-col items-center">
+                        <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
+                        <h2 className="text-[11px] font-semibold text-center w-[90%]">Default folder</h2>
                     </div>
                 </div>
             </div>
