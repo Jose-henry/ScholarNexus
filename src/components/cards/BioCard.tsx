@@ -10,7 +10,9 @@ interface Props {
 
 export default function BioCard({bio}: Props) {
     return (
-        <div> 
+        <div className="rounded-sm bg-white shadow-md p-4"> 
+            <h2 className="font-bold text-[15px]">About</h2>
+            <p className="pt-3">{bio}</p>
         </div>
     );
 }
