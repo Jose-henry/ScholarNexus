@@ -61,6 +61,7 @@ model Note {
 model Folder {
   id             String         @id @default(auto()) @map("_id") @db.ObjectId
   folderName     String
+  category       String
   createdAt      DateTime       @default(now())
   updatedAt      DateTime       @updatedAt
   createdBy      User           @relation(fields: [createdById], references: [id])
