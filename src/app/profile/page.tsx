@@ -14,7 +14,7 @@ export default async function Profile() {
         redirect("/onboarding");
     }
   return (
-      <div>
+      <div className="border border-black">
         <p className="text-[13px]">Profile Page</p>
       </div>
   );
