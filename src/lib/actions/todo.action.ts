@@ -3,8 +3,8 @@
 import prisma from "@/utils/connect";
 import { revalidatePath } from "next/cache";
 
-
 interface ToDoParams {
+  id?: string; // Optional if you want to allow specifying ID during update
   title: string;
   description?: string;
   deadline: Date;
@@ -15,6 +15,7 @@ interface ToDoParams {
 }
 
 export async function upsertToDo({
+  id,
   title,
   description,
   deadline,
@@ -24,16 +25,11 @@ export async function upsertToDo({
   path,
 }: ToDoParams): Promise<void> {
   try {
-    // Check if a ToDo with the given userId exists
-    const existingToDo = await prisma.toDo.findFirst({
-      where: { userId: userId },
-    });
-
     let todo;
-    if (existingToDo) {
-      // Update the existing ToDo
+    if (id) {
+      // Update existing ToDo
       todo = await prisma.toDo.update({
-        where: { id: existingToDo.id },
+        where: { id },
         data: {
           title,
           description,
@@ -44,7 +40,7 @@ export async function upsertToDo({
         },
       });
     } else {
-      // Create a new ToDo
+      // Create new ToDo
       todo = await prisma.toDo.create({
         data: {
           title,
@@ -52,40 +48,35 @@ export async function upsertToDo({
           deadline,
           completed,
           priority,
-          userId,
+          user: { connect: { id: userId } }, // Establish relation to User
           createdAt: new Date(), // Set the created date to now
         },
       });
     }
-    if (path === "/home" ||path === "/tasks") {
-        revalidatePath(path);
+
+    if (path === "/home" || path === "/tasks") {
+      revalidatePath(path);
     }
-    // Handle success, e.g., return todo or send a success response
   } catch (error: any) {
     throw new Error(`Error creating or updating ToDo: ${error.message}`);
   }
 }
 
-
-
 export async function deleteToDo(id: string, path: string): Promise<void> {
   try {
-    // Delete the ToDo
     await prisma.toDo.delete({ where: { id } });
-    if (path === "/home" ||path === "/tasks") {
-        revalidatePath(path);
+    if (path === "/home" || path === "/tasks") {
+      revalidatePath(path);
     }
-    // Handle success, e.g., send a success response
   } catch (error: any) {
     throw new Error(`Error deleting ToDo: ${error.message}`);
   }
 }
 
-
 export async function getToDos(userId: string): Promise<any> {
   try {
     const toDos = await prisma.toDo.findMany({
-      where: { userId: userId },
+      where: { userId },
     });
     return toDos;
   } catch (error: any) {

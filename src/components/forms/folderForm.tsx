@@ -42,6 +42,7 @@ import {
   CommandList,
 } from "@/components/ui/command"
 import { folderValidation } from "@/lib/validations/folder"
+import createOrUpdateFolder from "@/lib/actions/folder.action"
 
 
 
@@ -54,6 +55,7 @@ interface Props{
   folder: {
      folderName: string;
      category: string;
+     userId: string;
 
   };
   btnTitle: string;
@@ -81,20 +83,22 @@ export function FolderForm ({folder, btnTitle}: Props) {
    // 2. Define a submit handler.
    const onSubmit = async (values: z.infer<typeof folderValidation>) => {
   
-    /* }
+    
       setIsLoading(true); // Optional loading state
-      await UpsertFolder({
+      await createOrUpdateFolder({
         folderName: values.foldername,
         category: folder?.category
+        userId: folder?.userId || '',
+        path: pathname,
       });
-      if(pathname === '/profile/edit'){
+      if(pathname === '/notes/edit'){
         router.back();
     } else {
-      router.push('/onboarding/interest');
+      router.push('/notes');
     }
 
-  } */
-   }
+  }
+   
       
 
   

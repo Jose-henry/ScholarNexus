@@ -2,18 +2,42 @@
 
 import { revalidatePath } from "next/cache";
 import prisma from "@/utils/connect";
-interface props {
+
+interface Props {
     folderName: string;
     category: string;
-    path:     string
+    userId: string;
+    path: string;
 }
-export default function createFolder({
+
+export default async function createOrUpdateFolder({
     folderName,
     category,
-    path}: props) {
+    path,
+    userId
+}: Props): Promise<void> {
 
-
-
-
-    
+    try {
+        const folder = await prisma.folder.upsert({
+            where: {
+                createdById_folderName: {
+                    createdById: userId,
+                    folderName: folderName
+                }
+            },
+            update: {
+                folderName,
+                category,
+            },
+            create: {
+                folderName,
+                category,
+                createdBy: { connect: { id: userId } },
+            },
+        });
+        
+        revalidatePath(path);
+    } catch (error: any) {
+        throw new Error(`Error creating or updating folder: ${error.message}`);
+    }
 }

@@ -75,6 +75,7 @@ model Folder {
   parentFolderId String?        @db.ObjectId
 
   @@index([folderName])
+   @@unique([createdById, folderName])
 }
 
 model Collaborator {
