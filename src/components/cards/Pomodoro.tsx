@@ -60,7 +60,7 @@ const Pomodoro: React.FC = () => {
     setOffset({ x: clientX - position.x, y: clientY - position.y });
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: MouseEvent) => {
     if (dragging) {
       const { clientX, clientY } = e;
       setPosition({
@@ -72,15 +72,27 @@ const Pomodoro: React.FC = () => {
 
   const handleMouseUp = () => {
     setDragging(false);
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
   };
+
+  useEffect(() => {
+    if (dragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [dragging]);
 
   return (
     <div
       id="pomodoro-app"
       className='fixed top-10 right-0 z-10'
       style={{ left: `${position.x}px`, top: `${position.y}px` }}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
     >
       <div
         className="border border-gray-800 rounded-sm w-[220px] mx-auto p-5 text-center bg-gray-800"

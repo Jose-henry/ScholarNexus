@@ -12,7 +12,7 @@ export default function NavBar() {
 
   return (
     <nav className="flex flex-col justify-between items-center page sidebar-3 sidebar-3-page max-md:hidden w-[80px] h-[100%] pt-[20px] pb-[10px] shadow-md shadow-[#d3d6db] bg-white border-r-[1px] border-r-[#d3d6db]">
-      <div className="flex flex-col gap-[30px]">
+      <div className="flex flex-col gap-[30px] z-20">
         <Link href={'/'} aria-label="logo" className="flex items-center gap-[10px]">
           <Image width="32" height="32" src="/assets/logo-icon.svg" alt="logo" />
         </Link>
