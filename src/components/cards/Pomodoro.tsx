@@ -9,7 +9,7 @@ const Pomodoro: React.FC = () => {
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  const fillerIncrement = 60 / (minutes * 60);
+  const fillerIncrement = 90 / (minutes * 60);
 
   const startTimer = (mins: number) => {
     setMinutes(mins);
@@ -91,11 +91,11 @@ const Pomodoro: React.FC = () => {
   return (
     <div
       id="pomodoro-app"
-      className='fixed top-10 right-0 z-10'
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      className='fixed top-8 right-0 z-10 w-[220px] cursor-move'
+      style={{ right: '10px', top: `${position.y}px` }}
     >
       <div
-        className="border border-gray-800 rounded-sm w-[220px] mx-auto p-5 text-center bg-gray-800"
+        className="border border-gray-800 rounded-sm w-[220px] mx-auto p-5 text-center bg-gray-800 cursor-move"
         onMouseDown={handleMouseDown}
       >
         <div className="text-white text-[20px] font-bold mx-auto border-4 border-white rounded-full shadow-sm shadow-white w-[100px] h-[100px] relative flex items-center justify-center overflow-hidden">
