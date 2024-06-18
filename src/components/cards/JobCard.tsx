@@ -2,17 +2,12 @@
 
 import {Avatar} from 
 "@nextui-org/avatar";
-import { Button } from "@nextui-org/button";
 import Image from "next/image";
 
 interface Props {
-    userName: string;
-    firstName: string;
-    lastName: string;
-    middleName: string;
 }
 
-export default function JobCard({userName, firstName, lastName, middleName}: Props) {
+export default function JobCard() {
     return (
         <div> 
         </div>
