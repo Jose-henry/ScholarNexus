@@ -42,7 +42,7 @@ import {
   CommandList,
 } from "@/components/ui/command"
 import { folderValidation } from "@/lib/validations/folder"
-import createOrUpdateFolder from "@/lib/actions/folder.action"
+import {createOrUpdateFolder} from "@/lib/actions/folder.action"
 
 
 

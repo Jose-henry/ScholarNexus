@@ -1,3 +1,5 @@
+'use server'
+
 import { getUserByClerkId } from "@/lib/actions/user.action";
 
 
@@ -18,7 +20,7 @@ export default async function Onboarding() {
   
     const userInfo = await getUserByClerkId(User?.id);
 
-    const folders = await getFolders(userInfo?.id as string);
+    //const folders = await getFolders(userInfo?.id as string);
 
 
 
