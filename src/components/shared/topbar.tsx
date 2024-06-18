@@ -1,3 +1,4 @@
+'use client'
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid';
 import Image from "next/image";
 import React, { useState } from "react";
