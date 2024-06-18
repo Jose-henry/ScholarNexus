@@ -13,8 +13,9 @@ interface Props {
 export default async function createOrUpdateFolder({
     folderName,
     category,
+    userId,
     path,
-    userId
+    
 }: Props): Promise<void> {
 
     try {

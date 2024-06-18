@@ -87,7 +87,7 @@ export function FolderForm ({folder, btnTitle}: Props) {
       setIsLoading(true); // Optional loading state
       await createOrUpdateFolder({
         folderName: values.foldername,
-        category: folder?.category
+        category: folder?.category,
         userId: folder?.userId || '',
         path: pathname,
       });
