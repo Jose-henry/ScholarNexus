@@ -1,25 +1,28 @@
-"use client";
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid';
-import { SignOutButton, SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
-import { motion } from 'framer-motion';
-import { Avatar } from "@nextui-org/avatar";
-import { Input } from "@nextui-org/input";
 import React, { useState } from "react";
 import Link from 'next/link';
+import { Avatar } from "@nextui-org/avatar";
+import { Input } from "@nextui-org/input";
+import { motion } from 'framer-motion';
 import Pomodoro from '../cards/Pomodoro';
 import NotificationCard from '../cards/notificationCard';
 
 export default function TopBar() {
-  const [isClick, setisClick] = useState(false);
+  const [isClick, setIsClick] = useState(false);
   const [showPomodoro, setShowPomodoro] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
 
-  const toggleMenubar = () => {
-    setisClick(!isClick);
+  const toggleMenu = () => {
+    setIsClick(!isClick);
   };
 
   const togglePomodoro = () => {
     setShowPomodoro(!showPomodoro);
+  };
+
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
   };
 
   return (
@@ -65,24 +68,17 @@ export default function TopBar() {
       <div className='relative flex gap-[15px] items-center'>
         <motion.div className={'absolute p-[7px] mt-[12px] top-full rounded-sm md:hidden z-10 right-0 w-40 bg-[#393e46] flex text-[#eef2e2] text-[12.5px] flex-col gap-2 shadow-md' + (isClick ? '' : ' hidden')} initial={{ opacity: 0 }} animate={{ opacity: isClick ? 1 : 0 }} transition={{ duration: 0.3 }}>
           <div className="flex items-center gap-2">
-            <Image src="/assets/notification-icon.svg" alt="notification" width={18} height={18} />
+            <Image src="/assets/notification-icon.svg" alt="notification" width={18} height={18} onClick={toggleNotifications} />
             <span className='hover:underline cursor-pointer'>Notifications</span>
           </div>
           <div className="flex items-center gap-2">
             <Image src="/assets/settings-icon.svg" alt="settings" width={18} height={18} />
             <span className='hover:underline cursor-pointer'>Settings</span>
           </div>
-          <SignedIn>
-            <SignOutButton>
-              <div className="flex items-center gap-2">
-                <Image src="/assets/logout-icon.svg" alt="logout" width={18} height={18} />
-                <span className='hover:underline'>Logout</span>
-              </div>
-            </SignOutButton>
-          </SignedIn>
+          {/* Other menu items */}
         </motion.div>
         <div className="md:hidden flex">
-          <button className={'inline-flex items-center justify-center p-2 rounded-md text-black md:text-black' + (isClick ? 'focus:ring-2 focus:ring-inset focus:ring-gray-600' : '')} aria-label="Menu" onClick={() => toggleMenubar()}>
+          <button className={'inline-flex items-center justify-center p-2 rounded-md text-black md:text-black' + (isClick ? 'focus:ring-2 focus:ring-inset focus:ring-gray-600' : '')} aria-label="Menu" onClick={toggleMenu}>
             <Bars3CenterLeftIcon className="size-6 text-dark-1 " />
           </button>
         </div>
@@ -109,26 +105,16 @@ export default function TopBar() {
               width={20}
               height={20}
               className="hidden md:block cursor-pointer"
+              onClick={toggleNotifications}
             />
+            {showNotifications && <NotificationCard />}
             <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
               Notifications
             </p>
           </div>
 
-          <div className='relative group'>
-            <Image
-              src="/assets/settings-icon.svg"
-              alt="settings"
-              width={20}
-              height={20}
-              className="hidden md:block cursor-pointer"
-            />
-            <NotificationCard/>
-            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[65px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
-              Settings
-            </p>
-          </div>
-
+          {/* Other menu items */}
+          
           <Link href="/profile" aria-label="">
             <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'>
             </Avatar>
