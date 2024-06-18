@@ -1,7 +1,7 @@
 "use client"
 
 import { Avatar } from "@nextui-org/avatar";
-import Image from "next/image"
+import Image from "next/image";
 
 interface Props {}
 
@@ -23,7 +23,7 @@ export default function UserNotesCard() {
                     <button className="text-[12.5px] underline font-semibold hover:no-underline">School</button>
                     <button className="text-[12.5px] underline font-semibold hover:no-underline">Work</button>
                 </div>
-                <div className="border border-black p-2 rounded-sm flex-1 overflow-y-scroll">
+                <div className="bg-[#dee1ec] p-2 rounded-sm flex-1 overflow-y-scroll">
                     <div className="w-fit">
                         <Image src="/assets/folder-icon.svg" alt="folder" width={60} height={60} />
                         <h2 className="text-[11px] font-semibold text-center">Default folder</h2>
