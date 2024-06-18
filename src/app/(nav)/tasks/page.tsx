@@ -37,6 +37,7 @@ export default async function Task() {
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
+            <ComboboxDropdownMenu />
           </div>
           <div className="rounded-sm p-2 flex flex-col gap-2 h-[365px]">
             <h2 className="text-[13px] font-semibold">Completed</h2>
