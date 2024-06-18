@@ -9,7 +9,7 @@ const Pomodoro: React.FC = () => {
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  const circleHeight = 100; // Height of the circle in pixels
+  const circleHeight = 90; // Height of the circle in pixels
   const fillerIncrement = circleHeight / (minutes * 60); // Calculate the increment per second
 
   const startTimer = (mins: number) => {
