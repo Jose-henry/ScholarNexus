@@ -1,4 +1,5 @@
 // news.actions.ts
+"use server";
 import NodeCache from 'node-cache';
 
 const oneWeekInSeconds = 7 * 24 * 60 * 60; // One week in seconds
