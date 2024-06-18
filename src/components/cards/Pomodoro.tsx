@@ -5,12 +5,11 @@ const Pomodoro: React.FC = () => {
   const [seconds, setSeconds] = useState(0);
   const [fillerHeight, setFillerHeight] = useState(0);
   const [started, setStarted] = useState(false);
-  const [position, setPosition] = useState({ x: '1%', y: '6%' });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  const circleHeight = 90; // Height of the circle in pixels
-  const fillerIncrement = circleHeight / (minutes * 60); // Calculate the increment per second
+  const fillerIncrement = 60 / (minutes * 60);
 
   const startTimer = (mins: number) => {
     setMinutes(mins);
@@ -28,7 +27,7 @@ const Pomodoro: React.FC = () => {
 
   const updateDom = useCallback(() => {
     if (started) {
-      setFillerHeight((prevHeight) => prevHeight + fillerIncrement)
+      setFillerHeight((prevHeight) => prevHeight + fillerIncrement);
     }
   }, [started, fillerIncrement]);
 
@@ -58,15 +57,15 @@ const Pomodoro: React.FC = () => {
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setDragging(true);
     const { clientX, clientY } = e;
-    setOffset({ x: clientX - parseFloat(position.x), y: clientY - parseFloat(position.y) });
+    setOffset({ x: clientX - position.x, y: clientY - position.y });
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (dragging) {
       const { clientX, clientY } = e;
       setPosition({
-        x: `${clientX - offset.x}px`,
-        y: `${clientY - offset.y}px`,
+        x: clientX - offset.x,
+        y: clientY - offset.y,
       });
     }
   };
@@ -78,13 +77,8 @@ const Pomodoro: React.FC = () => {
   return (
     <div
       id="pomodoro-app"
-      style={{
-        position: 'fixed',
-        right: position.x,
-        top: position.y,
-        zIndex: 10,
-        cursor: dragging ? 'grabbing' : 'grab',
-      }}
+      className='fixed top-10 right-0 z-10'
+      style={{ left: `${position.x}px`, top: `${position.y}px` }}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
