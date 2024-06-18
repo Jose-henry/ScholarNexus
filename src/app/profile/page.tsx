@@ -5,7 +5,7 @@ import NameCard from "@/components/cards/NameCard";
 import UserNotesCard from "@/components/cards/UserNotesCard";
 import { getUserByClerkId } from "@/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
+import { redirect } from "next/navigation"
 
 
 export default async function Profile() {
