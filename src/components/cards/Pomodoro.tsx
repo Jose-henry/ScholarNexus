@@ -28,7 +28,7 @@ const Pomodoro: React.FC = () => {
 
   const updateDom = useCallback(() => {
     if (started) {
-      setFillerHeight((prevHeight) => prevHeight + fillerIncrement);
+      setFillerHeight((prevHeight) => prevHeight + fillerIncrement)
     }
   }, [started, fillerIncrement]);
 
