@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -53,8 +54,6 @@ export default function RootLayout({
   <h2 className="text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">Display size not optimized for responsiveness. Coming Soon!!</h2>
   <p className="text-center text-sm sm:text-base md:text-lg">Please use a larger screen</p>
 </div>
-
-
         </body>
       </html>
     </ClerkProvider>
