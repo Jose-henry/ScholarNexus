@@ -3,11 +3,10 @@
 import {Avatar} from 
 "@nextui-org/avatar";
 import { Button } from "@nextui-org/button";
-import { Url } from "next/dist/shared/lib/router/router";
 import Image from "next/image";
 
 interface Props {
-    image: Url;
+    image: string;
     userName: string;
     firstName: string;
     lastName: string;
@@ -18,8 +17,13 @@ export default function NameCard({userName, firstName, lastName, middleName, ima
     return (
         <div className="rounded-sm bg-white shadow-md p-3
         "> 
-            <Avatar showFallback isBordered radius="full" src="{image}" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'>
-            </Avatar>
+            <Avatar
+                isBordered
+                showFallback
+                color="secondary"
+                className="w-20 h-20 text-large mb-[10px] cursor-pointer"
+                src={image}
+            />
             <div>
                 <h2>First Name: {firstName}</h2>
                 <h2>Middle Name: {middleName}</h2>
