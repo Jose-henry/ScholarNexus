@@ -89,6 +89,7 @@ export default function TopBar() {
           <div className='relative'>
             <Image src="/assets/time-icon.svg" alt="time" width={20} height={20} className="hidden md:block cursor-pointer" onClick={togglePomodoro} />
             {showPomodoro && <Pomodoro />}
+            <p className="absolute text-[11px] text-black font-bold top-[-14px] left-[-30px] w-[65px] rounded-full text-center p-0.5 bg-[#eeeeee]">Pomodoro</p>
           </div>
           <div>
             <Image src="/assets/notification-icon.svg" alt="notification" width={20} height={20} className="hidden md:block cursor-pointer" />
