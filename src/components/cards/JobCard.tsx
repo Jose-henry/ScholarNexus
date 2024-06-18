@@ -9,7 +9,11 @@ interface Props {
 
 export default function JobCard() {
     return (
-        <div> 
+        <div className="rounded-sm bg-white shadow-sm border-[1.5px] border-[#d3d6db] p-3"> 
+            <h2 className="text-[14px] font-bold">Jobs</h2>
+            <div>
+                
+            </div>
         </div>
     );
 }

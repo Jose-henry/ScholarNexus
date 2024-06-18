@@ -17,7 +17,7 @@ interface Props {
 export default function NameCard({userName, firstName, lastName, middleName, image, email}: Props) {
     return (
         <div className="rounded-sm bg-white shadow-md p-4 flex flex-col gap-2">
-            <h2 className="text-[13px] font-bold">Profile</h2>
+            <h2 className="text-[14px] font-bold">Profile</h2>
             <div className="flex items-center gap-3">
                 <div className="w-[130px] h-[130px] rounded-full bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${image})` }}>
                 </div>
@@ -33,7 +33,7 @@ export default function NameCard({userName, firstName, lastName, middleName, ima
                     <div className="flex justify-between items-center pt-2 border-t-[1px] border-t-black mt-2">
                         <div className="flex flex-col items-center">
                             <p>0</p>
-                            <p className="font-bold">posts</p>
+                            <p className="font-bold">uploads</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <p>200</p>

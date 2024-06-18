@@ -1,4 +1,6 @@
+import JobCard from "@/components/cards/JobCard";
 import NameCard from "@/components/cards/NameCard";
+import UserNotesCard from "@/components/cards/UserNotesCard";
 import { getUserByClerkId } from "@/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
@@ -22,8 +24,8 @@ export default async function Profile() {
           <div className="rounded-sm bg-white shadow-md"></div>
         </div>
         <div className="grid grid-rows-2 gap-3">
-          <div className="rounded-sm bg-white shadow-md border border-[#d3d6db]"></div>
-          <div className="rounded-sm bg-white shadow-md border boder-[#d3d6db]"></div>
+          <UserNotesCard/>
+          <JobCard/>
         </div>
       </div>
   );
