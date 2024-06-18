@@ -29,7 +29,7 @@ export default async function Task() {
           <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
           Add Task
         </button>
-        <div className="h-[390px] grid grid-cols-2 gap-4">
+        <div className="h-[360px] grid grid-cols-2 gap-4 border border-black">
           <div className="flex flex-col h-full overflow-y-scroll p-0.5">
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
@@ -38,7 +38,7 @@ export default async function Task() {
             <ComboboxDropdownMenu />
             <ComboboxDropdownMenu />
           </div>
-          <div className="rounded-sm p-2 flex flex-col gap-2 h-[390px]">
+          <div className="rounded-sm p-2 flex flex-col gap-2 h-[360px] border border-black">
             <h2 className="text-[13px] font-semibold">Completed</h2>
             <div className=" overflow-y-scroll h-full">
               <CompletedDropdownMenu title="Your completed tasks will appear here." />

@@ -5,11 +5,12 @@ const Pomodoro: React.FC = () => {
   const [seconds, setSeconds] = useState(0);
   const [fillerHeight, setFillerHeight] = useState(0);
   const [started, setStarted] = useState(false);
-  const [position, setPosition] = useState({ x: '1%', y: '6%' }); // Adjust initial x and y position here
+  const [position, setPosition] = useState({ x: '1%', y: '6%' });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  const fillerIncrement = 200 / (minutes * 60);
+  const circleHeight = 100; // Height of the circle in pixels
+  const fillerIncrement = circleHeight / (minutes * 60); // Calculate the increment per second
 
   const startTimer = (mins: number) => {
     setMinutes(mins);

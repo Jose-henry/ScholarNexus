@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function AnalyticsCard() {
     return (
-        <div className="w-[100%] h-[200px] grid grid-cols-3 gap-5"> 
+        <div className="w-[100%] h-[250px] grid grid-cols-3 gap-5"> 
             <div className="shadow-md flex justify-between items-center rounded-sm bg-[#132743]">
-                <Image width="200" height="200" src="/assets/task-illustration.svg" alt="health"/>
+                <Image width="250" height="250" src="/assets/task-illustration.svg" alt="health"/>
                 <div className="px-2">
                     <div>
                         <h2 className="font-bold mb-2 text-center text-white">Keep all your tasks organized🎉</h2>
