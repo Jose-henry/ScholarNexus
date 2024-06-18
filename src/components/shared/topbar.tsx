@@ -108,7 +108,7 @@ export default function TopBar() {
               onClick={togglePomodoro}
             />
             {showPomodoro && <Pomodoro />}
-            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[65px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
+            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[65px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
               Pomodoro
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function TopBar() {
               height={20}
               className="hidden md:block cursor-pointer"
             />
-            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
+            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
               Notifications
             </p>
           </div>
@@ -136,7 +136,7 @@ export default function TopBar() {
               onClick={toggleSettings}
             />
             {showSettings && <SettingsCard />}
-            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#eeeeee] opacity-0 group-hover:opacity-100">
+            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
               Settings
             </p>
           </div>
