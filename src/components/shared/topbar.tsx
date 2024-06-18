@@ -7,7 +7,7 @@ import { Avatar } from "@nextui-org/avatar";
 import { Input } from "@nextui-org/input";
 import React, { useState } from "react";
 import Link from 'next/link';
-import Pomodoro from '../cards/Pomodoro'
+import Pomodoro from '../cards/Pomodoro';
 
 export default function TopBar() {
   const [isClick, setisClick] = useState(false);
@@ -86,7 +86,7 @@ export default function TopBar() {
           </button>
         </div>
         <div className="flex gap-4 items-center">
-          <div>
+          <div className='relative'>
             <Image src="/assets/time-icon.svg" alt="time" width={20} height={20} className="hidden md:block cursor-pointer" onClick={togglePomodoro} />
             {showPomodoro && <Pomodoro />}
           </div>

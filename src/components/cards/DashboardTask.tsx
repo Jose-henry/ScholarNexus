@@ -19,7 +19,7 @@ export default function DashboardTask() {
                 <TaskDashboard task="Read for exams." date="12/3/24" />
                 <TaskDashboard task="See Dr Azu and submit paperwork." date="20/3/24" />
                 <TaskDashboard task="Meet course-rep submit and col..." date="22/3/24" />
-                <TaskDashboard task="Meet course-rep submit and col..." date="22/3/24" />
+                <TaskDashboard task="Collect assignment from July." date="22/3/24" />
             </div>
         </div>
     );
