@@ -17,9 +17,9 @@ export default function EducationCard({programme, school, level}: Props) {
             <div className="flex items-center gap-4">
                 <Image src="/assets/edu-pic.svg" width={150} height={150} alt="education"></Image>
                 <div>
-                    <h2 className="text-[#142d4c] font-extrabold text-[25px] text-wrap">{school}</h2>
-                    <h2>Programme: {programme}</h2>
-                    <h2>Level: {level}</h2>
+                    <h2 className="text-[#142d4c] font-bold text-[15px]">School: <span className="text-[14px] font-semibold">{school}</span></h2>
+                    <h2 className="text-[#142d4c] font-bold text-[15px]">Programme: <span className="text-[14px] font-semibold">{programme}</span></h2>
+                    <h2 className="text-[#142d4c] font-bold text-[15px]">Level: <span className="text-[14px] font-semibold">{level}</span></h2>
                 </div>
             </div>
         </div>
