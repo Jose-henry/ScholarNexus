@@ -1,5 +1,5 @@
 import { getUserByClerkId } from "@/lib/actions/user.action";
-import { currentUser } from "@clerk/nextjs/server"
+import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 
@@ -14,8 +14,11 @@ export default async function Profile() {
         redirect("/onboarding");
     }
   return (
-      <div className="border border-black w-full h-full">
-        <div className="w-full h-[250px] border border-black">
+      <div className="w-full h-full pr-5 grid grid-cols-2 pb-3">
+        <div className="border border-black">
+        </div>
+        <div className="border border-black">
+
         </div>
       </div>
   );
