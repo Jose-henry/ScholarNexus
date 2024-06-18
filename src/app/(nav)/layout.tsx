@@ -28,8 +28,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  create,
 }: Readonly<{
   children: React.ReactNode;
+  create: React.ReactNode;
 }>) {
   return (
     <ClerkProvider>
@@ -42,7 +44,9 @@ export default function RootLayout({
               <TopBar />
               <main className="flex-1 ml-[12px]">
                 {children}
+                {create}
               </main>
+              
               <BottomBar />
             </div>
           </div>

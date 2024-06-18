@@ -10,7 +10,7 @@ interface Props {
     path: string;
 }
 
-export default async function createOrUpdateFolder({
+export async function createOrUpdateFolder({
     folderName,
     category,
     userId,
@@ -42,3 +42,18 @@ export default async function createOrUpdateFolder({
         throw new Error(`Error creating or updating folder: ${error.message}`);
     }
 }
+
+
+
+export async function getFolders(userId: string): Promise<any> {
+    try {
+      const folders = await prisma.folder.findMany({
+        where: {
+          createdById: userId, // Correctly filter by createdById field
+        },
+      });
+      return folders;
+    } catch (error: any) {
+      throw new Error(`Error getting folders: ${error.message}`);
+    }
+  }
