@@ -19,9 +19,9 @@ export default function NameCard({userName, firstName, lastName, middleName, ima
             <Image 
                 src={image} 
                 alt="image" 
-                width={200} 
-                height={200} 
-                className="rounded-full object-cover" 
+                className="object-cover" 
+                style={{ borderRadius: '50%' }}
+                layout="fixed"
             />
             <div>
                 <h2>First Name: {firstName}</h2>
