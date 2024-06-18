@@ -9,10 +9,10 @@ export default function AnalyticsCard() {
                 <Image width="200" height="200" src="/assets/task-img2.png" alt="task" />
                 <div className="pr-3 ml-[-20px]">
                     <div>
-                        <h2 className="font-bold mb-2 text-center text-white text-[17px]">Keep all your tasks organized🎉</h2>
-                        <p className=" text-[13.5px] text-center text-white">"The purpose of organization is to help you achieve your goals and reduce stress, not to create more work for yourself."</p>
+                        <h2 className="font-bold mb-2 text-center text-white text-[16.5px]">Keep all your tasks organized🎉</h2>
+                        <p className=" text-[13.5px] text-center text-white mt-[-4px]">"The purpose of organization is to help you achieve your goals and reduce stress, not to create more work for yourself."</p>
                     </div>
-                    <p className="text-[13px] mt-2 font-semibold text-center text-white">~ Laura Leist</p>
+                    <p className="text-[13px] mt-2 font-bold text-center text-white">~ Laura Leist</p>
                 </div>
             </div>
             <div className="shadow-sm bg-white rounded-sm"></div>

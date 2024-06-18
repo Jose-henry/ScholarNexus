@@ -63,9 +63,9 @@ export default function TopBar() {
 
       <div className='relative flex gap-[15px] items-center'>
         <motion.div className={'absolute p-[7px] mt-[12px] top-full rounded-sm md:hidden z-10 right-0 w-40 bg-[#393e46] flex text-[#eef2e2] text-[12.5px] flex-col gap-2 shadow-md' + (isClick ? '' : ' hidden')} initial={{ opacity: 0 }} animate={{ opacity: isClick ? 1 : 0 }} transition={{ duration: 0.3 }}>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 relative">
             <Image src="/assets/notification-icon.svg" alt="notification" width={18} height={18} />
-            <span className='hover:underline cursor-pointer'>Notifications</span>
+            <span className='absolute bg-[#eeeee]'>Notifications</span>
           </div>
           <div className="flex items-center gap-2">
             <Image src="/assets/settings-icon.svg" alt="settings" width={18} height={18} />
@@ -75,7 +75,7 @@ export default function TopBar() {
             <SignOutButton>
               <div className="flex items-center gap-2">
                 <Image src="/assets/logout-icon.svg" alt="logout" width={18} height={18} />
-                <span className='hover:underline cursor-pointer'>Logout</span>
+                <p className='hover:underline text-[11px] font-bold top-[-14px] left-3 w-[65px] rounded-full text-center p-0.5'>Logout</p>
               </div>
             </SignOutButton>
           </SignedIn>
