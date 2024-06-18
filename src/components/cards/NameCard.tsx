@@ -20,9 +20,8 @@ export default function NameCard({userName, firstName, lastName, middleName, ima
             <Avatar
                 isBordered
                 showFallback
-                color="secondary"
-                className="w-20 h-20 text-large mb-[10px] cursor-pointer"
-                src={image}
+                className="w-20 h-20 cursor-pointer"
+                src={image || "https://via.placeholder.com/150"}
             />
             <div>
                 <h2>First Name: {firstName}</h2>
