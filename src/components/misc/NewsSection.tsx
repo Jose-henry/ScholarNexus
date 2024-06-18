@@ -83,7 +83,7 @@ function NewsSection({ initialNews, userInfo }: any) {
             <Suspense fallback={<div>Loading feed...</div>}>
             <ThreadCard1
               key={index}
-              imageUrl={item.urlToImage ? item.urlToImage : "/pic1.jpg"}
+              imageUrl={item.urlToImage ? item.urlToImage : "/misc/pic4.jpg"}
               link={item.url}
               title={item.title}
               description={item.description}

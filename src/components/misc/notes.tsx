@@ -16,7 +16,7 @@ export default function NotesComponent() {
     const Router = useRouter();
 
     const onClick = () => {
-        Router.push("/notes/@create/(..notes)/1");}
+        Router.push("/notes/1");}
     return (
         <div className="flex flex-col h-full pr-5 gap-6">
           <div
