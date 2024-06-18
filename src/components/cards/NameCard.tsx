@@ -11,12 +11,13 @@ interface Props {
     firstName: string;
     lastName: string;
     middleName: string;
+    email: string;
 }
 
-export default function NameCard({userName, firstName, lastName, middleName, image}: Props) {
+export default function NameCard({userName, firstName, lastName, middleName, image, email}: Props) {
     return (
         <div className="rounded-sm bg-white shadow-md p-4 flex flex-col gap-2">
-            <h2 className="font-bold text-[15px]">Profile</h2>
+            <h2 className="font-bold text-[15px]">Profile: @<span className="text-[13px] font-semibold text-[#385170]">{userName}</span></h2>
             <div className="flex items-center gap-3">
                 <div className="w-[130px] h-[130px] rounded-full bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${image})` }}>
                 </div>
@@ -35,6 +36,10 @@ export default function NameCard({userName, firstName, lastName, middleName, ima
                             <p>300</p>
                             <p className="font-bold">following</p>
                         </div>
+                    </div>
+                    <div className="flex gap-2 items-center">
+                        <Image src="" alt="" height={20} width={20}></Image>
+                        <p>{email}</p>
                     </div>
                 </div>
             </div>

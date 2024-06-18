@@ -19,6 +19,7 @@ export default function EducationCard({programme, school, level}: Props) {
                 <div>
                     <h2>School: {school}</h2>
                     <h2>Programme: {programme}</h2>
+                    <h2>Level: {programme}</h2>
                 </div>
             </div>
         </div>
