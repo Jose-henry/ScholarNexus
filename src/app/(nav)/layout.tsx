@@ -28,22 +28,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  create,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-  create: React.ReactNode;
-}) {
+}>) {
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={nunito.className} style={{ height: "100vh" }}>
+          {/* Hide layout on md and below */}
           <div id="wrapper" className="hidden xl:flex h-[100%] sm:p-0 gap-[1%] bg-[#fafafa]">
             <NavBar />
             <div id="container" className="w-[100%] flex flex-col h-[100%]">
               <TopBar />
               <main className="flex-1 ml-[12px]">
                 {children}
-                {create}
               </main>
               
               <BottomBar />
