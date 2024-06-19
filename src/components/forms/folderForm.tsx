@@ -51,12 +51,12 @@ import { createOrUpdateFolder } from "@/lib/actions/folder.action"
 
 
 
-
 interface Props{
   folder: {
      folderName: string;
      category: string;
-     userId: string;
+     createdById: string;
+     parentFolderId: string | null;
 
   };
   btnTitle: string;
@@ -89,7 +89,8 @@ export function FolderForm ({folder, btnTitle}: Props) {
       await createOrUpdateFolder({
         folderName: values.foldername,
         category: folder?.category,
-        userId: folder?.userId || '',
+        createdById: folder?.createdById || '',
+        parentFolderId: folder?.parentFolderId || null,
         path: pathname,
       });
       if(pathname === '/notes/edit'){

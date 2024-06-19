@@ -6,18 +6,20 @@ import { FolderForm } from "@/components/forms/folderForm";
 import Modal from "@/components/misc/modal";
 import { Suspense } from "react";
 
-export default async function CreateFolderPage() {
+export default async function CreateFolderPage({ params }: { params: { id: string } }) {
   const User = await currentUser();
   if (!User) return null; // to avoid typescript warnings
   
   const userInfo = await getUserByClerkId(User?.id);
 
 
+
+
   const formData = {
     folderName: "",
     category: "",
     createdById: userInfo?.id as string,
-    parentFolderId: null,
+    parentFolderId: params.id as string,
   };
 
   return (

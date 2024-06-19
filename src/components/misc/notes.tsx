@@ -19,14 +19,10 @@ interface notesComponentProps {
 }
 
 export default function NotesComponent({ notes }: notesComponentProps) {
-  const Router = useRouter();
-
-  const onClick = () => {
-    Router.push("/folders/1");
-  };
 
   return (
         <>
+        <div className="flex flex-col h-full pr-5 gap-6">
             {/* Render folder cards here */}
             {notes && notes.map((note) => (
               <NoteCard
@@ -37,6 +33,7 @@ export default function NotesComponent({ notes }: notesComponentProps) {
                 authorId={note.authorId} // Pass createdById as userId
               />
             ))}
+            </div>
             </>
      
   );
