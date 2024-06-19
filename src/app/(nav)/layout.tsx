@@ -28,10 +28,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  folder,
+  //note,
 
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+  folder: React.ReactNode;
+  //note: React.ReactNode;
+}) {
   return (
     <ClerkProvider>
       <html lang="en">
@@ -43,6 +47,8 @@ export default function RootLayout({
               <TopBar />
               <main className="flex-1 ml-[12px]">
                 {children}
+                {folder}
+                {/* {note} */}
               </main>
               
               <BottomBar />
