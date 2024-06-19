@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ComboboxDropdownMenu } from "@/components/forms/toDo"
+import { ComboboxDropdownMenu } from "@/components/forms/toDo";
 import AnalyticsCard from "@/components/cards/analyticsCard";
 import Image from "next/image";
 import { CompletedDropdownMenu } from "@/components/forms/completed";

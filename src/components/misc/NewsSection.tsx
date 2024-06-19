@@ -19,9 +19,9 @@ function NewsSection({ initialNews, userInfo }: any) {
 
   return (
     <>
-      <div className="h-full flex flex-col gap-[30px]">
+      <div className="h-full flex flex-col gap-[20px]">
         <VideoCard />
-        <div className="flex gap-[10px] border-t-[1px] border-t-[#63686e] pt-3">
+        <div className="flex gap-[10px] border-t-[1px] border-t-[#63686e] pt-6">
           <Button
             variant="light"
             size="sm"
@@ -78,7 +78,7 @@ function NewsSection({ initialNews, userInfo }: any) {
             Refresh
           </Button>
         </div>
-        <div className="grid gap-[25px] grid-cols-3 h-[330px] overflow-y-scroll items-start p-[15px] scroll-smooth">
+        <div className="grid gap-[25px] grid-cols-3 h-[300px] overflow-y-scroll items-start p-[10px] pt-0 scroll-smooth">
           {news.map((item: any, index: number) => (
             <Suspense fallback={<div>Loading feed...</div>}>
             <ThreadCard1
