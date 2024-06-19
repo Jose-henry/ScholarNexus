@@ -5,7 +5,14 @@ import UserWelcomeCard from "./UserWelcomeCard";
 import { Suspense } from "react";
 
 
-export default function DashboardCard() {
+
+interface Props {
+  imgUrl: string;
+  firstName: string;
+}
+
+
+export default function DashboardCard({imgUrl, firstName}: Props) {
     return (
         <div 
         className="w-[100%] h-[100%] shadow-lg rounded-sm p-[20px] relative bg-[#132743]"
@@ -16,7 +23,8 @@ export default function DashboardCard() {
         </div>
         <div className="h-[97%] flex flex-col justify-between w-[100%] pt-[10px] pb-[10px]">
         <Suspense fallback={<div>Loading...</div>}>
-          <UserWelcomeCard />
+          <UserWelcomeCard
+            imgUrl={imgUrl} firstName={firstName} />
         </Suspense>
         <Suspense fallback={<div>Loading...</div>}>
           <DashboardTask />

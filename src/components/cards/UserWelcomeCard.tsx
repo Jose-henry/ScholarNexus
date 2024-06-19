@@ -1,7 +1,13 @@
 import { Avatar } from "@nextui-org/avatar";
 import Image from "next/image";
 
-export default function UserWelcomeCard() {
+
+interface Props {
+  imgUrl: string;
+  firstName: string;
+}
+
+export default function UserWelcomeCard({ imgUrl, firstName }: Props) {
   const titleStyle: React.CSSProperties = {
     color: 'white',
     fontSize: '25px',
@@ -20,9 +26,9 @@ export default function UserWelcomeCard() {
         showFallback
         color="secondary"
         className="w-20 h-20 text-large mb-[10px] cursor-pointer"
-        src="(link unavailable)"
+        src={imgUrl}
       />
-      <h3 style={{ ...titleStyle, ...shineStyle }}>Welcome Ella!</h3>
+      <h3 style={{ ...titleStyle, ...shineStyle }}>Welcome {firstName}!</h3>
       <div className="flex gap-1">
         <p className="text-white text-[13px] mt-[-3px] font-semibold">Keep the learning going!</p>
         <Image width="20" height="20" src="/assets/party-icon.svg" alt="next"/>

@@ -18,16 +18,27 @@ export default async function Profile() {
     if (userInfo?.onboarded === false) {
         redirect("/onboarding");
     }
+    const userName  = userInfo?.username||""
+    const firstName = userInfo?.firstName||""
+    const middleName = userInfo?.middleName||""
+    const lastName = userInfo?.lastName||""
+    const email = userInfo?.email||""
+    const image = userInfo?.image||""
+    const bio = userInfo?.bio||""
+    const programme = userInfo?.programme||""
+    const school = userInfo?.school||""
+    const level = userInfo?.level||""
+
   return (
       <div className="w-full h-full pr-5 grid grid-cols-2 pb-3 gap-5 pt-2">
         <div className="grid grid-rows-3 gap-3 py-2">
-          <NameCard userName="foguibe" firstName="Fortune" middleName="Oluomachukwu" lastName="Oguibe" image="/assets/profile-pic.jpg" email="foguibe@gmail.com" />
-          <EducationCard programme="Computer Science" school="Covenant University" level="400"/>
-          <BioCard bio="Reading is my refuge and inspiration. From classic literature to contemporary fiction, I immerse myself in diverse genres and perspectives. Books aren't just stories for me; they're gateways to understanding the world, sparking my imagination and broadening my horizons. I love engaging with fellow enthusiasts and learners. Feel free to reach out to me!"/>
+          <NameCard userName={userName} firstName={firstName} middleName={middleName} lastName={lastName} image={image} email={email} />
+          <EducationCard programme={programme} school={school} level={level}/>
+          <BioCard bio={bio}/>
         </div>
         <div className="grid grid-rows-2 gap-3">
-          <UserNotesCard firstName="Fortune"/>
-          <JobCard firstName="Fortune"/>
+          <UserNotesCard firstName={firstName}/>
+          <JobCard firstName={firstName}/>
         </div>
       </div>
   );

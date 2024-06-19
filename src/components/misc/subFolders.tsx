@@ -18,13 +18,13 @@ export default function FoldersSubComponent({ folders }: FoldersComponentProps) 
   const router = useRouter(); // Renamed Router to router to follow conventions
 
   const onClick = (folderId: string) => {
-    router.push(`/folders/${folderId}/`); // Fixed parameter usage
+    router.push("/notes/create-folder"); // Fixed parameter usage
   };
 
   const onClick2 = (folderId: string) => {
     // Placeholder for future implementation
     // router.push("/notes/1");
-    router.push(`/folders/notes`);
+    router.push(`/folders/folderId/create-note`);
   };
 
   return (

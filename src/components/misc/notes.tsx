@@ -41,9 +41,3 @@ export default function NotesComponent({ notes }: notesComponentProps) {
      
   );
 }
-
-
-// id: string;
-//     folderId: string;
-//     title: string;
-//     authorId: string;
