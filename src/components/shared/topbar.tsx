@@ -10,7 +10,11 @@ import Pomodoro from '../cards/Pomodoro';
 import SettingsCard from '../cards/settingsCard';
 import { SignOutButton, SignedIn } from '@clerk/nextjs';
 
-export default function TopBar() {
+interface Props {
+  imgUrl: string;
+}
+
+export default function TopBar({imgUrl}: Props) {
   const [isClick, setIsClick] = useState(false);
   const [showPomodoro, setShowPomodoro] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -144,8 +148,7 @@ export default function TopBar() {
           </div>
           
           <Link href="/profile" aria-label="">
-            <Avatar showFallback isBordered radius="full" src="(link unavailable)" size="sm" className='cursor-pointer bg-slate-300 h-[25px] w-[25px]'>
-            </Avatar>
+            <div className="w-[50px] h-[50px] rounded-full bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${imgUrl})` }}></div>
           </Link>
         </div>
       </div>

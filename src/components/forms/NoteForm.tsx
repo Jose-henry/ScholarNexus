@@ -119,7 +119,7 @@ export function NoteForm ({note, btnTitle}: Props) {
 
     return (
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-start gap-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-start p-3">
             <FormField
               control={form.control}
               name="title"

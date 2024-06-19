@@ -53,10 +53,11 @@ export default function FoldersComponent({ folders }: FoldersComponentProps) {
             Work
           </button>
         </div>
-        <div className="border-t-[1px] border-t-black pt-2 h-[450px] overflow-y-scroll">
+        <div className="border-t-[1px] border-t-black pt-2 h-[450px] flex gap-4 flex-wrap items-start overflow-y-scroll">
           <div className="w-fit">
             <Image src="/assets/folder-icon.svg" alt="folder" width={60} height={60} />
             <h2 className="text-[11px] font-semibold text-center">Default folder</h2>
+          </div>
             {/* Render folder cards here */}
             {folders && folders.map((folder) => (
               <FoldersCard
@@ -67,7 +68,6 @@ export default function FoldersComponent({ folders }: FoldersComponentProps) {
                 userId={folder.createdById} // Pass createdById as userId
               />
             ))}
-          </div>
         </div>
       </div>
     </div>

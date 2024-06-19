@@ -29,13 +29,14 @@ import Image from "next/image"
 import ToDoBtn from "./toDoBtn"
 
 const labels = [
-  "assignment",
-  "submission",
-  "meeting",
-  "test/exam",
-  "design",
-  "question",
-  "maintenance",
+  "home",
+  "work",
+  "learning",
+  "health",
+  "social",
+  "finance",
+  "career",
+  "school"
 ]
 
 export function ComboboxDropdownMenu() {    
