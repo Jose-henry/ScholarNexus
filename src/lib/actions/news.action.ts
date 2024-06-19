@@ -1,4 +1,3 @@
-// news.actions.ts
 "use server";
 import NodeCache from 'node-cache';
 
@@ -25,17 +24,14 @@ export const getNews = async (userInfo: any, refresh: boolean = false) => {
   let cachedArticles = myCache.get<Article[]>(cacheKey) || [];
   let cacheIndex = myCache.get<number>(cacheIndexKey) || 0;
 
-  // Check if cache should be refreshed (e.g., weekly)
-  const shouldRefreshCache = refresh || isCacheExpired(cacheKey);
-  
-  if (!cachedArticles.length || shouldRefreshCache) {
+  if (!cachedArticles.length) {
     cachedArticles = await fetchArticlesFromAPI(interests || [], apiKey);
     myCache.set(cacheKey, cachedArticles);
     cacheIndex = 0;
   }
 
-  if (shouldRefreshCache) {
-    resetCacheExpiry(cacheKey);
+  if (refresh) {
+    cacheIndex = cacheIndex + 12 >= cachedArticles.length ? 0 : cacheIndex + 12;
   }
 
   const articlesToReturn = cachedArticles.slice(cacheIndex, cacheIndex + 12);
@@ -81,3 +77,4 @@ function resetCacheExpiry(cacheKey: string): void {
   myCache.del(cacheKey); // Remove current cache
   // Optionally, you can reset other related cache data or indexes here
 }
+

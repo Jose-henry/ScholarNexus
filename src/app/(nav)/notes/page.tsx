@@ -1,9 +1,10 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import NotesComponent from '@/components/misc/notes'
 
 import { getUserByClerkId } from "@/lib/actions/user.action";
 import { Metadata } from "next";
+import { getFolders } from "@/lib/actions/folder.action";
+import FoldersComponent from "@/components/misc/folders";
 
 export const metadata: Metadata = {
   title: "Notes",
@@ -17,10 +18,11 @@ export default async function Notes() {
     redirect("/onboarding");
   }
 
+  const folders = await getFolders(userInfo?.id as string);
+
   return (
     <>
-    <NotesComponent/>
-    
+      <FoldersComponent folders={folders} />
     </>
   );
 }

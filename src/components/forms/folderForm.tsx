@@ -96,6 +96,7 @@ export function FolderForm ({folder, btnTitle}: Props) {
         router.back();
     } else {
       router.push('/notes');
+      router.back();
     }
 
   }
@@ -114,7 +115,7 @@ export function FolderForm ({folder, btnTitle}: Props) {
               render={({ field }) => (
                 <FormItem className="flex flex-col w-full gap-1">
                   <FormLabel className="text-base-semibold text-light-2 text-[13.5px]">
-                    Firstname
+                    Folder Name
                   </FormLabel>
                   <FormControl className="rounded-sm border-0">
                     <Input
