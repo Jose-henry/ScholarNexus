@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react'; // Import useState hook
-import Image from "next/image";
+import Image from "next/image"
 
 interface Props {
     firstName: string;
