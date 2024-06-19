@@ -65,6 +65,7 @@ export async function getNotes(folderId: string): Promise<any> {
       },
     });
     return notes;
+    revalidatePath("/notes")
   } catch (error: any) {
     throw new Error(`Error getting notes: ${error.message}`);
   }
@@ -91,6 +92,7 @@ export async function getNotesById(folderId: string, id: string): Promise<any> {
       },
     });
     return notes;
+    revalidatePath("/notes")
   } catch (error: any) {
     throw new Error(`Error getting notes: ${error.message}`);
   }

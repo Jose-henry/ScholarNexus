@@ -55,7 +55,9 @@ export async function getFolders(createdById: string): Promise<any> {
         parentFolderId: true,
       },
     });
+
     return folders;
+    revalidatePath("/notes");
   } catch (error: any) {
     throw new Error(`Error getting folders: ${error.message}`);
   }
@@ -74,6 +76,7 @@ export async function getFoldersById(folderId: string): Promise<any> {
         },
       });
       return folders;
+      revalidatePath("/notes");
     } catch (error: any) {
       throw new Error(`Error getting folders: ${error.message}`);
     }
