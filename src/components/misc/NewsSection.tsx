@@ -9,7 +9,14 @@ import VideoCard from '../cards/VideoCard';
 import DashboardCard from '../cards/DashboardCard'
 import { Suspense } from 'react'
 
-function NewsSection({ initialNews, userInfo }: any) {
+interface Props {
+  initialNews: any;
+  userInfo: any;
+  imgUrl: string;
+  firstName: string;
+}
+
+function NewsSection({ initialNews, userInfo, imgUrl, firstName }: Props) {
   const [news, setNews] = useState(initialNews);
 
   const handleRefresh = async () => {
@@ -94,7 +101,8 @@ function NewsSection({ initialNews, userInfo }: any) {
         </div>
       </div>
       <div className="h-full pl-[10px] pr-[20px]">
-        <DashboardCard />
+        <DashboardCard
+        imgUrl={imgUrl} firstName={firstName} />
       </div>
     </>
   );

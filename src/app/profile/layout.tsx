@@ -1,4 +1,3 @@
-
 import { Nunito } from "next/font/google";
 import "../globals.css";
 import {
@@ -8,6 +7,7 @@ import NavBar from "@/components/shared/NavBar";
 import TopBar from "@/components/shared/topbar";
 import BottomBar from "@/components/shared/bottombar";
 import { Metadata } from "next";
+import Image from "next/image";
 
 const nunito = Nunito({ 
   subsets: ["latin"],
@@ -38,7 +38,7 @@ export default function RootLayout({
       style={{
         height: "100vh"
       }}>
-        <div id="wrapper" className="h-[100%] flex sm:p-0  gap-[1%] bg-[#fafafa] overflow-hidden">
+        <div id="wrapper" className="h-[100%] hidden xl:flex sm:p-0  gap-[1%] bg-[#fafafa] overflow-hidden">
             <NavBar />
             <div id="container" className="w-[100%] flex flex-col h-[100%]">
               <TopBar />
@@ -48,6 +48,11 @@ export default function RootLayout({
                 <BottomBar />
             </div>
           </div>
+          <div className="flex flex-col gap-3 justify-center items-center h-screen bg-black text-white xl:hidden">
+  <Image src="/assets/eagle.svg" alt="logo" className="w-[25%] xl:w-3/4" width={30} height={30} />
+  <h2 className="text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">Display size not optimized for responsiveness. Coming Soon!!</h2>
+  <p className="text-center text-sm sm:text-base md:text-lg">Please use a larger screen</p>
+</div>
       </body>
     </html>
 
