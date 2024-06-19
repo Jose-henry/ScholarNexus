@@ -17,7 +17,7 @@ export default function FoldersComponent({ folders }: FoldersComponentProps) {
   const Router = useRouter();
 
   const onClick = () => {
-    Router.push("/notes/1");
+    Router.push("/notes/create-folder");
   };
 
   return (

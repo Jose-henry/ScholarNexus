@@ -1,4 +1,3 @@
-// page.tsx
 import { getFoldersById } from "@/lib/actions/folder.action";
 import NotesComponent from "@/components/misc/notes";
 import FoldersSubComponent from "@/components/misc/subFolders";

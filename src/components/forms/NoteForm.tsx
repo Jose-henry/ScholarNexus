@@ -109,6 +109,7 @@ export function NoteForm ({note, btnTitle}: Props) {
     //     router.back();
     //} else {
         router.push(`/folders/${note.folderId}`);
+
   }
    
       
