@@ -85,7 +85,7 @@ function NewsSection({ initialNews, userInfo, imgUrl, firstName }: Props) {
             Refresh
           </Button>
         </div>
-        <div className="grid gap-[25px] grid-cols-3 h-[300px] overflow-y-scroll items-start p-[10px] pt-0 scroll-smooth">
+        <div className="grid gap-[25px] grid-cols-3 h-[300px] overflow-y-scroll items-start p-[10px] pt-0 scroll-smooth border-b-2 border-b-[#9ba6a5]">
           {news.map((item: any, index: number) => (
             <Suspense fallback={<div>Loading feed...</div>}>
             <ThreadCard1
