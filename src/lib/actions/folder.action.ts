@@ -2,77 +2,80 @@
 import prisma from "@/utils/connect";
 import { revalidatePath } from "next/cache";
 
-export async function createOrUpdateFolder({
-    folderName,
-    category,
-    userId,
-    path,
-}: {
+interface FolderProps {
     folderName: string;
     category: string;
-    userId: string;
+    createdById: string;
+    parentFolderId: string | null;
     path: string;
-}): Promise<void> {
-    try {
-        const folder = await prisma.folder.upsert({
-            where: {
-                createdById_folderName: {
-                    createdById: userId,
-                    folderName: folderName,
-                },
-            },
-            update: {
-                folderName,
-                category,
-            },
-            create: {
-                folderName,
-                category,
-                createdBy: { connect: { id: userId } },
-            },
-        });
-
-        revalidatePath(path);
-    } catch (error: any) {
-        throw new Error(`Error creating or updating folder: ${error.message}`);
-    }
 }
 
-export async function getFolders(userId: string): Promise<any> {
-    try {
-        const folders = await prisma.folder.findMany({
-            where: {
-                createdById: userId, // Correctly filter by createdById field
-            },
-            select: {
-                id: true,
-                folderName: true,
-                category: true,
-                createdById: true, // Include createdById in the query
-            },
-        });
-        return folders;
-    } catch (error: any) {
-        throw new Error(`Error getting folders: ${error.message}`);
-    }
+export async function createOrUpdateFolder({
+  folderName,
+  category,
+  createdById,
+  parentFolderId,
+  path,
+}: FolderProps): Promise<void> {
+  try {
+    const folder = await prisma.folder.upsert({
+      where: {
+        createdById_folderName: {
+          createdById: createdById,
+          folderName: folderName,
+        },
+      },
+      update: {
+        folderName,
+        category,
+      },
+
+      create: {
+        folderName,
+        category,
+        createdBy: { connect: { id: createdById } },
+        parentFolder: parentFolderId ? { connect: { id: parentFolderId } } : undefined,
+      },
+    });
+    revalidatePath(path);
+  } catch (error: any) {
+    throw new Error(`Error creating or updating folder: ${error.message}`);
+  }
 }
 
+export async function getFolders(createdById: string): Promise<any> {
+  try {
+    const folders = await prisma.folder.findMany({
+      where: { createdById: createdById },
+      select: {
+        id: true,
+        folderName: true,
+        category: true,
+        createdById: true,
+        parentFolderId: true,
+      },
+    });
+    return folders;
+  } catch (error: any) {
+    throw new Error(`Error getting folders: ${error.message}`);
+  }
+}
 
 export async function getFoldersById(folderId: string): Promise<any> {
     try {
-        const folders = await prisma.folder.findMany({
-            where: {
-                id: folderId, // Correctly filter by createdById field
-            },
-            select: {
-                id: true,
-                folderName: true,
-                category: true,
-                createdById: true, // Include createdById in the query
-            },
-        });
-        return folders;
+      const folders = await prisma.folder.findMany({
+        where: { parentFolderId: folderId },
+        select: {
+          id: true,
+          folderName: true,
+          category: true,
+          createdById: true,
+          parentFolderId: true,
+        },
+      });
+      return folders;
     } catch (error: any) {
-        throw new Error(`Error getting folders: ${error.message}`);
+      throw new Error(`Error getting folders: ${error.message}`);
     }
-}
+  }
+  

@@ -12,19 +12,22 @@ interface FoldersComponentProps {
     createdById: string;
     folderId: string; // Include createdById in the type definition
   }[];
+  parentFolderId: string;
+ 
 }
 
-export default function FoldersSubComponent({ folders }: FoldersComponentProps) {
+export default function FoldersSubComponent({ folders, parentFolderId }: FoldersComponentProps) {
   const router = useRouter(); // Renamed Router to router to follow conventions
 
-  const onClick = (folderId: string) => {
-    router.push("/notes/create-folder"); // Fixed parameter usage
+  const onClick = (parentFolderId: string) => {
+    router.push(`/folders/${parentFolderId}/create-subfolder`); // Fixed parameter usage
   };
 
-  const onClick2 = (folderId: string) => {
+  const onClick2 = (parentFolderId: string) => {
     // Placeholder for future implementation
     // router.push("/notes/1");
-    router.push(`/folders/folderId/create-note`);
+    router.push(`/folders/${parentFolderId}/create-notes`);
+
   };
 
   return (
@@ -41,14 +44,14 @@ export default function FoldersSubComponent({ folders }: FoldersComponentProps) 
         <div className="flex items-center gap-2">
           <button
             className="text-[12px] font-bold bg-[#132743] text-white px-2 py-1 shadow-md rounded-full flex items-center gap-1 hover:bg-[#497285] active:bg-[#142d4c]"
-            onClick={() => onClick(folders[0].folderId)} // Example onClick handler, replace with proper logic
+            onClick={() => onClick(parentFolderId )} // Example onClick handler, replace with proper logic
           >
             <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
             Create folder
           </button>
           <button
             className="text-[12px] font-bold bg-[#132743] text-white px-2 py-1 shadow-md rounded-full flex items-center gap-1 hover:bg-[#497285] active:bg-[#142d4c]"
-            onClick={() => onClick2(folders[0].folderId)}
+            onClick={() => onClick2(parentFolderId)}  
           >
             <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
             Create Notes

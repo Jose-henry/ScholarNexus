@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <FoldersSubComponent folders={folders} />
+      <FoldersSubComponent folders={folders} parentFolderId={params.id}/>
       <NotesComponent notes={notes} />
     </>
   );

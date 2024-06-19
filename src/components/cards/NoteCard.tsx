@@ -15,7 +15,7 @@ interface Props {
 export default function NotesCard({id, title, authorId, folderId }: Props) {
     return (
        
-        <div className="w-fit">
+            <div className="w-fit flex">
                 <Link href={`/folders/${folderId}/notes/${id}`}>
                 <Image src="/assets/file.svg" alt="folder" width={60} height={60} />
                 </Link>

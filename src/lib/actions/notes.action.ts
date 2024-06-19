@@ -69,3 +69,30 @@ export async function getNotes(folderId: string): Promise<any> {
     throw new Error(`Error getting notes: ${error.message}`);
   }
 }
+
+
+
+
+export async function getNotesById(folderId: string, id: string): Promise<any> {
+  try {
+    const notes = await prisma.note.findMany({
+      where: {
+        folderId: folderId,
+        id: id // Correctly filter by folderId field
+      },
+      select: {
+        id: true,
+        title: true,
+        content: true,
+        createdAt: true,
+        updatedAt: true,
+        authorId: true,
+        folderId: true,
+      },
+    });
+    return notes;
+  } catch (error: any) {
+    throw new Error(`Error getting notes: ${error.message}`);
+  }
+}
+
