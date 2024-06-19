@@ -29,10 +29,10 @@ import Image from "next/image"
 import ToDoBtn from "./toDoBtn"
 
 const labels = [
-  "feature",
-  "bug",
-  "enhancement",
-  "documentation",
+  "assignment",
+  "submission",
+  "meeting",
+  "test/exam",
   "design",
   "question",
   "maintenance",
