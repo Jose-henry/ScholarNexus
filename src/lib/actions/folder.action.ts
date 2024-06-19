@@ -62,18 +62,17 @@ export async function getFoldersById(folderId: string): Promise<any> {
     try {
         const folders = await prisma.folder.findMany({
             where: {
-                id: folderId,
+                id: folderId, // Correctly filter by createdById field
             },
             select: {
                 id: true,
                 folderName: true,
                 category: true,
-                createdById: true,
+                createdById: true, // Include createdById in the query
             },
         });
         return folders;
     } catch (error: any) {
-        console.error(`Error getting folders by ID: ${error.message}`);
-        throw new Error(`Error getting folders by ID: ${error.message}`);
+        throw new Error(`Error getting folders: ${error.message}`);
     }
 }

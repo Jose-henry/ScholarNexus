@@ -9,23 +9,17 @@ interface Props {
     id: string;
     folderId: string;
     title: string;
-    authorId: string;
-    folderName: string; // Add folderName to Props
-  }
+    authorId : string;
+}
 
-export default function NoteCard({ id, folderId, title, authorId, folderName }: Props) {
-            return (
-              <div className="note-card">
-                <h2>{title}</h2>
-                <p>Folder: {folderName}</p>
-                <p>Author: {authorId}</p>
+export default function NotesCard({id, title, authorId, folderId }: Props) {
+    return (
        
         <div className="w-fit">
                 <Link href={`/folders/${folderId}/notes/${id}`}>
                 <Image src="/assets/file.svg" alt="folder" width={60} height={60} />
                 </Link>
                 <h2 className="text-[11px] font-semibold text-center">{title}</h2>
-              </div>
               </div>
         
     );
