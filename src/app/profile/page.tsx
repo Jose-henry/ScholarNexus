@@ -22,7 +22,7 @@ export default async function Profile() {
       <div className="w-full h-full pr-5 grid grid-cols-2 pb-3 gap-5 pt-2">
         <div className="grid grid-rows-3 gap-3">
           <NameCard userName="foguibe" firstName="Fortune" middleName="Oluomachukwu" lastName="Oguibe" image="/assets/profile-pic.jpg" email="foguibe@gmail.com" />
-          <EducationCard programme="Computer science" school="Covenant University" level="400"/>
+          <EducationCard programme="Computer Science" school="Covenant University" level="400"/>
           <BioCard bio="Reading is my refuge and inspiration. From classic literature to contemporary fiction, I immerse myself in diverse genres and perspectives. Books aren't just stories for me; they're gateways to understanding the world, sparking my imagination and broadening my horizons. I love engaging with fellow enthusiasts and learners. Feel free to reach out to me!"/>
         </div>
         <div className="grid grid-rows-2 gap-3">

@@ -39,9 +39,11 @@ export default function JobCard({firstName}: Props) {
                     <button className="text-[12.5px] underline font-semibold hover:no-underline">Services offered</button>
                     <button className="text-[12.5px] underline font-semibold hover:no-underline">Services requested</button>
                 </div>
-                <div className='h-[260px] mt-3 overflow-y-scroll'>
+                <div className='h-[260px] mt-3 overflow-y-scroll flex flex-col gap-3'>
                     <ServiceOffered jobTitle='Math Tutorial' jobNote='Are you struggling with math concepts and equations? Let me help you conquer those challenges! I offer personalized math tutorials!'
-                    creationDate="23/04/2024" deadline="not specifed"/>
+                    creationDate="23/04/2024" deadline="none"/>
+                    <ServiceOffered jobTitle='Laundry Services' jobNote="Let me take the load off your shoulders with my reliable laundry services. Whether you need a weekly wash or a one-time deep clean, your clothes will come back fresh and crisp every time! Contact me today and say goodbye to laundry day stress!"
+                    creationDate="23/04/2024" deadline="none"/>
                 </div>
             </div>
         </div>
