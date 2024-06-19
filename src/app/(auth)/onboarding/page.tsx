@@ -80,6 +80,7 @@ export default async function Onboarding() {
 
 
     return (
+      <SignedIn>
         <main className='mx-auto grid w-[900px] justify-start h-[650px] rounded-sm grid-cols-2 overflow-hidden shadow-lg border border-[#e3e3e3]'>
           <div className="bg-[#393e46] flex items-center justify-center">
             <Image width="250" height="250" src="/assets/onboard-logo.svg" alt="education" />
@@ -97,5 +98,6 @@ export default async function Onboarding() {
             </section>
           </div>
         </main>
+  </SignedIn>
 )
 }
