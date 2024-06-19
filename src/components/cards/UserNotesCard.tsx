@@ -26,7 +26,7 @@ export default function UserNotesCard({firstName}: Props) {
                         Only {firstName}'s followers can view public notes.
                     </p>
                 )}
-                <h2 className="text-[14px] font-bold">Jobs</h2>
+                <h2 className="text-[14px] font-bold">Notes</h2>
             </div>
             <div>
                 <div className="border-[2px] border-[#d3d6db] p-1 pl-3 flex items-center">

@@ -38,6 +38,9 @@ export default function JobCard({firstName}: Props) {
                     <button className="text-[12.5px] underline font-semibold hover:no-underline">Services offered</button>
                     <button className="text-[12.5px] underline font-semibold hover:no-underline">Services requested</button>
                 </div>
+                <div className='border border-black h-[260px] mt-3'>
+
+                </div>
             </div>
         </div>
     );
