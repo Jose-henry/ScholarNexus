@@ -33,7 +33,6 @@ import { createOrUpdateNote } from "@/lib/actions/notes.action"
 
 interface Props{
   note: {
-     id: string;
      title: string;
      content: string;
      authorId: string;

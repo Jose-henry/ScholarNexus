@@ -8,6 +8,7 @@ import NavBar from "@/components/shared/NavBar";
 import TopBar from "@/components/shared/topbar";
 import BottomBar from "@/components/shared/bottombar";
 import { Metadata } from "next";
+import TopBarServer from "@/components/shared/topbarserver";
 
 const nunito = Nunito({ 
   subsets: ["latin"],
@@ -41,7 +42,7 @@ export default function RootLayout({
         <div id="wrapper" className="h-[100%] flex sm:p-0  gap-[1%] bg-[#fafafa]">
             <NavBar />
             <div id="container" className="w-[100%] flex flex-col h-[100%]">
-              <TopBar />
+              <TopBarServer />
               <main className="flex-1 ml-[12px] ">
                   {children}
               </main>

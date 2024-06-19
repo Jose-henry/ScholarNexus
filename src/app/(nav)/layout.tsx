@@ -5,10 +5,10 @@ import {
   ClerkProvider
 } from '@clerk/nextjs';
 import NavBar from "@/components/shared/NavBar"
-import TopBar from "@/components/shared/topbar";
 import BottomBar from "@/components/shared/bottombar";
 import { Metadata } from "next";
 import Image from "next/image"
+import TopBarServer from "@/components/shared/topbarserver";
 
 const nunito = Nunito({ 
   subsets: ["latin"],
@@ -44,7 +44,7 @@ export default function RootLayout({
           <div id="wrapper" className="hidden xl:flex h-[100%] sm:p-0 gap-[1%] bg-[#fafafa]">
             <NavBar />
             <div id="container" className="w-[100%] flex flex-col h-[100%] overflow-hidden">
-              <TopBar />
+              <TopBarServer />
               <main className="flex-1 ml-[12px]">
               
                 {children}

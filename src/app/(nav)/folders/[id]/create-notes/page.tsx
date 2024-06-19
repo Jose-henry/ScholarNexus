@@ -6,7 +6,7 @@ import Modal from "@/components/misc/modal";
 import { Suspense } from "react";
 import { NoteForm } from "@/components/forms/NoteForm";
 
-export default async function CreateFolderPage({ params }: { params: { id: string, nid: string } }) {
+export default async function CreateFolderPage({ params }: { params: { id: string } }) {
   const User = await currentUser();
   if (!User) return null; // to avoid typesscript warnings
   
@@ -14,7 +14,6 @@ export default async function CreateFolderPage({ params }: { params: { id: strin
 
 
   const formData = {
-    id: params.nid,
     title: "",
     content: "",
     authorId: userInfo?.id as string,
