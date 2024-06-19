@@ -12,7 +12,7 @@ interface Props {
 
 export default function EducationCard({programme, school, level}: Props) {
     return (
-        <div className="rounded-sm bg-white shadow-md p-4 flex flex-col gap-2"> 
+        <div className="rounded-sm bg-white shadow-sm p-4 flex flex-col gap-2 border-[2px] border-[#d3d6db]"> 
             <h2 className="font-bold text-[15px]">Education</h2>
             <div className="flex items-center gap-4">
                 <Image src="/assets/edu-pic.svg" width={150} height={150} alt="education"></Image>

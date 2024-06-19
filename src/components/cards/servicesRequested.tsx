@@ -15,7 +15,7 @@ export default function ServiceRequested({jobTitle, jobNote, creationDate, deadl
     return (
         <div className="w-full flex gap-2 items-start"> 
             <Image src="/assets/dot.svg" alt="" height={30} width={30} />
-            <div className="rounded-sm bg-[#f8f8f8] border-[1px] border-[#d3d6db] shadow-sm p-2">
+            <div className="rounded-sm bg-[#f8f8f8] border-2 border-[#d3d6db] shadow-sm p-2">
                 <h2 className="font-bold text-[14px]">{jobTitle}</h2>
                 <p className="text-[13px]">{jobNote}</p>
                 <div className="flex justify-end gap-2 items-center mt-1">

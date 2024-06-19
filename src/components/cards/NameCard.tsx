@@ -32,8 +32,8 @@ export default function NameCard({userName, firstName, lastName, middleName, ima
                     </div>
                     <div className="flex justify-between items-center pt-2 border-t-[1px] border-t-black mt-2">
                         <div className="flex flex-col items-center">
-                            <p>0</p>
-                            <p className="font-bold">uploads</p>
+                            <p>3</p>
+                            <p className="font-bold">posts</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <p>200</p>
