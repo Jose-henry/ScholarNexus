@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from 'react'; // Import useState hook
-import Image from "next/image"
+import Image from "next/image";
+import ServiceOffered from './serviceOffered';
 
 interface Props {
     firstName: string;
@@ -38,8 +39,9 @@ export default function JobCard({firstName}: Props) {
                     <button className="text-[12.5px] underline font-semibold hover:no-underline">Services offered</button>
                     <button className="text-[12.5px] underline font-semibold hover:no-underline">Services requested</button>
                 </div>
-                <div className='border border-black h-[260px] mt-3'>
-
+                <div className='h-[260px] mt-3 overflow-y-scroll'>
+                    <ServiceOffered jobTitle='Math Tutorial' jobNote='Are you struggling with math concepts and equations? Let me help you conquer those challenges! I offer personalized math tutorials!'
+                    creationDate="23/04/2024" deadline="not specifed"/>
                 </div>
             </div>
         </div>
