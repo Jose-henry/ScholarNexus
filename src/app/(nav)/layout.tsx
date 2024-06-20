@@ -34,7 +34,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
  
-  //note: React.ReactNode;
+  //note: React.ReactNode
 }) {
   return (
     <ClerkProvider>
