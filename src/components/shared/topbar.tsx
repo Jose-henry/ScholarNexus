@@ -112,7 +112,7 @@ export default function TopBar({imgUrl}: Props) {
               onClick={togglePomodoro}
             />
             {showPomodoro && <Pomodoro />}
-            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[65px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
+            <p className="absolute text-[10px] text-black font-bold top-[-18px] left-[-56px] w-[65px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
               Pomodoro
             </p>
           </div>
@@ -127,7 +127,7 @@ export default function TopBar({imgUrl}: Props) {
                 className="hidden md:block cursor-pointer"
               />
             </Link>
-            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
+            <p className="absolute text-[10px] text-black font-bold top-[-18px] left-[-56px] w-[80px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
               Notifications
             </p>
           </div>
@@ -142,14 +142,14 @@ export default function TopBar({imgUrl}: Props) {
               onClick={toggleSettings}
             />
             {showSettings && <SettingsCard />}
-            <p className="absolute text-[11px] text-black font-bold top-[-18px] left-[-56px] w-[85px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
+            <p className="absolute text-[10px] text-black font-bold top-[-18px] left-[-56px] w-[60px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
               Settings
             </p>
           </div>
           
-          <Link href="/profile" aria-label="">
+          <Link href="/profile" aria-label="" className='relative group'>
             <div className="w-[30px] h-[30px] rounded-full border-[2px] border-red-700 bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${imgUrl})` }}></div>
-            <p>Profile</p>
+            <p className="absolute text-[10px] text-black font-bold top-[-18px] left-[-30px] w-[50px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">Profile</p>
           </Link>
         </div>
       </div>
