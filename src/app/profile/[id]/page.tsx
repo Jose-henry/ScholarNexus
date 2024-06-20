@@ -47,8 +47,8 @@ export default async function Profile({ params }: { params: { id: string } }) {
         <BioCard bio={bio} />
       </div>
       <div className="grid grid-rows-2 gap-3">
-        <UserNotesCard firstName={firstName} />
-        <JobCard firstName={firstName} />
+        <UserNotesCard firstName={firstName} isCurrentUser={isCurrentUser} />
+        <JobCard firstName={firstName} isCurrentUser={isCurrentUser} />
       </div>
     </div>
   );

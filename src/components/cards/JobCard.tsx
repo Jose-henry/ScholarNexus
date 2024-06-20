@@ -1,15 +1,16 @@
 "use client";
 
-import { useState } from 'react'; // Import useState hook
+import { useState } from 'react';
 import Image from "next/image";
 import ServiceOffered from './serviceOffered';
 
 interface Props {
     firstName: string;
+    isCurrentUser: boolean; 
 }
 
-export default function JobCard({firstName}: Props) {
-    const [showTooltip, setShowTooltip] = useState(false); // State to manage tooltip visibility
+export default function JobCard({ firstName, isCurrentUser }: Props) {
+    const [showTooltip, setShowTooltip] = useState(false);
 
     return (
         <div className="rounded-sm bg-white shadow-sm border-[1.5px] border-[#d3d6db] p-3"> 
@@ -20,12 +21,15 @@ export default function JobCard({firstName}: Props) {
                     className="mr-2 cursor-pointer" 
                     src="/assets/info.svg" 
                     alt="info"
-                    onMouseEnter={() => setShowTooltip(true)} // Show tooltip on mouse enter
-                    onMouseLeave={() => setShowTooltip(false)} // Hide tooltip on mouse leave
+                    onMouseEnter={() => setShowTooltip(true)}
+                    onMouseLeave={() => setShowTooltip(false)}
                 />
                 {showTooltip && (
                     <p className="bg-[#eeeeee] p-0.5 px-1 rounded-sm text-[12px] font-semibold absolute top-[-20px] left-[-5px] w-fit">
-                        Explore services offered and requested by {firstName}.
+                        {isCurrentUser 
+                            ? "Others can see the services you offer and requested."
+                            : `Explore services offered and requested by ${firstName}.`
+                        }
                     </p>
                 )}
                 <h2 className="text-[14px] font-bold">Jobs</h2>
