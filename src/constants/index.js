@@ -27,7 +27,7 @@ export const sidebarLinks = [
     },
     {
       imgURL: "/assets/group-icon.svg",
-      route: "/groups",
+      route: "/people",
       label: "People",
     },
     {
