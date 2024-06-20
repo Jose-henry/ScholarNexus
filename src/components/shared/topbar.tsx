@@ -148,7 +148,8 @@ export default function TopBar({imgUrl}: Props) {
           </div>
           
           <Link href="/profile" aria-label="">
-            <div className="w-[30px] h-[30px] rounded-full bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${imgUrl})` }}></div>
+            <div className="w-[30px] h-[30px] rounded-full border-[2px] border-red-700 bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${imgUrl})` }}></div>
+            <p>Profile</p>
           </Link>
         </div>
       </div>
