@@ -31,9 +31,11 @@ export default function NameCard({ userName, firstName, lastName, middleName, im
             </h2>
             <div className="flex gap-2 items-center relative group">
               <Image src="/assets/email-icon.svg" alt="" height={15} width={15} className="cursor-pointer" />
-              <a className="text-[13px] font-semibold text-[#385170] cursor-pointer">{email}</a>
-              <p className="text-[10px] absolute top-[-20px] bg-[#dee1ec] py-0.5 px-1 opacity-0 group-hover:opacity-100 rounded-full font-bold">contact {firstName}</p>
-            </div>
+              <p className="tooltip text-[10px] absolute top-[-20px] bg-[#dee1ec] py-0.5 px-1 opacity-0 group-hover:opacity-100 rounded-full font-bold">contact {firstName}</p>
+              <a className="text-[13px] font-semibold text-[#385170] cursor-pointer" href={`mailto:${email}?subject=Hello ${firstName}`}>
+                {email}
+              </a>
+          </div>
           </div>
           <div className="flex justify-between items-center pt-2 border-t-[1px] border-t-black mt-2">
             <div className="flex flex-col items-center">
