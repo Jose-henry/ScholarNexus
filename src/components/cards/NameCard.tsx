@@ -29,9 +29,10 @@ export default function NameCard({ userName, firstName, lastName, middleName, im
             <h2 className="font-semibold text-[13px]">
               Username: @<span className="text-[13px] font-semibold">{userName}</span>
             </h2>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center relative">
               <Image src="/assets/email-icon.svg" alt="" height={15} width={15} className="cursor-pointer" />
-              <p className="text-[13px] font-semibold text-[#385170] cursor-pointer">{email}</p>
+              <p className="text-[13px] font-semibold text-[#385170]">{email}</p>
+              <p className="text-[10px] absolute top-[-20px] bg-[#dee1ec] py-0.5 px-1 opacity-0 group-hover:opacity-100 rounded-full font-bold">contact {firstName}</p>
             </div>
           </div>
           <div className="flex justify-between items-center pt-2 border-t-[1px] border-t-black mt-2">
