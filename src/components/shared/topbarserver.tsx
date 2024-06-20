@@ -14,11 +14,12 @@ export default async function TopBarServer() {
     const userInfo = await getUserByClerkId(User?.id);
 
     const imgUrl = userInfo?.image;
+    const id = userInfo?.id;
 
 
     return (
         <>
-            <TopBar imgUrl={imgUrl || ""}/>
+            <TopBar imgUrl={imgUrl || ""} id={id || ""}/>
         </>
     )
 }

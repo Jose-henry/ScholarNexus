@@ -12,9 +12,10 @@ import { SignOutButton, SignedIn } from '@clerk/nextjs';
 
 interface Props {
   imgUrl: string;
+  id: string;
 }
 
-export default function TopBar({imgUrl}: Props) {
+export default function TopBar({imgUrl, id}: Props) {
   const [isClick, setIsClick] = useState(false);
   const [showPomodoro, setShowPomodoro] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -147,7 +148,7 @@ export default function TopBar({imgUrl}: Props) {
             </p>
           </div>
           
-          <Link href="/profile" aria-label="" className='relative group'>
+          <Link href={"/profile/"+ id} aria-label="" className='relative group'>
             <div className="w-[30px] h-[30px] rounded-full border-[2px] border-red-700 bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${imgUrl})` }}></div>
             <p className="absolute text-[10px] text-black font-bold top-[-18px] left-[-30px] w-[50px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">Profile</p>
           </Link>

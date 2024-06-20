@@ -3,18 +3,18 @@ import EducationCard from "@/components/cards/EducationCard";
 import JobCard from "@/components/cards/JobCard";
 import NameCard from "@/components/cards/NameCard";
 import UserNotesCard from "@/components/cards/UserNotesCard";
-import { getUserByClerkId } from "@/lib/actions/user.action";
+import { getUserByClerkId, getUserById } from "@/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation"
 
 
-export default async function Profile() {
+export default async function Profile({params}:{params:{id:string}}) {
   
   const User = await currentUser();
 
   if (!User) redirect("/");
     if (!User) return null; // to avoid typescript warnings
-    const userInfo = await getUserByClerkId(User?.id);
+    const userInfo = await getUserById(params.id);
     if (userInfo?.onboarded === false) {
         redirect("/onboarding");
     }
