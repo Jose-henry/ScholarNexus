@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {Avatar} from 
 "@nextui-org/avatar";
