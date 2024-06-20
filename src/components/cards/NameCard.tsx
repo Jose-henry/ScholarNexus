@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image"
+import Image from "next/image";
 
 interface Props {
   image: string;
@@ -27,11 +27,11 @@ export default function NameCard({ userName, firstName, lastName, middleName, im
           </h2>
           <div className="flex text-center gap-3">
             <h2 className="font-semibold text-[13px]">
-              Username: @<span className="text-[13px] font-semibold text-[#385170]">{userName}</span>
+              Username: @<span className="text-[13px] font-semibold">{userName}</span>
             </h2>
             <div className="flex gap-2 items-center">
-              <Image src="/assets/email-icon.svg" alt="" height={15} width={15} />
-              <p className="text-[13px] font-semibold">{email}</p>
+              <Image src="/assets/email-icon.svg" alt="" height={15} width={15} className="cursor-pointer" />
+              <p className="text-[13px] font-semibold text-[#385170] cursor-pointer">{email}</p>
             </div>
           </div>
           <div className="flex justify-between items-center pt-2 border-t-[1px] border-t-black mt-2">
