@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 interface Props {
@@ -9,17 +7,40 @@ interface Props {
   lastName: string;
   middleName?: string;
   email: string;
-  isCurrentUser: boolean; // Add new prop
+  isCurrentUser: boolean;
+  level: string; // Change type to string
 }
 
-export default function NameCard({ userName, firstName, lastName, middleName, image, email, isCurrentUser }: Props) {
+export default function NameCard({ userName, firstName, lastName, middleName, image, email, isCurrentUser, level }: Props) {
+  // Define colors corresponding to each level (adjust as needed)
+  const levelColors: { [key: string]: string } = {
+    "100": "#66ccff", // Level 100
+    "200": "#99ff99", // Level 200
+    "300": "#ffff99", // Level 300
+    "400": "#ffcc99", // Level 400
+    "500": "#cc99ff", // Level 500
+    "600": "#ff9999", // Level 600
+    "700": "#99ffff"  // Level 700
+    // Add more levels as needed
+  };
+
+  // Function to get border color based on level
+  const getBorderColor = (level: string): string => {
+    return levelColors[level] || "#e0e0e0"; // Default color if level not found
+  };
+
   return (
     <div className="rounded-sm bg-white shadow-md p-4 flex flex-col gap-2">
       <h2 className="text-[14px] font-bold">Profile</h2>
       <div className="flex items-center gap-3">
         <div
-          className="w-[130px] h-[130px] rounded-full bg-cover bg-center shadow-sm shadow-[#e0e0e0]"
-          style={{ backgroundImage: `url(${image})` }}
+          className="w-[130px] h-[130px] rounded-full bg-cover bg-center shadow-sm"
+          style={{
+            backgroundImage: `url(${image})`,
+            borderColor: getBorderColor(level),
+            borderWidth: "3px", // Adjust border width as needed
+            borderStyle: "solid" // Border style
+          }}
         ></div>
         <div>
           <h2 className="text-[#142d4c] font-extrabold text-[30px] text-wrap">

@@ -42,6 +42,7 @@ export default async function Profile({ params }: { params: { id: string } }) {
           image={image}
           email={email}
           isCurrentUser={isCurrentUser} // Pass the flag
+          level={level}
         />
         <EducationCard programme={programme} school={school} level={level} />
         <BioCard bio={bio} />

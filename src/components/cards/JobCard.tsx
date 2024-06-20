@@ -27,7 +27,7 @@ export default function JobCard({ firstName, isCurrentUser }: Props) {
                 {showTooltip && (
                     <p className="bg-[#eeeeee] p-0.5 px-1 rounded-sm text-[12px] font-semibold absolute top-[-20px] left-[-5px] w-fit">
                         {isCurrentUser 
-                            ? "Others can see the services you offer and requested."
+                            ? "Others can see the services you offered and requested."
                             : `Explore services offered and requested by ${firstName}.`
                         }
                     </p>
