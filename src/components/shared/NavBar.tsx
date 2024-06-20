@@ -27,7 +27,7 @@ export default function NavBar() {
                 className={`relative flex justify-start gap-2 rounded-sm group ${isActive ? 'bg-[#dee1ec] rounded-sm p-[4px] hover:bg-white hover:transition-all hover:p-[6px]' : ''} hover:transition-all hover:p-[4px]`}
               >
                 <Image src={link.imgURL} alt={link.label} width={20} height={20} />
-                <p className="absolute text-[11px] font-bold top-[-14px] left-3 w-[65px] rounded-full text-center p-0.5 bg-[#eeeeee] z-10 hidden group-hover:block">
+                <p className="absolute text-[10px] font-bold top-[-14px] left-3 w-[63px] rounded-full text-center p-0.5 bg-[#eeeeee] z-10 hidden group-hover:block">
                   {link.label}
                 </p>
               </Link>

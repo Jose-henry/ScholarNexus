@@ -45,7 +45,7 @@ export default function JobCard({firstName}: Props) {
                     <ServiceOffered jobTitle='Laundry Services' jobNote="Let me take the load off your shoulders with my reliable laundry services. Whether you need a weekly wash or a one-time deep clean, your clothes will come back fresh and crisp every time! Contact me today and say goodbye to laundry day stress!"
                     creationDate="12/05/2024" deadline="none"/>
                     <ServiceOffered jobTitle='DSA Tuotor needed' jobNote="I'm seeking a data structures and algorithms tutor who can provide personalized guidance to help me grasp key concepts and excel in coding challenges. Preferably someone with a strong background in computer science and a knack for explaining complex ideas clearly."
-                    creationDate="17/05/2024" deadline="none"/>
+                    creationDate="17/05/2024" deadline="22/05/2024"/>
                 </div>
             </div>
         </div>

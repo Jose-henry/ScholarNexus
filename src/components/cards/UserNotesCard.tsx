@@ -34,7 +34,7 @@ export default function UserNotesCard({firstName}: Props) {
                     <input type="input" placeholder="Search note by title..." className="text-[12.5px] w-full p-1"></input>
                 </div>
                 <div className="bg-[#dee1ec] p-2 h-[250px] overflow-y-scroll grid grid-cols-6 gap-3">
-                    {["Biology", "Chemistry", "Physics", "Mathematics", "Geography", "History", "Literature", "Philosophy", "Art", "Music", "Philisophy", "Science", "Literature"].map(subject => (
+                    {["Biology", "Chemistry", "Physics", "Mathematics", "Geography", "History", "Literature", "Philosophy", "Art", "Music", "Philisophy", "Science", "Geology", "Ecology", 'Politics', "Tech"].map(subject => (
                         <div key={subject} className="w-[80px] h-[80px] flex flex-col p-2 items-center bg-white rounded-sm shadow-md cursor-pointer">
                             <Image src="/assets/folder-icon.svg" alt="folder" width={50} height={50} />
                             <h2 className="text-[11px] font-semibold text-center">{subject}</h2>

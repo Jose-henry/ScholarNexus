@@ -20,7 +20,7 @@ export default function ServiceOffered({jobTitle, jobNote, creationDate, deadlin
                 <p className="text-[13px]">{jobNote}</p>
                 <div className="flex justify-end gap-2 items-center mt-1">
                     <p className="font-bold text-[12px]">posted: <span className="font-medium text-[11px]">{creationDate}</span></p>
-                    <p className="font-bold text-[12px]">deadline: <span className="font-medium text-[12px]">{deadline}</span></p>
+                    <p className="font-bold text-[12px]">deadline: <span className="font-medium text-[11px]">{deadline}</span></p>
                 </div>
             </div>
         </div>
