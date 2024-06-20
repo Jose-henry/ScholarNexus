@@ -20,12 +20,13 @@ async function HomePage() {
 
   const firstName = userInfo?.firstName || "";
   const imgUrl = userInfo?.image || "";
+  const level = userInfo?.level || "";
 
   const news = await getNews(userInfo, false);
 
   return (
     <div className="w-[100%] grid h-full gap-[1%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
-      <NewsSection initialNews={news} userInfo={userInfo} imgUrl={imgUrl} firstName={firstName} />
+      <NewsSection initialNews={news} userInfo={userInfo} imgUrl={imgUrl} firstName={firstName} level={level} />
     </div>
   );
 }
