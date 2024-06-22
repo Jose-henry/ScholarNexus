@@ -8,6 +8,7 @@ import Image from "next/image";
 import VideoCard from '../cards/VideoCard';
 import DashboardCard from '../cards/DashboardCard'
 import { Suspense } from 'react'
+import Loading from '@/app/(nav)/loading';
 
 interface Props {
   initialNews: any;
@@ -27,7 +28,9 @@ function NewsSection({ initialNews, userInfo, imgUrl, firstName }: Props) {
   return (
     <>
       <div className="h-full flex flex-col gap-[20px]">
+      <Suspense fallback={<Loading/>}>
         <VideoCard />
+        </Suspense>
         <div className="flex gap-[10px] border-t-[1px] border-t-[#63686e] pt-6">
           <Button
             variant="light"
@@ -87,7 +90,7 @@ function NewsSection({ initialNews, userInfo, imgUrl, firstName }: Props) {
         </div>
         <div className="grid gap-[25px] grid-cols-3 h-[300px] overflow-y-scroll items-start p-[10px] pt-0 scroll-smooth border-b-2 border-b-[#9ba6a5]">
           {news.map((item: any, index: number) => (
-            <Suspense fallback={<div>Loading feed...</div>}>
+            <Suspense fallback={<Loading/>}>
             <ThreadCard1
               key={index}
               imageUrl={item.urlToImage ? item.urlToImage : "/misc/pic4.jpg"}
@@ -101,8 +104,10 @@ function NewsSection({ initialNews, userInfo, imgUrl, firstName }: Props) {
         </div>
       </div>
       <div className="h-full pl-[10px] pr-[20px]">
+      <Suspense fallback={<Loading/>}>
         <DashboardCard
         imgUrl={imgUrl} firstName={firstName} />
+      </Suspense>
       </div>
     </>
   );
