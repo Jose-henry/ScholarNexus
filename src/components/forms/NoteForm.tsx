@@ -108,7 +108,7 @@ export function NoteForm ({note, btnTitle}: Props) {
     //   if(pathname === `/folders/${note.folderId}/note/${note.noteId}/edit`){
     //     router.back();
     //} else {
-        router.push(`/folders/${note.folderId}`);
+        router.back();
 
   }
    

@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { getNews } from "@/lib/actions/news.action";
 import NewsSection from "@/components/misc/NewsSection";
 import { Suspense } from "react";
+import Loading from "../loading";
 
 export const metadata: Metadata = {
   title: "Home"
@@ -25,7 +26,9 @@ async function HomePage() {
 
   return (
     <div className="w-[100%] grid h-full gap-[1%] pt-[15px] pb-[15px]" style={{ gridTemplateColumns: "2.3fr 1fr" }}>
+      <Suspense fallback={<Loading/>}>
       <NewsSection initialNews={news} userInfo={userInfo} imgUrl={imgUrl} firstName={firstName} />
+      </Suspense>
     </div>
   );
 }

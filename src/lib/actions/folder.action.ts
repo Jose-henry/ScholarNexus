@@ -16,7 +16,7 @@ export async function createOrUpdateFolder({
   createdById,
   parentFolderId,
   path,
-}: FolderProps): Promise<void> {
+}: FolderProps): Promise<any> {
   try {
     const folder = await prisma.folder.upsert({
       where: {
@@ -46,7 +46,10 @@ export async function createOrUpdateFolder({
 export async function getFolders(createdById: string): Promise<any> {
   try {
     const folders = await prisma.folder.findMany({
-      where: { createdById: createdById },
+      where: {
+        createdById: createdById,
+        parentFolder: null , // Filter for only top-level folders
+      },
       select: {
         id: true,
         folderName: true,
@@ -55,30 +58,72 @@ export async function getFolders(createdById: string): Promise<any> {
         parentFolderId: true,
       },
     });
-
-    return folders;
     revalidatePath("/notes");
+    return folders;
+   
   } catch (error: any) {
     throw new Error(`Error getting folders: ${error.message}`);
   }
 }
 
 export async function getFoldersById(folderId: string): Promise<any> {
-    try {
-      const folders = await prisma.folder.findMany({
-        where: { parentFolderId: folderId },
-        select: {
-          id: true,
-          folderName: true,
-          category: true,
-          createdById: true,
-          parentFolderId: true,
+  try {
+    const folders = await prisma.folder.findMany({
+      where: { parentFolderId: folderId },
+      select: {
+        id: true,
+        folderName: true,
+        category: true,
+        createdById: true,
+        parentFolderId: true,
+        parentFolder: {
+          select: {
+            folderName: true,
+          },
         },
-      });
-      return folders;
-      revalidatePath("/notes");
-    } catch (error: any) {
-      throw new Error(`Error getting folders: ${error.message}`);
-    }
+        subfolders: {
+          select: {
+            id: true,
+            folderName: true,
+            category: true,
+            createdById: true,
+            parentFolderId: true,
+          },
+        },
+      },
+    });
+
+    revalidatePath("/notes/folders/" + folderId);
+    return folders;
+  } catch (error: any) {
+    throw new Error(`Error getting folders: ${error.message}`);
   }
-  
+}
+
+export async function deleteFolder(folderId: string): Promise<any> {
+  try {
+    await prisma.folder.delete({
+      where: {
+        id: folderId,
+      },
+    });
+    revalidatePath("/notes");
+  } catch (error: any) {
+    throw new Error(`Error deleting folder: ${error.message}`);
+  }
+}
+export async function getParentFolderName(folderId: string): Promise<any> {
+  try {
+    const folder = await prisma.folder.findUnique({
+      where: {
+        id: folderId,
+      },
+      select: {
+            folderName: true,
+      },
+    });
+    return folder?.folderName;
+  } catch (error: any) {
+    throw new Error(`Error getting parent folder name: ${error.message}`);
+  }
+}

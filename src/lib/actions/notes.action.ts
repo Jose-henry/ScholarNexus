@@ -42,17 +42,21 @@ export async function createOrUpdateNote({
       },
     });
 
-    revalidatePath(path);
+    revalidatePath(`/folders/${folderId}`)
   } catch (error: any) {
     throw new Error(`Error creating or updating note: ${error.message}`);
   }
 }
 
-export async function getNotes(folderId: string): Promise<any> {
+
+
+
+
+export async function getNotesbyUserId(userId: string): Promise<any> {
   try {
     const notes = await prisma.note.findMany({
       where: {
-        folderId: folderId, // Correctly filter by folderId field
+        authorId: userId,
       },
       select: {
         id: true,
@@ -64,14 +68,62 @@ export async function getNotes(folderId: string): Promise<any> {
         folderId: true,
       },
     });
+    revalidatePath(`/`)
     return notes;
-    revalidatePath("/notes")
+  } catch (error: any) {
+    throw new Error(`Error getting notes: ${error.message}`);
+  }
+}
+
+export async function getNotes(folderId: string): Promise<any> {
+  try {
+    const notes = await prisma.note.findMany({
+      where: {
+        folderId: folderId,
+        
+      },
+      select: {
+        id: true,
+        title: true,
+        content: true,
+        createdAt: true,
+        updatedAt: true,
+        authorId: true,
+        folderId: true,
+      },
+    });
+    revalidatePath(`/folders/${folderId}`)
+    return notes;
+    
   } catch (error: any) {
     throw new Error(`Error getting notes: ${error.message}`);
   }
 }
 
 
+export async function getNoteById(noteId: string, folderId: string): Promise<any> {
+  try {
+    const note = await prisma.note.findUnique({
+      where: {
+        id: noteId,
+        folderId: folderId
+      },
+      select: {
+        id: true,
+        title: true,
+        content: true,
+        createdAt: true,
+        updatedAt: true,
+        authorId: true,
+        folderId: true,
+      },
+    });
+    revalidatePath(`/folders/${folderId}`)
+    return note;
+  } catch (error: any) {
+    throw new Error(`Error getting note: ${error.message}`);
+  }
+}
 
 
 export async function getNotesById(folderId: string, id: string): Promise<any> {
@@ -91,8 +143,8 @@ export async function getNotesById(folderId: string, id: string): Promise<any> {
         folderId: true,
       },
     });
+    revalidatePath(`/folders/${folderId}`)
     return notes;
-    revalidatePath("/notes")
   } catch (error: any) {
     throw new Error(`Error getting notes: ${error.message}`);
   }

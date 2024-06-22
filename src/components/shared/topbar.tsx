@@ -3,7 +3,6 @@ import { Bars3CenterLeftIcon } from '@heroicons/react/24/solid';
 import Image from "next/image";
 import React, { useState } from "react";
 import Link from 'next/link';
-import { Avatar } from "@nextui-org/avatar";
 import { Input } from "@nextui-org/input";
 import { motion } from 'framer-motion';
 import Pomodoro from '../cards/Pomodoro';

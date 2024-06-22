@@ -29,6 +29,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Nunito", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"], // Keep this for specific usage
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

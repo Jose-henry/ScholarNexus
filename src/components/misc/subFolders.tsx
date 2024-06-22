@@ -10,24 +10,21 @@ interface FoldersComponentProps {
     folderName: string;
     category: string;
     createdById: string;
-    folderId: string; // Include createdById in the type definition
+    parentFolderId: string; // Include parentFolderId in the type definition
   }[];
   parentFolderId: string;
- 
+  parentFolderName: string;
 }
 
-export default function FoldersSubComponent({ folders, parentFolderId }: FoldersComponentProps) {
-  const router = useRouter(); // Renamed Router to router to follow conventions
+export default function FoldersSubComponent({ folders, parentFolderId, parentFolderName }: FoldersComponentProps) {
+  const router = useRouter();
 
   const onClick = (parentFolderId: string) => {
-    router.push(`/folders/${parentFolderId}/create-subfolder`); // Fixed parameter usage
+    router.push(`/folders/${parentFolderId}/create-subfolder`);
   };
 
   const onClick2 = (parentFolderId: string) => {
-    // Placeholder for future implementation
-    // router.push("/notes/1");
     router.push(`/folders/${parentFolderId}/create-notes`);
-
   };
 
   return (
@@ -42,16 +39,17 @@ export default function FoldersSubComponent({ folders, parentFolderId }: Folders
       ></div>
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
+          <p className="text-[12px] text-[#132743] font-black">{parentFolderName}</p>
           <button
             className="text-[12px] font-bold bg-[#132743] text-white px-2 py-1 shadow-md rounded-full flex items-center gap-1 hover:bg-[#497285] active:bg-[#142d4c]"
-            onClick={() => onClick(parentFolderId )} // Example onClick handler, replace with proper logic
+            onClick={() => onClick(parentFolderId)}
           >
             <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
             Create folder
           </button>
           <button
             className="text-[12px] font-bold bg-[#132743] text-white px-2 py-1 shadow-md rounded-full flex items-center gap-1 hover:bg-[#497285] active:bg-[#142d4c]"
-            onClick={() => onClick2(parentFolderId)}  
+            onClick={() => onClick2(parentFolderId)}
           >
             <Image src="/assets/plus.svg" alt="folder" width={18} height={18} />
             Create Notes

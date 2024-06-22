@@ -2,7 +2,7 @@
 
 import { getUserByClerkId } from "@/lib/actions/user.action";
 import { currentUser } from "@clerk/nextjs/server";
-import { FolderForm } from "@/components/forms/folderForm";
+import { FolderForm } from "@/components/forms/subFolderForm";
 import Modal from "@/components/misc/modal";
 import { Suspense } from "react";
 
@@ -26,7 +26,7 @@ export default async function CreateFolderPage({ params }: { params: { id: strin
     <Modal>
       <main className='mx-auto grid w-[900px] justify-start h-[650px] rounded-md overflow-hidden shadow-lg border border-[#e3e3e3]'>
       <Suspense fallback={<div>Loading...</div>}>
-        <FolderForm folder={formData} btnTitle='Continue' />
+        <FolderForm folder={formData}  btnTitle='Continue' />
       </Suspense>
       </main>
     </Modal>

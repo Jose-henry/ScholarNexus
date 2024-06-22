@@ -12,7 +12,7 @@ export default function NotesCard({id, content, title, folderId, authorId }: Pro
     return (
        
         <div className="w-fit">
-            <h1 className="text-[11px] font-semibold text-center">{title}</h1>
+            <h1 className="text-[11px] font-bold text-center">{title}</h1>
             <p className="text-[11px] font-semibold text-left">{content}</p>   
         </div>
         

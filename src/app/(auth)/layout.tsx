@@ -8,10 +8,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import Image from "next/image";
 
 
-const nunito = Nunito({ 
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
-  variable: '--font-nunito' 
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'], // Specify the weights you want
+  style: ['normal', 'italic'], // Specify the styles you want
+  variable: '--font-nunito',
 });
 
 
@@ -40,7 +41,7 @@ export default function RootLayout({
     }} >
     <html lang="en">
     <body
-    className={`${nunito.className}`}
+    className={`${nunito.variable}`}
     style={{
       backgroundImage: 'url("/assets/bg-img.jpg")',
       backgroundSize: 'cover',

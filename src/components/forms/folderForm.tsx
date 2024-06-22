@@ -90,13 +90,13 @@ export function FolderForm ({folder, btnTitle}: Props) {
         folderName: values.foldername,
         category: folder?.category,
         createdById: folder?.createdById || '',
-        parentFolderId: folder?.parentFolderId || null,
+        parentFolderId:null,
         path: pathname,
       });
       if(pathname === '/notes/edit'){
         router.back();
     } else {
-      router.push('/notes');
+      router.replace('/notes');
       router.back();
     }
 

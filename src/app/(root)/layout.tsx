@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "../globals.css";
 
-const nunito = Nunito({ 
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
-  variable: '--font-nunito' 
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'], // Specify the weights you want
+  style: ['normal', 'italic'], // Specify the styles you want
+  variable: '--font-nunito',
 });
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunito.className} style={{ backgroundColor: "#000" }}>
+      <body className={nunito.variable} style={{ backgroundColor: "#000" }}>
        {children}
       </body>
     </html>

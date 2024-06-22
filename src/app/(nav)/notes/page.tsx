@@ -12,8 +12,10 @@ export const metadata: Metadata = {
 
 export default async function Notes() {
   const User = await currentUser();
+ 
   if (!User) return null; // to avoid typescript warnings
   const userInfo = await getUserByClerkId(User?.id);
+  console.log(userInfo?.id);
   if (userInfo?.onboarded === false) {
     redirect("/onboarding");
   }

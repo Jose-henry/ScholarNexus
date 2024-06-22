@@ -20,7 +20,7 @@ import { UserValidation } from "@/lib/validations/user"
 import { useUploadThing } from "@/lib/uploadthing"
 import { isBase64Image } from "@/utils/utils"
 import Image from "next/image"
-import { Button } from "../ui/button"
+
 import { Upsert } from "@/lib/actions/user.action"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
@@ -31,7 +31,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { cn } from "@/utils/cn";
-import { toast } from "@/components/ui/use-toast"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Check, ChevronsUpDown } from "lucide-react"
 import {
   Command,
@@ -41,6 +42,9 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
+//import { Button } from "@nextui-org/button"
+import {Button, buttonVariants} from '@/components/ui/button' 
+import { Loader2 } from "lucide-react"
 
 
 
@@ -142,11 +146,12 @@ export function ProfileForm ({user, btnTitle}: Props) {
         }
         
     }
-      setIsLoading(true); // Optional loading state
+    setIsLoading(true); // Set loading state to true
+    try {
       await Upsert({
         clerkId: user?.clerkId,
-        username: user?.username, 
-        email: user?.email, 
+        username: user?.username,
+        email: user?.email,
         firstName: values.fname,
         lastName: values.lname,
         middleName: values.mname,
@@ -154,19 +159,26 @@ export function ProfileForm ({user, btnTitle}: Props) {
         programme: values.programme,
         school: values.school,
         level: values.level,
-        image: values.profile_photo || "",
-        bio: values.bio, 
+        image: values.profile_photo || '',
+        bio: values.bio,
         onboarded: true,
         interests: [],
-        path: pathname
+        path: pathname,
       });
-      if(pathname === '/profile/edit'){
+      toast.success('Profile updated successfully!');
+      if (pathname === '/profile/edit') {
         router.back();
-    } else {
-      router.push('/onboarding/interest');
+      } else {
+        router.push('/onboarding/interest');
+      }
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      toast.error('Failed to update profile. Please try again.');
+    } finally {
+      setIsLoading(false); // Set loading state back to false
     }
+  };
 
-  }
 
       
 
@@ -437,8 +449,24 @@ export function ProfileForm ({user, btnTitle}: Props) {
         />
 
 
-          <Button type="submit" className="bg-[#393e46] text-white" >Next</Button>
-        </form>
-      </Form>
-    )
+{isLoading ? (
+          <ButtonLoading />
+        ) : (
+          <Button type="submit" className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[13.5px] font-bold shadow-lg w-[200px] mx-auto">
+            Next
+          </Button>
+        )}
+      </form>
+    </Form>
+  );
+}
+
+// ButtonLoading component
+export function ButtonLoading() {
+  return (
+    <Button disabled>
+      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+      Please wait...
+    </Button>
+  );
 }

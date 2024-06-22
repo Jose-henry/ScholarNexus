@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -33,6 +36,7 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    --font-nunito: 'Nunito', sans-serif;
   }
 
   .dark {
@@ -80,6 +84,9 @@
     
     body {
       @apply bg-background text-foreground;
+      font-family: var(--font-nunito), sans-serif;
+
+      
   }
 }
 

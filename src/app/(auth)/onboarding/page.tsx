@@ -33,32 +33,10 @@ export default async function Onboarding() {
     
   
     const userInfo = await getUserByClerkId(User?.id);
-    if (userInfo?.onboarded === true && userInfo?.interests?.length > 0) redirect("/home");
+    //if (userInfo?.onboarded === true && userInfo?.interests?.length > 0) redirect("/home");
     
 
-    
-
-
-
-    /* 
-    interface Props{
-  user: {
-      clerkId: any;
-      username: string;
-      email: any;
-      firstName: string;
-      lastName: string;
-      middleName: string;
-      dateOfBirth: Date;
-      programme: string;
-      school: string;
-      level: string;
-      image: string;
-      bio: string;
-  };
-  btnTitle: string;
-}
-    */
+  
 
     
   const formData = {

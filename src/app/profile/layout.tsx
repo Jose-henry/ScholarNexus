@@ -9,10 +9,11 @@ import BottomBar from "@/components/shared/bottombar";
 import { Metadata } from "next";
 import Image from "next/image";
 
-const nunito = Nunito({ 
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
-  variable: '--font-nunito' 
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'], // Specify the weights you want
+  style: ['normal', 'italic'], // Specify the styles you want
+  variable: '--font-nunito',
 });
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <body
-      className={nunito.className}
+      className={nunito.variable}
       style={{
         height: "100vh"
       }}>

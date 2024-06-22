@@ -8,6 +8,7 @@ import { updateInterests } from "@/lib/actions/user.action";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import path from "path";
+import { Loader2 } from "lucide-react"
 
 const interests = [
     {
@@ -160,6 +161,8 @@ interface props{
 }
 
 export default function InterestForm(   {clerkId}: props) {
+  const [isLoading, setIsLoading] = useState(false); // 1. Define the state
+
     const router = useRouter();
     const pathname = usePathname();
     const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
@@ -169,6 +172,8 @@ export default function InterestForm(   {clerkId}: props) {
 
     
     const onSubmit = async () => {
+      setIsLoading(true);
+      try{
         if (count < 1) {
           toast.error("Please select at least one");
           return;
@@ -183,6 +188,10 @@ export default function InterestForm(   {clerkId}: props) {
         if(pathname === '/profile/edit'){
             router.back()
         }; 
+      } catch (error) {
+        console.error('Error updating interests:', error);
+        toast.error('Failed to update interests. Please try again.');
+      }
       };
     
 
@@ -239,6 +248,8 @@ export default function InterestForm(   {clerkId}: props) {
       </div>
       <div className="flex flex-col gap-4">
 
+            { isLoading ? (<ButtonLoading />
+            ):(
             <Button
             size="sm"
             className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[13.5px] font-bold shadow-lg w-[200px] mx-auto"
@@ -246,7 +257,7 @@ export default function InterestForm(   {clerkId}: props) {
         >
                 Submit
                 <Image width="20" height="20" src="/assets/next-icon.svg" alt="next"/>
-            </Button>
+            </Button>)}
             { selectedInterests.length > 0 &&( <Button
           size="sm"
           className="bg-[#393e46] text-white hover:bg-[#606470] cursor-pointer rounded-sm text-[13.5px] font-bold shadow-lg w-[200px] mx-auto"
@@ -260,4 +271,16 @@ export default function InterestForm(   {clerkId}: props) {
 
         </>
     )
+}
+
+
+
+// ButtonLoading component
+export function ButtonLoading() {
+  return (
+    <Button disabled>
+      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+      Please wait...
+    </Button>
+  );
 }

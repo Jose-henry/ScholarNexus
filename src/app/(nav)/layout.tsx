@@ -10,10 +10,11 @@ import { Metadata } from "next";
 import Image from "next/image"
 import TopBarServer from "@/components/shared/topbarserver";
 
-const nunito = Nunito({ 
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
-  variable: '--font-nunito' 
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'], // Specify the weights you want
+  style: ['normal', 'italic'], // Specify the styles you want
+  variable: '--font-nunito',
 });
 
 export const metadata: Metadata = {
@@ -34,12 +35,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
  
-  //note: React.ReactNode;
+  //note: React.ReactNode
 }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={nunito.className} style={{ height: "100vh"}}>
+        <body className={nunito.variable} style={{ height: "100vh"}}>
           {/* Hide layout on md and below */}
           <div id="wrapper" className="hidden xl:flex h-[100%] sm:p-0 gap-[1%] bg-[#fafafa]">
             <NavBar />
