@@ -15,9 +15,10 @@ interface Props {
   userInfo: any;
   imgUrl: string;
   firstName: string;
+  level: string;
 }
 
-function NewsSection({ initialNews, userInfo, imgUrl, firstName }: Props) {
+function NewsSection({ initialNews, userInfo, imgUrl, firstName, level }: Props) {
   const [news, setNews] = useState(initialNews);
 
   const handleRefresh = async () => {
@@ -106,7 +107,7 @@ function NewsSection({ initialNews, userInfo, imgUrl, firstName }: Props) {
       <div className="h-full pl-[10px] pr-[20px]">
       <Suspense fallback={<Loading/>}>
         <DashboardCard
-        imgUrl={imgUrl} firstName={firstName} />
+        imgUrl={imgUrl} firstName={firstName} level={level} />
       </Suspense>
       </div>
     </>

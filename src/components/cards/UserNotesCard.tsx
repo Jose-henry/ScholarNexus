@@ -5,9 +5,10 @@ import { useState } from 'react'; // Import useState hook
 
 interface Props {
     firstName: string;
+    isCurrentUser: boolean;
 }
 
-export default function UserNotesCard({firstName}: Props) {
+export default function UserNotesCard({firstName, isCurrentUser}: Props) {
     const [showTooltip, setShowTooltip] = useState(false); // State to manage tooltip visibility
     return (
         <div className="rounded-sm bg-white shadow-sm border-[1.5px] border-[#d3d6db] p-3 flex flex-col gap-3">
@@ -23,7 +24,10 @@ export default function UserNotesCard({firstName}: Props) {
                 />
                 {showTooltip && (
                     <p className="bg-[#eeeeee] p-0.5 px-1 rounded-sm text-[12px] font-semibold absolute top-[-20px] left-[-5px] w-fit">
-                        Only {firstName}'s followers can view public notes.
+                        {isCurrentUser 
+                            ? "Only your followers can view your public notes."
+                            : `Only ${firstName}'s followers can view public notes.`
+                        }
                     </p>
                 )}
                 <h2 className="text-[14px] font-bold">Notes</h2>

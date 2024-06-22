@@ -17,7 +17,7 @@ export default function DashboardFriends() {
             <div className="w-full h-[85%] bg-[#fafafa] shadow-md shadow-[#929aab] flex flex-col justify-between p-2">
                 <FriendDashboard firstName="John" lastName="Doe" programme="Aerospace Engineering" friendImage="/assets/friend1.png"/>
                 <FriendDashboard firstName="Jane" lastName="Piper" programme="Mechanical Engineering" friendImage="/assets/friend1.png"/>
-                <FriendDashboard firstName="Marywell" lastName="Wilder" programme="Law &Justice" friendImage="/assets/friend1.png"/>
+                <FriendDashboard firstName="Marywell" lastName="Wilder" programme="Law & Justice" friendImage="/assets/friend1.png"/>
             </div>
         </div>
     );

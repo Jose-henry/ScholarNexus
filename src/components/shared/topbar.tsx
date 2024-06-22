@@ -11,9 +11,11 @@ import { SignOutButton, SignedIn } from '@clerk/nextjs';
 
 interface Props {
   imgUrl: string;
+  id: string;
+  level: string;
 }
 
-export default function TopBar({imgUrl}: Props) {
+export default function TopBar({imgUrl, id, level}: Props) {
   const [isClick, setIsClick] = useState(false);
   const [showPomodoro, setShowPomodoro] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -35,6 +37,23 @@ export default function TopBar({imgUrl}: Props) {
       setShowPomodoro(false); // Close Pomodoro if open
     }
   };
+
+    // Function to get border color based on level
+    const getBorderColor = (level: string): string => {
+      const levelColors: { [key: string]: string } = {
+        "100": "#66ccff", // Level 100
+        "200": "#99ff99", // Level 200
+        "300": "#ffff99", // Level 300
+        "400": "#ffcc99", // Level 400
+        "500": "#cc99ff", // Level 500
+        "600": "#ff9999", // Level 600
+        "700": "#99ffff"  // Level 700
+        // Add more levels as needed
+      };
+  
+      return levelColors[level] || "#e0e0e0"; // Default color if level not found
+    };
+  
 
   return (
     <header className="p-[15px] pr-[25px] flex justify-between">
@@ -146,9 +165,23 @@ export default function TopBar({imgUrl}: Props) {
             </p>
           </div>
           
-          <Link href="/profile" aria-label="" className='relative group'>
-            <div className="w-[30px] h-[30px] rounded-full border-[2px] border-red-700 bg-cover bg-center shadow-sm shadow-[#e0e0e0]]" style={{ backgroundImage: `url(${imgUrl})` }}></div>
-            <p className="absolute text-[10px] text-black font-bold top-[-18px] left-[-30px] w-[50px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">Profile</p>
+          <Link href={"/profile/" + id} aria-label="" className="relative group">
+            <div
+              className="w-[30px] h-[30px] rounded-full bg-cover bg-center shadow-sm relative overflow-hidden"
+              style={{
+                backgroundImage: `url(${imgUrl})`,
+                border: `2px solid ${getBorderColor(level)}`, // Set border color dynamically based on level
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.border = "2px solid #dc2f2f";
+              }} // Show border on hover
+              onMouseLeave={(e) => {
+                e.currentTarget.style.border = `2px solid ${getBorderColor(level)}`; // Reset border color on hover out
+              }}
+            ></div>
+            <p className="absolute text-[10px] text-black font-bold top-[-18px] left-[-30px] w-[50px] rounded-full text-center p-0.5 bg-[#dee1ec] opacity-0 group-hover:opacity-100">
+              Profile
+            </p>
           </Link>
         </div>
       </div>
