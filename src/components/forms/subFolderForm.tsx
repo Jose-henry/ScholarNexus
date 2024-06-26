@@ -43,6 +43,7 @@ import {
 } from "@/components/ui/command"
 import { folderValidation } from "@/lib/validations/folder"
 import { createOrUpdateFolder } from "@/lib/actions/folder.action"
+import { revalidatePath } from "next/cache"
 
 
 
@@ -91,6 +92,7 @@ export function FolderForm ({folder, btnTitle}: Props) {
         path: pathname,
       });
       router.back();
+      revalidatePath(`/notes/${folder?.parentFolderId}`);
     }
 
    

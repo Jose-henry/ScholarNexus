@@ -22,6 +22,7 @@ import Image from "next/image"
 import { Button } from "../ui/button"
 import { noteValidation } from "@/lib/validations/folder"
 import { createOrUpdateNote } from "@/lib/actions/notes.action"
+import { revalidatePath } from "next/cache"
 
 
 
@@ -109,6 +110,7 @@ export function NoteForm ({note, btnTitle}: Props) {
     //     router.back();
     //} else {
         router.back();
+        revalidatePath(`/notes/${note.folderId}`);
 
   }
    
