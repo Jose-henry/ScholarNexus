@@ -17,7 +17,7 @@ export default function ThreadCard1({ imageUrl, link, title, description, loader
                 <Image 
                     src={imageUrl} 
                     alt=""  
-                    className="h-full w-full object-cover rounded-sm"
+                    className="h-full w-full rounded-sm"
                     fill
                     loader={loader}
                     unoptimized
